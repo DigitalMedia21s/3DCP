@@ -22,12 +22,13 @@ public struct QuestData
 public class QuestManager : MonoBehaviour
 {
     [SerializeField]
-    List<QuestData> datas;
-    // 현재 실행중인 퀘스트 목록
+    List<QuestData> quests;
+    QuestLevel currentLevel;
+    List<QuestData> currentQuests; // 현재 수행중인 퀘스트 목록
 
     private void Awake() 
     {
-
+        currentLevel = QuestLevel.START;
     }
 
     private void Update() 
@@ -35,8 +36,12 @@ public class QuestManager : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other) 
+    {
+                
+    }
+
     // 퀘스트 UI 활성화
     // 현재 수행중인 퀘스트 목록에 업데이트
-    // 현재 수행중인 퀘스트 목록
     // Quest 함수
 }
