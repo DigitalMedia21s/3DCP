@@ -1,5 +1,6 @@
 // Scriptable Object 설정 -> 어차피 씬이 하나라 상관 없나?
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -17,13 +18,6 @@ public class QuestData
     public string desc;
     public bool open;
     public bool clear;
-
-    public QuestData(int id, QuestLevel level, string desc) 
-    {
-        this.id = id;
-        this.level = level;
-        this.desc = desc;
-    }
 }
 
 public class QuestManager : MonoBehaviour
@@ -38,12 +32,7 @@ public class QuestManager : MonoBehaviour
     private void Awake() 
     {
         currentLevel = QuestLevel.START;
-        levelCountMax = new int[System.Enum.GetValues(typeof(QuestData)).Length];
-        
-        quests = new() // quests 리스트 추가
-        {
-            new QuestData(0, QuestLevel.START, "식탁 밑에 저거 뭐야? 한번 주워 봐")
-        };
+        levelCountMax = new int[System.Enum.GetValues(typeof(QuestLevel)).Length]; 
         
         foreach (var i in quests) // LevelCountMax 배열에 quests 리스트의 level의 개수를 세어서.. 원소로 넣음
         {
@@ -52,24 +41,29 @@ public class QuestManager : MonoBehaviour
             else if (i.level == QuestLevel.MID) levelCountMax[2]++;
             else if (i.level == QuestLevel.SECOND) levelCountMax[3]++;
         }
-
     }
 
-    private void startTrigger (Collider other) // 각 level 마다 만들어준 다음에 currentlevel? => 맞게 실행
-    {
-        if (other.name == "LivingRoom")
-        {
+    // private void startTrigger (Collider other) // 각 level 마다 만들어준 다음에 currentlevel? => 맞게 실행
+    // {
+    //     if (other.name == "LivingRoom")
+    //     {
             
-        }
-    }
-
-    
+    //     }
+    // }
 
     private void addCurrentQuests(QuestData quest) 
     {
-        quest.open = true; 
-        currentQuests.Add(quest);
-        // UI 동기화
+        try 
+        {
+            quest!.open = true;
+            currentQuests.Add(quest);
+            // UI 동기화
+        }       
+        catch (NullReferenceException ex) 
+        {
+            Debug.Log("NULL");
+        }
+
     }
     
     private void clearQuest(QuestData quest) 
