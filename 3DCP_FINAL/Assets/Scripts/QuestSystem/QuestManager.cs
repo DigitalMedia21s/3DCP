@@ -41,6 +41,7 @@ public class QuestManager : MonoBehaviour
             else if (i.level == QuestLevel.MID) levelCountMax[2]++;
             else if (i.level == QuestLevel.SECOND) levelCountMax[3]++;
         }
+        
     }
 
     // private void startTrigger (Collider other) // 각 level 마다 만들어준 다음에 currentlevel? => 맞게 실행

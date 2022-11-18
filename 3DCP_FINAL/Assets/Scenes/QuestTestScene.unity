@@ -329,7 +329,19 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5405867970655458293, guid: e74e4a70fed13194aa07bb35daab2852, type: 3}
+      propertyPath: quests.Array.data[0].desc
+      value: "\uBC14\uB2E5\uC5D0 \uC800\uAC70 \uBB50\uC57C? \uD55C \uBC88 \uC8FC\uC6CC\uBD10"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405867970655458293, guid: e74e4a70fed13194aa07bb35daab2852, type: 3}
+      propertyPath: quests.Array.data[1].desc
+      value: "\uD55C\uBC88 \uBA39\uC5B4\uBCF4\uC790"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405867970655458293, guid: e74e4a70fed13194aa07bb35daab2852, type: 3}
       propertyPath: quests.Array.data[0].clear
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5405867970655458293, guid: e74e4a70fed13194aa07bb35daab2852, type: 3}
+      propertyPath: quests.Array.data[1].level
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5405867970655458294, guid: e74e4a70fed13194aa07bb35daab2852, type: 3}
