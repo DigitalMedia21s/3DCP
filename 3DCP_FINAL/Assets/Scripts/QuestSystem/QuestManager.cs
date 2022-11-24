@@ -1,4 +1,4 @@
-// Scriptable Object 설정 -> 어차피 씬이 하나라 상관 없나?
+// DontDestroy 설정 -> 어차피 씬 변환 없음
 
 using System;
 using System.Collections;
@@ -13,15 +13,20 @@ public enum QuestLevel
 [System.Serializable]
 public class QuestData
 {
-    public int id;
+    public int id; 
     public QuestLevel level;
     public string desc;
+    public int reward;
     public bool open;
     public bool clear;
+
+        // 퀘스트 완료 아이템 ?
 }
 
 public class QuestManager : MonoBehaviour
 {
+    public static QuestManager instance;
+
     [SerializeField]
     List<QuestData> quests;
     QuestLevel currentLevel; 
@@ -44,20 +49,18 @@ public class QuestManager : MonoBehaviour
         
     }
 
-    // private void startTrigger (Collider other) // 각 level 마다 만들어준 다음에 currentlevel? => 맞게 실행
-    // {
-    //     if (other.name == "LivingRoom")
-    //     {
-            
-    //     }
-    // }
-
-    private void addCurrentQuests(QuestData quest) 
+    /// <summary>
+    /// 퀘스트 리스트에 현재 퀘스트 추가
+    /// </summary>
+    public void addCurrentQuests(int id) 
     {
+        QuestData quest = getData(id);
+
         try 
         {
             quest!.open = true;
             currentQuests.Add(quest);
+            Debug.Log("퀘스트를 추가함");
             // UI 동기화
         }       
         catch (NullReferenceException ex) 
@@ -67,14 +70,22 @@ public class QuestManager : MonoBehaviour
 
     }
     
-    private void clearQuest(QuestData quest) 
+    /// <summary> 
+    /// 현재 퀘스트 완료
+    /// </summary>
+    public void clearQuest(int id) 
     {
+        QuestData quest = getData(id);
+
         quest.clear = true;
         currentQuests.Remove(quest);
         // UI 동기화
         nextQuestLevel();
     }
 
+    /// <summary> 
+    /// 현재 레벨에서 완료한 퀘스트의 개수를 세고, 현재 레벨을 모두 완료하면 다음 레벨로 넘어감
+    /// </summary>
     private void nextQuestLevel() 
     {
         levelCount ++;
@@ -99,19 +110,10 @@ public class QuestManager : MonoBehaviour
         currentLevel ++;
         levelCount =0;
     }
+
+    private QuestData getData(int id) 
+    {
+        return quests[id];
+    } 
+
 }
-
-// => player에서
-    // private void OnTriggerEnter(Collider other) 
-    // {
-    //     if (other.tag == "QuestTrigger") // 퀘스트 발동 조건
-    //     {
-
-    //     }
-    //     else if (other.tag == "QuestClearItem") // 퀘스트 완료 조건 => 나중에 클릭이나 뭐로 바꿀건데 일단 넣어놓음 
-    //     {
-    //         // 클릭했을 때
-    //         // 태그가 QuestClearItem이고
-    //         // 이름이 
-    //     }
-    // }
