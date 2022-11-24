@@ -56,8 +56,10 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     public void addCurrentQuests(int id) 
     {
+        // current level에 따라서 실행 -> 
+
         QuestData quest = getData(id);
-        Debug.Log(quest.id + quest.desc);
+        if(!checkQuestLevel(quest)) return;
 
         try 
         {
@@ -70,7 +72,6 @@ public class QuestManager : MonoBehaviour
         {
             Debug.Log("NULL");
         }
-
     }
     
     /// <summary> 
@@ -119,4 +120,10 @@ public class QuestManager : MonoBehaviour
         return quests.Find(x => x.id == id);
     }
 
+    private bool checkQuestLevel(QuestData data)
+    {
+        if (currentLevel == data.level)
+            return true;
+        return false;
+    }
 }
