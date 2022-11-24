@@ -36,6 +36,8 @@ public class QuestManager : MonoBehaviour
 
     private void Awake() 
     {
+        instance = this;
+        currentQuests = new();
         currentLevel = QuestLevel.START;
         levelCountMax = new int[System.Enum.GetValues(typeof(QuestLevel)).Length]; 
         
@@ -55,10 +57,11 @@ public class QuestManager : MonoBehaviour
     public void addCurrentQuests(int id) 
     {
         QuestData quest = getData(id);
+        Debug.Log(quest.id + quest.desc);
 
         try 
         {
-            quest!.open = true;
+            quest.open = true;
             currentQuests.Add(quest);
             Debug.Log("퀘스트를 추가함");
             // UI 동기화
@@ -113,7 +116,7 @@ public class QuestManager : MonoBehaviour
 
     private QuestData getData(int id) 
     {
-        return quests[id];
-    } 
+        return quests.Find(x => x.id == id);
+    }
 
 }
