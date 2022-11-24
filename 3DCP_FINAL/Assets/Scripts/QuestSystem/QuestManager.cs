@@ -56,13 +56,10 @@ public class QuestManager : MonoBehaviour
     /// </summary>
     public void addCurrentQuests(int id) 
     {
-        // current level에 따라서 실행 -> 
-
         QuestData quest = getData(id);
-        if(!checkQuestLevel(quest)) return;
-
         try 
         {
+            if(!checkQuestLevel(quest)) return;
             quest.open = true;
             currentQuests.Add(quest);
             Debug.Log("퀘스트를 추가함");
@@ -80,9 +77,12 @@ public class QuestManager : MonoBehaviour
     public void clearQuest(int id) 
     {
         QuestData quest = getData(id);
+        if(!checkQuestItem(quest)) return;
 
         quest.clear = true;
+        // 플레이어 별풍선 += quest.reward;
         currentQuests.Remove(quest);
+        quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
         // UI 동기화
         nextQuestLevel();
     }
@@ -115,15 +115,40 @@ public class QuestManager : MonoBehaviour
         levelCount =0;
     }
 
-    private QuestData getData(int id) 
+    /// <summary> 
+    /// 아이디에 해당하는 QuestData를 quests 리스트에서 찾아서 반환함
+    /// </summary>
+    public QuestData getData(int id) 
     {
         return quests.Find(x => x.id == id);
     }
 
+    /// <summary> 
+    /// 인자로 받은 QuestData의 level이 currentLevel과 일치하는지 여부를 반환함
+    /// </summary>
     private bool checkQuestLevel(QuestData data)
     {
         if (currentLevel == data.level)
             return true;
+        Debug.Log("현재 레벨에 해당하지 않음");
         return false;
+    }
+
+    /// <summary> 
+    /// 현재 아이템이 수행중인 퀘스트의 클리어 아이템인지?
+    /// </summary>
+    public bool checkQuestItem(QuestData data) 
+    {
+        try
+        {
+            currentQuests.Find(x => x == data);
+            Debug.Log("currentQuests에 있음");
+            return true;
+        }
+        catch
+        {
+            Debug.Log("currentQuests에 없음");
+            return false;
+        }
     }
 }
