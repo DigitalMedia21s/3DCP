@@ -8,7 +8,7 @@ public class GhostAI : MonoBehaviour
     private Transform target;
     private NavMeshAgent navAgent;
 
-    bool isMove;
+    public bool isMove;
 
     // Start is called before the first frame update
     void Start()
@@ -20,16 +20,18 @@ public class GhostAI : MonoBehaviour
 
         isMove = true;
 
+        GameObject.Find("PlayerArmature").GetComponent<PlayerControl>().isGhost = true;
+
         StartGhost();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isMove = false;
-        }
+        //if (Input.GetKeyDown(KeyCode.F))
+        //{
+        //    isMove = false;
+        //}
     }
 
     void StartGhost()
