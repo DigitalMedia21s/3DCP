@@ -20,6 +20,8 @@ public class GhostAI : MonoBehaviour
 
         isMove = true;
 
+        GameObject.Find("PlayerArmature").GetComponent<PlayerControl>().isGhost = true;
+
         StartGhost();
     }
 

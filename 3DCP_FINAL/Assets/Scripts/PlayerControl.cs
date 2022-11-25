@@ -11,10 +11,13 @@ public class PlayerControl : MonoBehaviour
 
     float distance;
 
+    public GameObject ceiling;
+    public bool isGhost;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        isGhost = false;
     }
 
     // Update is called once per frame
@@ -52,6 +55,17 @@ public class PlayerControl : MonoBehaviour
             {
                 //실제 귀신 공격
                 GameObject.Find("Ghost").GetComponent<GhostAI>().isMove = false;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "WallTrigger")
+        {
+            if (isGhost == true)
+            {
+                ceiling.SetActive(false);
             }
         }
     }
