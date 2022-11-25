@@ -8,7 +8,7 @@ public class Item : MonoBehaviour
 {
     GameObject chosenitem; //what item choose
     public GameObject itemsprite; //for allocate inven item sprite
-    public GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7; //each item sprite
+    public GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
 
     // Start is called before the first frame update
     void Start()
@@ -54,6 +54,26 @@ public class Item : MonoBehaviour
         if (chosenitem.tag == "Item7")
         {
             itemsprite = spriteImg7;
+        }
+        if (chosenitem.tag == "Item8")
+        {
+            itemsprite = spriteImg8;
+        }
+        if (chosenitem.tag == "Item9")
+        {
+            itemsprite = spriteImg9;
+        }
+        if (chosenitem.tag == "Item10")
+        {
+            itemsprite = spriteImg10;
+        }
+        if (chosenitem.tag == "Item11")
+        {
+            itemsprite = spriteImg11;
+        }
+        if (chosenitem.tag == "Item12")
+        {
+            itemsprite = spriteImg12;
         }
     }
 }
