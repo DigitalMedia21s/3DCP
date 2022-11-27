@@ -9,7 +9,7 @@ public class movex : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {   
-            this.transform.Translate(-0.5f, 0, 0);
+            this.transform.Translate(-30f, 0, 0);
         }
     }
 }

@@ -10,17 +10,21 @@ public enum QuestLevel
     START, FIRST, MID, SECOND
 } 
 
+public enum NickName 
+{
+    A, B, C
+}
+
 [System.Serializable]
 public class QuestData
 {
     public int id; 
     public QuestLevel level;
+    public NickName name;
     public string desc;
     public int reward;
     public bool open;
     public bool clear;
-
-        // 퀘스트 완료 아이템 ?
 }
 
 public class QuestManager : MonoBehaviour
@@ -28,15 +32,18 @@ public class QuestManager : MonoBehaviour
     public static QuestManager instance;
 
     [SerializeField]
-    List<QuestData> quests;
-    QuestLevel currentLevel; 
-    int levelCount =0; 
-    List<QuestData> currentQuests; // 현재 수행중인 퀘스트 목록
-    int[] levelCountMax;
+    private List<QuestData> quests;
+    private QuestLevel currentLevel; 
+    private int levelCount =0; 
+    private List<QuestData> currentQuests; // 현재 수행중인 퀘스트 목록
+    public List<QuestData> CurrentQuests {get{return currentQuests;}} // QuestUI에서 사용하기 위한 읽기전용 프로퍼티
+    private int[] levelCountMax;
+    private QuestUI ui;
 
     private void Awake() 
     {
         instance = this;
+        ui = GetComponent<QuestUI>();
         currentQuests = new();
         currentLevel = QuestLevel.START;
         levelCountMax = new int[System.Enum.GetValues(typeof(QuestLevel)).Length]; 
@@ -48,7 +55,6 @@ public class QuestManager : MonoBehaviour
             else if (i.level == QuestLevel.MID) levelCountMax[2]++;
             else if (i.level == QuestLevel.SECOND) levelCountMax[3]++;
         }
-        
     }
 
     /// <summary>
@@ -62,13 +68,14 @@ public class QuestManager : MonoBehaviour
             if(!checkQuestLevel(quest)) return;
             quest.open = true;
             currentQuests.Add(quest);
-            Debug.Log("퀘스트를 추가함");
+            Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc);
             // UI 동기화
         }       
         catch (NullReferenceException ex) 
         {
             Debug.Log("NULL");
         }
+        ui.resetQuestUI();
     }
     
     /// <summary> 
@@ -83,7 +90,7 @@ public class QuestManager : MonoBehaviour
         // 플레이어 별풍선 += quest.reward;
         currentQuests.Remove(quest);
         quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
-        // UI 동기화
+        ui.resetQuestUI();
         nextQuestLevel();
     }
 
@@ -123,6 +130,11 @@ public class QuestManager : MonoBehaviour
         return quests.Find(x => x.id == id);
     }
 
+    public QuestData getCurrentData(int id) 
+    {
+        return currentQuests.Find(x => x.id == id);
+    }
+
     /// <summary> 
     /// 인자로 받은 QuestData의 level이 currentLevel과 일치하는지 여부를 반환함
     /// </summary>
@@ -151,4 +163,5 @@ public class QuestManager : MonoBehaviour
             return false;
         }
     }
+
 }
