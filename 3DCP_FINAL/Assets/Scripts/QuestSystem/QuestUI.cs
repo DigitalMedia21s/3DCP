@@ -24,9 +24,7 @@ public class QuestUI : MonoBehaviour
     /// 퀘스트를 시작하거나 완료하면 UI를 리셋함 
     /// </summary>
     public void resetQuestUI() 
-    {
-        // currentQuestCount = QuestManager.instance.countCurrentQuest();
-        
+    {   
         // UI 모두 해제
         for(int i =0; i<questsUI.Length; i++)
         {
