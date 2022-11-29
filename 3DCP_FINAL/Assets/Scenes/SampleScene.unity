@@ -4396,6 +4396,11 @@ MonoBehaviour:
   spriteImg5: {fileID: 1977961807}
   spriteImg6: {fileID: 1764176054}
   spriteImg7: {fileID: 648758526}
+  spriteImg8: {fileID: 0}
+  spriteImg9: {fileID: 0}
+  spriteImg10: {fileID: 0}
+  spriteImg11: {fileID: 0}
+  spriteImg12: {fileID: 0}
 --- !u!224 &1367087335
 RectTransform:
   m_ObjectHideFlags: 0
