@@ -36,14 +36,17 @@ public class DialogManager : MonoBehaviour
     private IEnumerator ShowPlayerDialog(PlayerDialog dialog) 
     {
         Tween tweener;
+        yield return new WaitForSeconds(3);
+        tweener = playerDialogPanel.DOFade(1, 1f);
         foreach (string c in dialog.content)
         {
             playerDialogText.text = c;
-            tweener = playerDialogPanel.DOFade(1, 1f);
+            tweener = playerDialogText.DOFade(1,1.5f);
             yield return tweener.WaitForCompletion();
             yield return new WaitForSeconds(interval);
-            tweener = playerDialogPanel.DOFade(0, 0);   
+            tweener = playerDialogText.DOFade(0, 0);   
         }
+            tweener = playerDialogPanel.DOFade(0, 1.5f);   
     }
     // private IEnumerator ShowViewerDialog(ViewerDialog dialog)
     // {
