@@ -10,7 +10,7 @@ public class QuestData
 {
     public int id; 
     public QuestLevel level;
-    public string name;
+    public Nickname name;
     public string desc;
     public int reward;
     public bool open;
