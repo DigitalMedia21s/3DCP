@@ -50,6 +50,7 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
+            SoundManager.instance.Play("hit");
             //공격(애니메이션)
             if (distance <= 8.0f)
             {
