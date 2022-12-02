@@ -2,44 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
+using DG.Tweening;
 
 public class DialogManager : MonoBehaviour
 {
-    public TextMeshProUGUI playerDialogText;
+    [SerializeField] private float interval; 
+    [SerializeField] private CanvasGroup playerDialogPanel;
+    [SerializeField] private TextMeshProUGUI playerDialogText;
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
     [SerializeField] private List<PlayerDialog> playerDialogs;
     [SerializeField] private List<ViewerDialog> viewerDialogs;
     [SerializeField] private ViewerDialog loopViewerDialogs;
 
+    private void Start() 
+    {
+        ShowDialog("시작");
+    }
     /// <summary> 
     /// 대사를 시작하고 싶은 곳에서 이 함수를 호출하세요. 매개변수로 대사의 ID를 사용합니다. 
     /// </summary>
     public void ShowDialog(string id)
     {
-        // player Dialogs 에서 해당 아이디를 찾는다. => 못찾으면 log 출력
-        // 해당 id의 content를 출력한다.
-        // content가 여러개일 경우 일정 시간을 간격으로 출력한다. 
-        
+        PlayerDialog pDialog = playerDialogs.Find(x => x.id == id);
+        // ViewerDialog vDialog = viewerDialogs.Find(x => x.id == id);
+
+        if (pDialog == null) Debug.LogWarning("CAN NOT FIND PLAYER DIALOG");
+        else StartCoroutine(ShowPlayerDialog(pDialog));
+        // if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG");
+        // else StartCoroutine(ShowViewerDialog(vDialog));
     }
-    private void ShowPlayerDialog(string id) 
+
+    private IEnumerator ShowPlayerDialog(PlayerDialog dialog) 
     {
-        PlayerDialog dialog = playerDialogs.Find(x => x.id == id);
-        if (dialog == null) return;
+        Tween tweener;
         foreach (string c in dialog.content)
         {
-                       
+            playerDialogText.text = c;
+            tweener = playerDialogPanel.DOFade(1, 1f);
+            yield return tweener.WaitForCompletion();
+            yield return new WaitForSeconds(interval);
+            tweener = playerDialogPanel.DOFade(0, 0);   
         }
-
     }
-    private void ShowViewerDialog(string id) 
-    {
+    // private IEnumerator ShowViewerDialog(ViewerDialog dialog)
+    // {
+    //     Tween tweener;
+    //     foreach (var c in dialog.content)
+    //     {
 
-    }
+    //     }
+    // }
 
 }
-
 
 
 [System.Serializable]
