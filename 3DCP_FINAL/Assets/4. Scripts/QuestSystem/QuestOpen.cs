@@ -12,7 +12,9 @@ public class QuestOpen : MonoBehaviour
     // 접촉한 오브젝트의 이름은 Open + id
     private void OnTriggerEnter(Collider other) 
     {
-        string name = other.name.Substring(4);
+        string name = other.name.Substring(0,3);
+        if (name!="Open") return;
+        name = other.name.Substring(4);
         int questNum;
         bool trial = (System.Int32.TryParse(name, out questNum));
         
