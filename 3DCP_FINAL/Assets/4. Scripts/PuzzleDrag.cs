@@ -33,6 +33,43 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     void IEndDragHandler.OnEndDrag(PointerEventData eventData)
     {
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        //if(this.name == "pz1" && this.transform.position == )
+        //{
+
+        //}
+        if (this.name == "pz2")
+        {
+
+        }
+        if (this.name == "pz3")
+        {
+
+        }
+        if (this.name == "pz4")
+        {
+
+        }
+        if (this.name == "pz5")
+        {
+
+        }
+        if (this.name == "pz6")
+        {
+
+        }
+        if (this.name == "pz7")
+        {
+
+        }
+        if (this.name == "pz8")
+        {
+
+        }
+        if (this.name == "pz9")
+        {
+
+        }
         this.transform.position = defaultpos;
     }
 }
