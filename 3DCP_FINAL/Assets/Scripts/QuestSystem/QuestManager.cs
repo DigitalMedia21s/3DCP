@@ -5,16 +5,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum QuestLevel 
-{
-    START, FIRST, MID, SECOND
-} 
-
-public enum NickName 
-{
-    A, B, C
-}
-
 [System.Serializable]
 public class QuestData
 {
