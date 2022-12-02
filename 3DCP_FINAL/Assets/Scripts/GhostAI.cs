@@ -9,6 +9,7 @@ public class GhostAI : MonoBehaviour
     private NavMeshAgent navAgent;
 
     public bool isMove;
+    bool isCorPlay;
 
     // Start is called before the first frame update
     void Start()
@@ -41,21 +42,31 @@ public class GhostAI : MonoBehaviour
 
     IEnumerator Ghost()
     {
+        isCorPlay = true;
+
         yield return new WaitUntil(() => isMove == true);
         yield return new WaitForSecondsRealtime(1.0f);
+
         while (isMove == true)
         {
             navAgent.SetDestination(target.position);
 
             yield return null;
         }
+        navAgent.isStopped = true;
 
         yield return new WaitUntil(() => isMove == false);
         Debug.Log("АјАн");
         yield return new WaitForSecondsRealtime(5.0f);
-        while (isMove == false)
+
+        navAgent.isStopped = false;
+        isMove = true;
+
+        isCorPlay = false;
+
+        while (isCorPlay == false)
         {
-            navAgent.SetDestination(target.position);
+            StartCoroutine(Ghost());
 
             yield return null;
         }
