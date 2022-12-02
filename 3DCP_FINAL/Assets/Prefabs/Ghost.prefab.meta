@@ -1,3 +1,4 @@
+<<<<<<< HEAD:3DCP_FINAL/Assets/Prefabs/Ghost.prefab.meta
 fileFormatVersion: 2
 guid: 556a0eeb6d306794bb6dfe59097c4315
 PrefabImporter:
@@ -5,3 +6,12 @@ PrefabImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
+=======
+fileFormatVersion: 2
+guid: 381dcb09d5029d14897e55f98031fca5
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> 8e61eb65a2ee279969164335c8060372cecd6618:3DCP_FINAL/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta

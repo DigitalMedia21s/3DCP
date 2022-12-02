@@ -5,6 +5,7 @@ using UnityEngine;
 public class Animation : MonoBehaviour
 {
     public GameObject Panel;
+    GameObject parent;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,10 @@ public class Animation : MonoBehaviour
         {
             OpenPanel();
         }
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            DoorOpen();
+        }
     }
 
     public void OpenPanel()
@@ -31,6 +36,39 @@ public class Animation : MonoBehaviour
                 bool isOpen = animator.GetBool("open");
 
                 animator.SetBool("open", !isOpen);
+            }
+        }
+    }
+
+    public void DoorOpen()
+    {
+        Animator animator = parent.gameObject.GetComponent<Animator>();
+
+        if (animator != null)
+        {
+            Debug.Log("test");
+            bool isOpen = animator.GetBool("open");
+
+            animator.SetBool("open", !isOpen);
+            parent = null;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("this´Â" + this.name);
+
+            if (this.gameObject.name.Contains("RightColi"))
+            {
+                parent = transform.parent.gameObject;
+
+                //Debug.Log("parent´Â" + parent.name);
+            }
+            if (this.gameObject.name.Contains("LeftColi"))
+            {
+                parent = transform.parent.gameObject;
+
             }
         }
     }
