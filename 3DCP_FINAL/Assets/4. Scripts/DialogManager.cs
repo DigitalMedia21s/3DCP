@@ -9,6 +9,8 @@ public class DialogManager : MonoBehaviour
     [SerializeField] private float interval; 
     [SerializeField] private CanvasGroup playerDialogPanel;
     [SerializeField] private TextMeshProUGUI playerDialogText;
+    [SerializeField] private GameObject viewerTextPrefab;
+    [SerializeField] private Transform parentContent;
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
     [SerializeField] private List<PlayerDialog> playerDialogs;
@@ -25,12 +27,12 @@ public class DialogManager : MonoBehaviour
     public void ShowDialog(string id)
     {
         PlayerDialog pDialog = playerDialogs.Find(x => x.id == id);
-        // ViewerDialog vDialog = viewerDialogs.Find(x => x.id == id);
+        ViewerDialog vDialog = viewerDialogs.Find(x => x.id == id);
 
         if (pDialog == null) Debug.LogWarning("CAN NOT FIND PLAYER DIALOG");
         else StartCoroutine(ShowPlayerDialog(pDialog));
-        // if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG");
-        // else StartCoroutine(ShowViewerDialog(vDialog));
+        if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG"); // 반복 실행
+        else StartCoroutine(ShowViewerDialog(vDialog));
     }
 
     private IEnumerator ShowPlayerDialog(PlayerDialog dialog) 
@@ -48,14 +50,17 @@ public class DialogManager : MonoBehaviour
         }
             tweener = playerDialogPanel.DOFade(0, 1.5f);   
     }
-    // private IEnumerator ShowViewerDialog(ViewerDialog dialog)
-    // {
-    //     Tween tweener;
-    //     foreach (var c in dialog.content)
-    //     {
-
-    //     }
-    // }
+    private IEnumerator ShowViewerDialog(ViewerDialog dialog)
+    {
+        Debug.Log("ShowViewerDialog");
+        foreach (var c in dialog.content)
+        {
+            GameObject clone = Instantiate(viewerTextPrefab, parentContent);
+            clone.GetComponent<TextMeshProUGUI>().text = $"{c.name} : {c.content}";
+            yield return new WaitForSeconds(interval*2);
+        }
+        // 반복 실행
+    }
 
 }
 
