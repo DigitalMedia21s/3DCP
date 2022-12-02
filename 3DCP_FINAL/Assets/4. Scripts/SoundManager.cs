@@ -19,13 +19,9 @@ public struct AudioClips
 public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance;
-    [SerializeField]
-    AudioSource[] audioSources = new AudioSource[System.Enum.GetValues(typeof(SoundType)).Length]; // 사운드의 종류만큼 AudioSources를 가짐
-
-    [SerializeField]
-    private List<AudioClips> BgmClip; // BGM
-    [SerializeField]
-    private List<AudioClips> EffectClip; // 효과음
+    [SerializeField] AudioSource[] audioSources = new AudioSource[System.Enum.GetValues(typeof(SoundType)).Length]; // 사운드의 종류만큼 AudioSources를 가짐
+    [SerializeField] private List<AudioClips> BgmClip; // BGM
+    [SerializeField] private List<AudioClips> EffectClip; // 효과음
 
     public void Awake()
     {
