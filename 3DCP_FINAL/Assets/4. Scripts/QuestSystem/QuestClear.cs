@@ -15,8 +15,9 @@ public class QuestClear : MonoBehaviour
     {
         QuestManager.instance.clearQuest(id);
         // 아이템 획득 코드 -> 인벤토리에 추가 ??
+
         // 완료 UI 띄우기
-        // 별풍선 더하기..
+        // resetUI
         
         // 추가로 id 마다 더 해야할 동작이 있으면 넣기
     }

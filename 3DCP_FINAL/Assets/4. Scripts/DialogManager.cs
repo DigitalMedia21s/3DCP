@@ -72,6 +72,6 @@ public class ViewerDialog
 [System.Serializable]
 public struct ViewerDialogSub
 {
-    public NickName name;
+    public string name;
     public string content;
 }
