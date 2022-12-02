@@ -64,7 +64,7 @@ public class QuestManager : MonoBehaviour
             Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc);
             // UI 동기화
         }       
-        catch (NullReferenceException ex) 
+        catch 
         {
             Debug.Log("NULL");
         }

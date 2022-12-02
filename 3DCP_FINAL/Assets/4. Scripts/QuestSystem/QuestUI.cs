@@ -20,6 +20,7 @@ public class QuestUI : MonoBehaviour
         {
             questsUI[i] = questParent.GetChild(i);
         }
+        resetQuestUI();
     }
     /// <summary> 
     /// 퀘스트를 시작하거나 완료하면 UI를 리셋함 
