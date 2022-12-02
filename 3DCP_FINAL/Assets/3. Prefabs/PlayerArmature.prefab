@@ -557,7 +557,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
   FootstepAudioVolume: 0.3
   JumpHeight: 1.2
-  Gravity: -15
+  Gravity: -10
   JumpTimeout: 0.3
   FallTimeout: 0.15
   Grounded: 1
@@ -743,7 +743,11 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 0
   visibleTargets: []
-  ghost: {fileID: 0}
+  meshResolution: 0
+  viewMeshFilter: {fileID: 0}
+  fadeIn: {fileID: 0}
+  edgeResolveIterations: 0
+  edgeDstThreshold: 0
 --- !u!1 &1885621154543634590
 GameObject:
   m_ObjectHideFlags: 0
