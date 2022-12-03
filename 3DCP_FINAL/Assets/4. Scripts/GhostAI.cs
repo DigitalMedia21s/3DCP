@@ -9,6 +9,8 @@ public class GhostAI : MonoBehaviour
     private NavMeshAgent navAgent;
 
     public bool isMove;
+    public bool isGhost;
+
     bool isCorPlay;
 
     // Start is called before the first frame update
@@ -19,56 +21,55 @@ public class GhostAI : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").transform; //타겟에 Player 태그 필수
         navAgent = GetComponent<NavMeshAgent>(); //귀신 오브젝트에 NavMeshAgent 컴포넌트 추가
 
+        isGhost = true;
         isMove = true;
 
-        GameObject.Find("PlayerArmature").GetComponent<PlayerControl>().isGhost = true;
-
-        StartGhost();
+        //StartGhost();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.F))
-        //{
-        //    isMove = false;
-        //}
-    }
-
-    void StartGhost()
-    {
-        StartCoroutine(Ghost());
-    }
-
-    IEnumerator Ghost()
-    {
-        isCorPlay = true;
-
-        yield return new WaitUntil(() => isMove == true);
-        yield return new WaitForSecondsRealtime(1.0f);
-
-        while (isMove == true)
+        if (isMove == true)
         {
             navAgent.SetDestination(target.position);
-
-            yield return null;
-        }
-        navAgent.isStopped = true;
-
-        yield return new WaitUntil(() => isMove == false);
-        Debug.Log("공격");
-        yield return new WaitForSecondsRealtime(5.0f);
-
-        navAgent.isStopped = false;
-        isMove = true;
-
-        isCorPlay = false;
-
-        while (isCorPlay == false)
-        {
-            StartCoroutine(Ghost());
-
-            yield return null;
         }
     }
+
+    //void StartGhost()
+    //{
+    //    StartCoroutine(StopGhost());
+    //}
+
+    //IEnumerator StopGhost()
+    //{
+    //    isCorPlay = true;
+
+    //    yield return new WaitUntil(() => isMove == true);
+    //    yield return new WaitForSecondsRealtime(1.0f);
+
+    //    //while (isMove == true)
+    //    //{
+    //    //    navAgent.SetDestination(target.position);
+
+    //    //    yield return null;
+    //    //}
+    //    //navAgent.isStopped = true;
+
+    //    //yield return new WaitUntil(() => isMove == false);
+    //    //Debug.Log("공격");
+    //    //yield return new WaitForSecondsRealtime(5.0f);
+
+    //    //navAgent.isStopped = false;
+    //    //isMove = true;
+
+    //    //isCorPlay = false;
+
+    //    //while (isCorPlay == false)
+    //    //{
+    //    //    StartCoroutine(Ghost());
+
+    //    //    yield return null;
+    //    //}
+    //}
 }

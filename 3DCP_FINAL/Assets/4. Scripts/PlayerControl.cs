@@ -9,15 +9,17 @@ public class PlayerControl : MonoBehaviour
     public GameObject rUi; //지금 ui 없음
     public GameObject gUi; //지금 ui 없음
 
+    public GameObject ghost1;
+
     float distance;
 
     public GameObject ceiling;
-    public bool isGhost;
+    bool isGhost;
 
     // Start is called before the first frame update
     void Start()
     {
-        isGhost = false;
+        isGhost = GameObject.Find("PlayerArmature").GetComponent<PlayerControl>().isGhost;
     }
 
     // Update is called once per frame
@@ -68,6 +70,12 @@ public class PlayerControl : MonoBehaviour
             {
                 ceiling.SetActive(false);
             }
+        }
+
+        if (other.name == "GhostTrigger1")
+        {
+            ghost.SetActive(false);
+            ghost1.SetActive(true);
         }
     }
 }
