@@ -10,8 +10,17 @@ public class CameraShake : MonoBehaviour
 
     Transform cam;
 
+<<<<<<< HEAD
     // Update is called once per frame
     void Update()
+=======
+    private void Start()
+    {
+
+    }
+
+    private void Update()
+>>>>>>> 25d60423f10efa43a2ea8ca3be3b0ff232f9d8df
     {
         cam = this.transform;
 
@@ -38,4 +47,8 @@ public class CameraShake : MonoBehaviour
 
         cam.localPosition = originPosition;
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 25d60423f10efa43a2ea8ca3be3b0ff232f9d8df
