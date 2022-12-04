@@ -7,24 +7,27 @@ using DG.Tweening;
 
 public class DialogManager : MonoBehaviour
 {
-    [SerializeField] private float interval; 
+    DialogManager instance;
+    [SerializeField] private float interval;
     [SerializeField] private CanvasGroup playerDialogPanel;
     [SerializeField] private TextMeshProUGUI playerDialogText;
     [SerializeField] private GameObject viewerTextPrefab;
+    private Queue<GameObject> viewerTextQueue;
     [SerializeField] private Transform parentContent;
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
     // 댓글 코루틴은 한 개만
     private DialogDatas datas;
 
-    private void Awake() 
+    private void Awake()
     {
         Debug.LogWarning("Awake");
-        
         Load();
     }
-    private void Start() 
+    private void Start()
     {
+        instance = this;
+        viewerTextQueue = new();
         ShowDialog("복도");
     }
     /// <summary> 
@@ -41,7 +44,7 @@ public class DialogManager : MonoBehaviour
         else StartCoroutine(ShowViewerDialog(vDialog));
     }
 
-    private IEnumerator ShowPlayerDialog(PlayerDialog dialog) 
+    private IEnumerator ShowPlayerDialog(PlayerDialog dialog)
     {
         Tween tweener;
         yield return new WaitForSeconds(3);
@@ -49,12 +52,12 @@ public class DialogManager : MonoBehaviour
         foreach (string c in dialog.content)
         {
             playerDialogText.text = c;
-            tweener = playerDialogText.DOFade(1,1.5f);
+            tweener = playerDialogText.DOFade(1, 1.5f);
             yield return tweener.WaitForCompletion();
             yield return new WaitForSeconds(interval);
-            tweener = playerDialogText.DOFade(0, 0);   
+            tweener = playerDialogText.DOFade(0, 0);
         }
-            tweener = playerDialogPanel.DOFade(0, 1.5f);   
+        tweener = playerDialogPanel.DOFade(0, 1.5f);
     }
     private IEnumerator ShowViewerDialog(ViewerDialog dialog)
     {
@@ -63,11 +66,13 @@ public class DialogManager : MonoBehaviour
         {
             GameObject clone = Instantiate(viewerTextPrefab, parentContent);
             clone.GetComponent<TextMeshProUGUI>().text = $"{c.name} : {c.content}";
+            viewerTextQueue.Enqueue(clone);
+            if (viewerTextQueue.Count > 6) Destroy(viewerTextQueue.Dequeue());
             yield return new WaitForSeconds(interval);
         }
         // 반복 실행
     }
-    public void Load() 
+    public void Load()
     {
         Debug.LogWarning("Load 시작");
 
