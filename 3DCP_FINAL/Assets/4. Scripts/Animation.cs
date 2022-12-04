@@ -84,7 +84,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot2").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -98,7 +98,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot3").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -112,7 +112,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot4").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -126,7 +126,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot5").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -140,7 +140,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot6").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -154,7 +154,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot7").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -168,7 +168,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot8").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -182,7 +182,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot9").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -196,7 +196,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot10").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -210,7 +210,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot11").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -224,7 +224,7 @@ public class Animation : MonoBehaviour
             detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
 
             Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot12").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
             DetailInfo();
         }
@@ -402,917 +402,77 @@ public class Animation : MonoBehaviour
 
     void DetailInfo()
     {
-        if(GameObject.Find("itemPos1").gameObject != null)
+        if(Hold.GetComponent<Image>().sprite.name == "item_knife")
         {
-            GameObject tem = GameObject.Find("itemPos1").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg1.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
+            detailUI_Name.text = "부엌 식칼";
         }
-        if(GameObject.Find("itemPos2").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_paper")
         {
-            GameObject tem = GameObject.Find("itemPos2").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg5.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
+            detailUI_Name.text = "익명의 쪽지";
         }
-        if(GameObject.Find("itemPos3").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image1-01")
         {
-            GameObject tem = GameObject.Find("itemPos3").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg9.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos4").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image2-01")
         {
-            GameObject tem = GameObject.Find("itemPos4").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg8.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos5").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image3-01")
         {
-            GameObject tem = GameObject.Find("itemPos5").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg11.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos6").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image4-01")
         {
-            GameObject tem = GameObject.Find("itemPos6").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg10.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos7").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image5-01")
         {
-            GameObject tem = GameObject.Find("itemPos7").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg2.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos8").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image6-01")
         {
-            GameObject tem = GameObject.Find("itemPos8").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg7.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos9").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image7-01")
         {
-            GameObject tem = GameObject.Find("itemPos9").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg3.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos10").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image8-01")
         {
-            GameObject tem = GameObject.Find("itemPos10").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg4.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos11").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_image9-01")
         {
-            GameObject tem = GameObject.Find("itemPos11").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg6.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+            detailUI_Name.text = "사진 조각";
         }
-        if(GameObject.Find("itemPos12").gameObject != null)
+        if (Hold.GetComponent<Image>().sprite.name == "item_key")
         {
-            GameObject tem = GameObject.Find("itemPos12").gameObject;
-            if (tem.GetComponent<Image>().sprite.name == "item_knife")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "날이 서있는 주방 식칼. 위협할 수 있는 무기가 된다.";
-                detailUI_Name.text = "부엌 식칼";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_paper")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
-                detailUI_Name.text = "익명의 쪽지";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image1-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image2-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image3-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image4-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image5-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image6-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image7-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image8-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_image9-01")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
-                detailUI_Name.text = "사진 조각";
-            }
-            if (tem.GetComponent<Image>().sprite.name == "item_key")
-            {
-                detailUI_Image.sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-                detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
-                detailUI_Name.text = "열쇠";
-            }
+            detailUI_Image.sprite = spriteImg12.GetComponent<SpriteRenderer>().sprite;
+            detailUI_Explain.text = "어딘가의 열쇠. 잠긴 곳을 열 수 있다.";
+            detailUI_Name.text = "열쇠";
         }
     }
 }
