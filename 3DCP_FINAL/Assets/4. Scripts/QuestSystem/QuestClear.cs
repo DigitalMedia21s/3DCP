@@ -13,8 +13,11 @@ public class QuestClear : MonoBehaviour
 
     public void clearQuest(int id) 
     {
-        // 퀘스트 후 변하는게 reward로 별풍선 획득하는 것밖에 없으면 굳이 이 스크립트가 필요 없을 것 같기도 하다
         QuestManager.instance.clearQuest(id);
         // 아이템 획득 코드 -> 인벤토리에 추가 ??
+
+        // 완료 UI 띄우기
+
+        // 추가로 id 마다 더 해야할 동작이 있으면 넣기
     }
 }
