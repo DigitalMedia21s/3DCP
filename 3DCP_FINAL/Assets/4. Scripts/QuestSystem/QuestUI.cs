@@ -44,7 +44,7 @@ public class QuestUI : MonoBehaviour
             questsUI[current].gameObject.SetActive(true);
             questsUI[current].Find("Detail_Text").GetComponent<TextMeshProUGUI>().text = quest.desc;
             questsUI[current].Find("Nick_Text").GetComponent<TextMeshProUGUI>().text = quest.name.ToString();
-            questsUI[current].Find("Cost_Text").GetComponent<TextMeshProUGUI>().text = quest.reward.ToString();
+            questsUI[current].Find("Cost_Text").GetComponent<TextMeshProUGUI>().text = "상금" + quest.reward.ToString() + "만원";
 
             current--;
         }
