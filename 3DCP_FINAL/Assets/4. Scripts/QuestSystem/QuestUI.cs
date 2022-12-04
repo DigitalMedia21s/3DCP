@@ -5,7 +5,8 @@ using TMPro;
 
 public class QuestUI : MonoBehaviour
 {
-    public Transform questParent;
+    [SerializeField] private Transform questParent;
+    [SerializeField] TextMeshProUGUI starCount;
     private Transform[] questsUI;
     private TMP_Text datailText;
     private TMP_Text nickText;
@@ -19,6 +20,7 @@ public class QuestUI : MonoBehaviour
         {
             questsUI[i] = questParent.GetChild(i);
         }
+        resetQuestUI();
     }
     /// <summary> 
     /// 퀘스트를 시작하거나 완료하면 UI를 리셋함 
@@ -43,9 +45,11 @@ public class QuestUI : MonoBehaviour
             questsUI[current].Find("Detail_Text").GetComponent<TextMeshProUGUI>().text = quest.desc;
             questsUI[current].Find("Nick_Text").GetComponent<TextMeshProUGUI>().text = quest.name.ToString();
             questsUI[current].Find("Cost_Text").GetComponent<TextMeshProUGUI>().text = quest.reward.ToString();
-            // 사운드 추가
-            // 페이드 효과 추가
+
             current--;
         }
+        // 사운드 추가
+        // 페이드 효과 추가
+        starCount.text = QuestManager.instance.Stars.ToString();
     }
 }
