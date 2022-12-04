@@ -4,16 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
+struct Slot
+{
+    public GameObject select;
+    public GameObject itemPos;
+}
+
 public class Animation : MonoBehaviour
 {
-    public GameObject Panel;
-    GameObject parent;
+    public GameObject Panel; 
+    GameObject parent; 
 
     List<Image> invenBaseImg = new List<Image>(); //image with inven item
     int invenCount, invenNum; //for inventory count control
 
     public GameObject itemsprite;
-    GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
+    private GameObject[] spriteImg = new GameObject[11];
+    private Slot[] slots = new Slot[11];
 
     Image detailUI_Image;
     TextMeshProUGUI detailUI_Explain;
@@ -29,21 +36,16 @@ public class Animation : MonoBehaviour
 
         for (int i = 1; i < 13; i++)
         {
-            invenBaseImg.Add(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>());
+            invenBaseImg.Add(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>()); // ??
         }
-        
-        spriteImg1 = GameObject.Find("AllItemSprite").transform.GetChild(0).gameObject;
-        spriteImg2 = GameObject.Find("AllItemSprite").transform.GetChild(1).gameObject;
-        spriteImg3 = GameObject.Find("AllItemSprite").transform.GetChild(2).gameObject;
-        spriteImg4 = GameObject.Find("AllItemSprite").transform.GetChild(3).gameObject;
-        spriteImg5 = GameObject.Find("AllItemSprite").transform.GetChild(4).gameObject;
-        spriteImg6 = GameObject.Find("AllItemSprite").transform.GetChild(5).gameObject;
-        spriteImg7 = GameObject.Find("AllItemSprite").transform.GetChild(6).gameObject;
-        spriteImg8 = GameObject.Find("AllItemSprite").transform.GetChild(7).gameObject;
-        spriteImg9 = GameObject.Find("AllItemSprite").transform.GetChild(8).gameObject;
-        spriteImg10 = GameObject.Find("AllItemSprite").transform.GetChild(9).gameObject;
-        spriteImg11 = GameObject.Find("AllItemSprite").transform.GetChild(10).gameObject;
-        spriteImg12 = GameObject.Find("AllItemSprite").transform.GetChild(11).gameObject;
+        for (int i = 0; i < spriteImg.Length; i++)
+            spriteImg[i] = GameObject.Find("AllItemSprite").transform.GetChild(i).gameObject;
+
+        for (int i = 0; i < slots.Length; i++)
+        {
+            slots[i].select = GameObject.Find("Slot" + (i+1)).transform.GetChild(0).gameObject;
+            slots[i].itemPos = GameObject.Find("Slot" + (i+1)).transform.GetChild(1).gameObject;
+        }
 
         Hold = GameObject.Find("HoldItem").gameObject.transform.GetChild(0).gameObject;
     }
@@ -60,190 +62,44 @@ public class Animation : MonoBehaviour
             ItemToInven();
             DoorOpen();
         }
-        if(Input.GetKeyDown(KeyCode.F1))
-        {
-            GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
+        if(Input.GetKeyDown(KeyCode.F1)) OpenDetail(0);
+        if(Input.GetKeyDown(KeyCode.F2)) OpenDetail(1);
+        if (Input.GetKeyDown(KeyCode.F3)) OpenDetail(2);
+        if (Input.GetKeyDown(KeyCode.F4)) OpenDetail(3);
+        if (Input.GetKeyDown(KeyCode.F5))OpenDetail(4);
+        if (Input.GetKeyDown(KeyCode.F6)) OpenDetail(5);
+        if (Input.GetKeyDown(KeyCode.F7)) OpenDetail(6);
+        if (Input.GetKeyDown(KeyCode.F8)) OpenDetail(7);
+        if (Input.GetKeyDown(KeyCode.F9)) OpenDetail(8);
+        if (Input.GetKeyDown(KeyCode.F10)) OpenDetail(9);
+        if (Input.GetKeyDown(KeyCode.F11)) OpenDetail(10);
+        if (Input.GetKeyDown(KeyCode.F12)) OpenDetail(11);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F2))
-        {
-            GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F3))
-        {
-            GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F4))
-        {
-            GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F5))
-        {
-            GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F6))
-        {
-            GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F7))
-        {
-            GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F8))
-        {
-            GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F9))
-        {
-            GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F10))
-        {
-            GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F11))
-        {
-            GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
-        if (Input.GetKeyDown(KeyCode.F12))
-        {
-            GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(true);
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
-
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
-
-            Hold.SetActive(true);
-            Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
-
-            DetailInfo();
-        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(false);
+            for (int i = 0; i < slots.Length; i++)
+                slots[i].select.SetActive(false);
         }
+        
+    }
+
+    private void OpenDetail(int num)
+    {
+        for(int i = 0; i < slots.Length; i++)
+            slots[i].select.SetActive(false);
+        slots[num].select.SetActive(true);
+    
+        GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
+
+        detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
+        detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
+        detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+
+        Hold.SetActive(true);
+        Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
+
+        DetailInfo();
     }
 
     public void OpenPanel()
@@ -337,6 +193,7 @@ public class Animation : MonoBehaviour
         }
     }
 
+    /*
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -399,7 +256,7 @@ public class Animation : MonoBehaviour
             //    itemsprite = spriteImg12;
         }
     }
-
+    */
     void DetailInfo()
     {
         if(GameObject.Find("itemPos1").gameObject != null)
