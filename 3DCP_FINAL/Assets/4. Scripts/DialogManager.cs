@@ -30,9 +30,7 @@ public class DialogManager : MonoBehaviour
         viewerTextQueue = new();
         ShowDialog("복도");
     }
-    /// <summary> 
-    /// 대사를 시작하고 싶은 곳에서 이 함수를 호출하세요. 매개변수로 대사의 ID를 사용합니다. 
-    /// </summary>
+
     public void ShowDialog(string id)
     {
         PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id == id);

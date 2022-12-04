@@ -50,9 +50,6 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// 퀘스트 리스트에 현재 퀘스트 추가
-    /// </summary>
     public void addCurrentQuests(int id) 
     {
         QuestData quest = getData(id);
@@ -70,10 +67,7 @@ public class QuestManager : MonoBehaviour
         }
         ui.resetQuestUI();
     }
-    
-    /// <summary> 
-    /// 현재 퀘스트 완료
-    /// </summary>
+
     public void clearQuest(int id) 
     {
         QuestData quest = getData(id);
@@ -87,9 +81,6 @@ public class QuestManager : MonoBehaviour
         nextQuestLevel();
     }
 
-    /// <summary> 
-    /// 현재 레벨에서 완료한 퀘스트의 개수를 세고, 현재 레벨을 모두 완료하면 다음 레벨로 넘어감
-    /// </summary>
     private void nextQuestLevel() 
     {
         levelCount ++;
@@ -115,9 +106,6 @@ public class QuestManager : MonoBehaviour
         levelCount =0;
     }
 
-    /// <summary> 
-    /// 아이디에 해당하는 QuestData를 quests 리스트에서 찾아서 반환함
-    /// </summary>
     public QuestData getData(int id) 
     {
         return quests.Find(x => x.id == id);
@@ -128,9 +116,6 @@ public class QuestManager : MonoBehaviour
         return currentQuests.Find(x => x.id == id);
     }
 
-    /// <summary> 
-    /// 인자로 받은 QuestData의 level이 currentLevel과 일치하는지 여부를 반환함
-    /// </summary>
     private bool checkQuestLevel(QuestData data)
     {
         if (currentLevel == data.level)
@@ -139,9 +124,6 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
-    /// <summary> 
-    /// 현재 아이템이 수행중인 퀘스트의 클리어 아이템인지?
-    /// </summary>
     public bool checkQuestItem(QuestData data) 
     {
         try
