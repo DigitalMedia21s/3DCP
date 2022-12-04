@@ -25,25 +25,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Pick();
         Attack();
-    }
-
-    void Pick()
-    {
-        //distance = Vector3.Distance(item.transform.position, this.transform.position);
-
-        //if (distance <= 3.0f)
-        //{
-        //    Debug.Log("아이템 발견");
-        //    //rUi.SetActive(true);
-        //    if (Input.GetKeyDown(KeyCode.R))
-        //    {
-        //        //줍기
-        //        //item.SetActive(false);
-        //        //rUi.SetActive(false);
-        //    }
-        //}
     }
 
     void Attack()
