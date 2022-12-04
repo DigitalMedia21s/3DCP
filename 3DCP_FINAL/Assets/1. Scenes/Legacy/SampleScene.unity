@@ -1351,27 +1351,63 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1447659288}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerJsonData.id
+      value: "\u3134\u3134\u3134"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: playerDialogs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: playerDialogs.Array.data[0].id
       value: "\uC2DC\uC791"
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].id
+      value: "\u3141\u313B\u3134\u3147\u3139"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.data[0].id
       value: "\uC2DC\uC791"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].id
+      value: "\u3157\u3140"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerJsonData.content.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerJsonData.content.Array.data[0]
+      value: "\u3147\u3141\u3147\u3141\u3134"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerJsonData.content.Array.data[1]
+      value: "\u314E\u3139\u3147\u3134"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerJsonData.content.Array.data[2]
+      value: "\u3157\u3147"
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: playerDialogs.Array.data[0].content.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].content.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.data[0].content.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.size
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
@@ -1391,6 +1427,22 @@ PrefabInstance:
       value: "\uD53C\uCE74\uCE04"
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].content.Array.data[0]
+      value: "\u3136\u3139"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].content.Array.data[1]
+      value: "\u3136\u3139"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].content.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: playerDialogs.Array.data[1].content.Array.data[3]
+      value: "\u3139\u3147\u314E\u3134\u3147\u314E"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.data[0].content.Array.data[0].name
       value: "\uD53C\uCE74\uCE04"
       objectReference: {fileID: 0}
@@ -1407,6 +1459,22 @@ PrefabInstance:
       value: "\uAF2C\uBD81\uC774"
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[0].name
+      value: "\uD53C\uCE74\uCE04"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[1].name
+      value: "\uB77C\uC774\uCE04"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[2].name
+      value: "\uD30C\uC774\uB9AC"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[3].name
+      value: "\uAF2C\uBD81\uC774"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.data[0].content.Array.data[0].content
       value: "\uD53C\uCE74\uD53C\uCE74"
       objectReference: {fileID: 0}
@@ -1420,6 +1488,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
       propertyPath: viewerDialogs.Array.data[0].content.Array.data[3].content
+      value: sNKnlkanibisn,nkqjkbmknaskjl,bmkjmabwkbmkasbmkmbskjs
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[0].content
+      value: "\uD53C\uCE74\uD53C\uCE74"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[1].content
+      value: "\uB77C\uC774\uB77C\uC774(?)"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[2].content
+      value: "\uD30C\uC774\uD30C\uC774"
+      objectReference: {fileID: 0}
+    - target: {fileID: 279459471886338005, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
+      propertyPath: viewerDialogs.Array.data[1].content.Array.data[3].content
       value: sNKnlkanibisn,nkqjkbmknaskjl,bmkjmabwkbmkasbmkmbskjs
       objectReference: {fileID: 0}
     - target: {fileID: 4376558638759164200, guid: 69378ead37932e842866c2866d7eb5b1, type: 3}
