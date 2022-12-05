@@ -20,9 +20,9 @@ public class Animation : MonoBehaviour
     TextMeshProUGUI detailUI_Explain;
     TextMeshProUGUI detailUI_Name;
 
-    GameObject Hold;
+    GameObject Hold, getUIobj;
 
-    bool dooranim, draweranim, item;
+    bool dooranim, draweranim, item, uiup;
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +49,17 @@ public class Animation : MonoBehaviour
         spriteImg12 = GameObject.Find("AllItemSprite").transform.GetChild(11).gameObject;
 
         Hold = GameObject.Find("HoldItem").gameObject.transform.GetChild(0).gameObject;
+
+        getUIobj = GameObject.Find("GetUI").gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(uiup == true)
+        {
+            StartCoroutine("GetUIroutine");
+        }
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             OpenPanel();
@@ -69,7 +75,10 @@ public class Animation : MonoBehaviour
                 DrawerOpen();
             }
             if(item == true)
+            {
                 ItemToInven();
+                uiup = true;
+            }
         }
         if(Input.GetKeyDown(KeyCode.F1))
         {
@@ -368,6 +377,14 @@ public class Animation : MonoBehaviour
         {
             GameObject.Find("photo (3)").gameObject.SetActive(false);
         }
+    }
+
+    IEnumerator GetUIroutine()
+    {
+        getUIobj.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        uiup = false;
+        getUIobj.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
