@@ -8,16 +8,19 @@ using DG.Tweening;
 public class DialogManager : MonoBehaviour
 {
     DialogManager instance;
+    
     [SerializeField] private float interval;
+    [SerializeField] private Transform parentContent;
     [SerializeField] private CanvasGroup playerDialogPanel;
     [SerializeField] private TextMeshProUGUI playerDialogText;
     [SerializeField] private GameObject viewerTextPrefab;
-    private Queue<GameObject> viewerTextQueue;
-    [SerializeField] private Transform parentContent;
+
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
     // 댓글 코루틴은 한 개만
     private DialogDatas datas;
+    private Queue<GameObject> viewerTextQueue;
+    private bool displayLoopDialog = false;
 
     private void Awake()
     {
@@ -29,6 +32,7 @@ public class DialogManager : MonoBehaviour
         instance = this;
         viewerTextQueue = new();
         ShowDialog("복도");
+        StartCoroutine(ShowLoopingDialog());
     }
 
     public void ShowDialog(string id)
@@ -41,7 +45,6 @@ public class DialogManager : MonoBehaviour
         if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG"); // 반복 실행
         else StartCoroutine(ShowViewerDialog(vDialog));
     }
-
     private IEnumerator ShowPlayerDialog(PlayerDialog dialog)
     {
         Tween tweener;
@@ -59,6 +62,7 @@ public class DialogManager : MonoBehaviour
     }
     private IEnumerator ShowViewerDialog(ViewerDialog dialog)
     {
+        displayLoopDialog = false;
         Debug.Log("ShowViewerDialog");
         foreach (var c in dialog.content)
         {
@@ -68,7 +72,30 @@ public class DialogManager : MonoBehaviour
             if (viewerTextQueue.Count > 6) Destroy(viewerTextQueue.Dequeue());
             yield return new WaitForSeconds(interval);
         }
-        // 반복 실행
+        displayLoopDialog = true;
+    }
+    private IEnumerator ShowLoopingDialog()
+    {
+        Debug.Log("ShowLoopingDialog");
+        ViewerDialog dialog = datas.viewerDialogs.Find(x => x.id == "반복");
+
+        while (true) 
+        {
+            yield return null;
+            if (displayLoopDialog)
+            {
+                // yield return null;
+                foreach (var c in dialog.content)
+                {
+                    GameObject clone = Instantiate(viewerTextPrefab, parentContent);
+                    clone.GetComponent<TextMeshProUGUI>().text = $"{c.name} : {c.content}";
+                    viewerTextQueue.Enqueue(clone);
+                    if (viewerTextQueue.Count > 6) Destroy(viewerTextQueue.Dequeue());
+                    yield return new WaitForSeconds(interval);
+                }
+            }
+        }
+
     }
     public void Load()
     {
