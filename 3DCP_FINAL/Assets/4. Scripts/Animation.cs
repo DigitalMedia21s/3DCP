@@ -254,6 +254,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(false);
+            detailUI_Image.sprite = null;
+            detailUI_Explain.text = null;
+            detailUI_Name.text = null;
         }
     }
 
@@ -299,6 +302,9 @@ public class Animation : MonoBehaviour
             animator.SetBool("open", !isOpen);
             //drawer = null;
             draweranim = false;
+            GameObject.Find("animForDrawerColi").gameObject.SetActive(false);
+            //draweropen = true;
+            GameObject.Find("2FRoom3Coli").transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
@@ -324,7 +330,7 @@ public class Animation : MonoBehaviour
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_key")
         {
-            //GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
+            GameObject.Find("Simple_02").gameObject.SetActive(false);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "itemui_image1-01")
         {
@@ -438,9 +444,11 @@ public class Animation : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg11;
             }
-            //if (this.gameObject.name == "keyColi")
-            //    item = true;
-            //    itemsprite = spriteImg12;
+            if (this.gameObject.name == "keyColi")
+            {
+                item = true;
+                itemsprite = spriteImg12;
+            }
         }
     }
 
