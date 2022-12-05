@@ -8,6 +8,7 @@ public class Animation : MonoBehaviour
 {
     public GameObject Panel;
     GameObject parent;
+    GameObject drawer;
 
     List<Image> invenBaseImg = new List<Image>(); //image with inven item
     int invenCount, invenNum; //for inventory count control
@@ -20,6 +21,8 @@ public class Animation : MonoBehaviour
     TextMeshProUGUI detailUI_Name;
 
     GameObject Hold;
+
+    bool dooranim, draweranim, item;
 
     // Start is called before the first frame update
     void Start()
@@ -57,8 +60,16 @@ public class Animation : MonoBehaviour
         }
         if(Input.GetKeyDown(KeyCode.R))
         {
-            ItemToInven();
-            DoorOpen();
+            if(dooranim == true)
+            {
+                DoorOpen();
+            }
+            if(draweranim == true)
+            {
+                DrawerOpen();
+            }
+            if(item == true)
+                ItemToInven();
         }
         if(Input.GetKeyDown(KeyCode.F1))
         {
@@ -262,7 +273,7 @@ public class Animation : MonoBehaviour
 
     public void DoorOpen()
     {
-        Debug.Log(parent.name);
+        //Debug.Log(parent.name);
         Animator animator = parent.gameObject.GetComponent<Animator>();
 
         if (animator != null)
@@ -271,7 +282,23 @@ public class Animation : MonoBehaviour
             bool isOpen = animator.GetBool("open");
 
             animator.SetBool("open", !isOpen);
-            parent = null;
+            //parent = null;
+            //dooranim = false;
+        }
+    }
+
+    public void DrawerOpen()
+    {
+        Debug.Log(drawer.name);
+        Animator animator = drawer.gameObject.GetComponent<Animator>();
+
+        if (animator != null)
+        {
+            bool isOpen = animator.GetBool("open");
+
+            animator.SetBool("open", !isOpen);
+            //drawer = null;
+            draweranim = false;
         }
     }
 
@@ -349,53 +376,70 @@ public class Animation : MonoBehaviour
             {
                 parent = transform.parent.gameObject;
                 //Debug.Log("parent´Â" + parent.name);
+                dooranim = true;
             }
-
+            if (this.gameObject.name == "animForDrawerColi")
+            {
+                drawer = GameObject.Find("grpDraw_Anim").gameObject;
+                draweranim = true;
+            }
             if (this.gameObject.name == "knifeColi")
             {
+                item = true;
                 itemsprite = spriteImg1; 
             }
             if (this.gameObject.name == "kitchPhtoColi")
             {
+                item = true;
                 itemsprite = spriteImg2;
             }
             if (this.gameObject.name == "livinPhtoColi")
             {
+                item = true;
                 itemsprite = spriteImg3;
             }
             if (this.gameObject.name == "guestPhotoColi")
             {
+                item = true;
                 itemsprite = spriteImg4;
             }
             if (this.gameObject.name == "memoColi")
             {
+                item = true;
                 itemsprite = spriteImg5;
             }
             if (this.gameObject.name == "basePhtoColi1")
             {
+                item = true;
                 itemsprite = spriteImg6;
             }
             if (this.gameObject.name == "basePhtoColi2")
             {
+                item = true;
                 itemsprite = spriteImg7;
             }
             if (this.gameObject.name == "basePhtoColi3")
             {
+                item = true;
                 itemsprite = spriteImg8;
             }
             if (this.gameObject.name == "basePhtoColi4")
             {
+                item = true;
                 itemsprite = spriteImg9;
             }
             if (this.gameObject.name == "basePhtoColi5")
             {
+                item = true;
                 itemsprite = spriteImg10;
             }
             if (this.gameObject.name == "basePhtoColi6")
             {
+                item = true;
                 itemsprite = spriteImg11;
             }
             //if (this.gameObject.name == "keyColi")
+            //    item = true;
             //    itemsprite = spriteImg12;
         }
     }
