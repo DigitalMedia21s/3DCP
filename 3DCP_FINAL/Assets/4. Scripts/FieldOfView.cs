@@ -27,6 +27,8 @@ public class FieldOfView : MonoBehaviour
     public GameObject BBlankek1;
     public GameObject BBlankek2;
 
+    public GameObject BathBlood;
+
     void Start()
     {
         viewMesh = new Mesh();
@@ -84,6 +86,15 @@ public class FieldOfView : MonoBehaviour
                         {
                             BBlankek1.SetActive(false);
                             BBlankek2.SetActive(true);
+                        }
+                    }
+
+                    if (target.name == "Bath")
+                    {
+                        Debug.Log("¿åÁ¶");
+                        if (Input.GetKeyDown(KeyCode.R))
+                        {
+                            BathBlood.SetActive(false);
                         }
                     }
                 }
