@@ -22,7 +22,7 @@ public class Animation : MonoBehaviour
 
     GameObject Hold, getUIobj;
 
-    bool dooranim, draweranim, item, uiup;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknif, getkitphto;
 
     // Start is called before the first frame update
     void Start()
@@ -56,7 +56,9 @@ public class Animation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(uiup == true)
+        DontOpenDoor();
+
+        if (uiup == true)
         {
             StartCoroutine("GetUIroutine");
         }
@@ -283,6 +285,27 @@ public class Animation : MonoBehaviour
         }
     }
 
+    public void DontOpenDoor()
+    {
+        if (inkitch)
+        {
+            //door 제자리로 회전하기 & 해당 door doorNcoli active false
+            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
+            parent.transform.GetChild(1).gameObject.SetActive(false);
+
+            if(getknif == true && getkitphto == true)
+            {
+                parent.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+        if (inemproom)
+        {
+            //위와 동일 
+            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
+            parent.transform.GetChild(1).gameObject.SetActive(false);
+        }
+    }
+
     public void DoorOpen()
     {
         //Debug.Log(parent.name);
@@ -332,6 +355,7 @@ public class Animation : MonoBehaviour
         if(itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
+            getknif = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
         {
@@ -360,6 +384,7 @@ public class Animation : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image5-01")
         {
             GameObject.Find("photo (1)").gameObject.SetActive(false);
+            getkitphto = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
@@ -392,7 +417,6 @@ public class Animation : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("this는" + this.name);
-
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") || this.gameObject.name.Contains("door3coli")
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") || this.gameObject.name.Contains("door7coli")
                 || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli") || this.gameObject.name.Contains("door10coli"))
@@ -400,6 +424,20 @@ public class Animation : MonoBehaviour
                 parent = transform.parent.gameObject;
                 //Debug.Log("parent는" + parent.name);
                 dooranim = true;
+            }
+            if (this.gameObject.name == "kitchenColi")
+            {
+                inkitch = true;
+            }
+            if (this.gameObject.name == " ")
+            {
+                inemproom = true;
+            }
+            if (this.gameObject.name == "studyColi")
+            {
+                //getkey 함수 설정 -> true면 
+                //studycoli가 아니고 서재 문 따로 빼서 제어해야할듯
+                //콜리더가 서재 문일 떄 getKey가 true면 애니메이션 적용 & 인벤토리에서 key삭제
             }
             if (this.gameObject.name == "animForDrawerColi")
             {
