@@ -319,6 +319,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6305813803438481162, guid: 14bcf082d085ec44383b4dda11f47f76, type: 3}
+      propertyPath: m_Size.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 8465776921122448048, guid: 14bcf082d085ec44383b4dda11f47f76, type: 3}
       propertyPath: m_Name
       value: DoorAnimForm

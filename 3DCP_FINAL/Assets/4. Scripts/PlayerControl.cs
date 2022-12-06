@@ -5,16 +5,13 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     //public GameObject item;
-    public GameObject ghost;
-    public GameObject rUi; //지금 ui 없음
-    public GameObject gUi; //지금 ui 없음
-
     public GameObject ghost1;
+    public GameObject ghost2;
+    bool isGhost;
 
     float distance;
 
-    public GameObject ceiling;
-    bool isGhost;
+    public GameObject floor;
 
     // Start is called before the first frame update
     void Start()
@@ -25,30 +22,12 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Pick();
         Attack();
-    }
-
-    void Pick()
-    {
-        //distance = Vector3.Distance(item.transform.position, this.transform.position);
-
-        //if (distance <= 3.0f)
-        //{
-        //    Debug.Log("아이템 발견");
-        //    //rUi.SetActive(true);
-        //    if (Input.GetKeyDown(KeyCode.R))
-        //    {
-        //        //줍기
-        //        //item.SetActive(false);
-        //        //rUi.SetActive(false);
-        //    }
-        //}
     }
 
     void Attack()
     {
-        distance = Vector3.Distance(ghost.transform.position, this.transform.position);
+        distance = Vector3.Distance(ghost1.transform.position, this.transform.position);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
@@ -68,14 +47,14 @@ public class PlayerControl : MonoBehaviour
         {
             if (isGhost == true)
             {
-                ceiling.SetActive(false);
+                floor.SetActive(false);
             }
         }
 
         if (other.name == "GhostTrigger1")
         {
-            ghost.SetActive(false);
-            ghost1.SetActive(true);
+            ghost1.SetActive(false);
+            ghost2.SetActive(true);
         }
     }
 }
