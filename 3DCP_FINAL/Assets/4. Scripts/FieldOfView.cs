@@ -22,10 +22,8 @@ public class FieldOfView : MonoBehaviour
 
     //°Å¿ï ±Û¾¾
     public GameObject fadeIn;
-    
-    //ÀÌºÒ
-    public GameObject BBlankek1;
-    public GameObject BBlankek2;
+
+    public GameObject BathBlood;
 
     void Start()
     {
@@ -77,13 +75,12 @@ public class FieldOfView : MonoBehaviour
                         fadeIn.GetComponent<FadeIO>().startFadeIn();
                     }
 
-                    if (target.name == "PFB_Bed")
+                    if (target.name == "Bath")
                     {
-                        Debug.Log("Ä§´ë");
+                        Debug.Log("¿åÁ¶");
                         if (Input.GetKeyDown(KeyCode.R))
                         {
-                            BBlankek1.SetActive(false);
-                            BBlankek2.SetActive(true);
+                            BathBlood.SetActive(false);
                         }
                     }
                 }
