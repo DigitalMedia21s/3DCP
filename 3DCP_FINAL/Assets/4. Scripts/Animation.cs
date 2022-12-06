@@ -16,13 +16,14 @@ public class Animation : MonoBehaviour
     public GameObject itemsprite;
     GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
 
+    GameObject DetailView, deailImgObj, deailEXObj, deailNmObj;
     Image detailUI_Image;
     TextMeshProUGUI detailUI_Explain;
     TextMeshProUGUI detailUI_Name;
 
     GameObject Hold, getUIobj;
 
-    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknif, getkitphto;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknif, getkitphto, getkey;
 
     // Start is called before the first frame update
     void Start()
@@ -51,6 +52,14 @@ public class Animation : MonoBehaviour
         Hold = GameObject.Find("HoldItem").gameObject.transform.GetChild(0).gameObject;
 
         getUIobj = GameObject.Find("GetUI").gameObject.transform.GetChild(0).gameObject;
+
+        DetailView = GameObject.Find("InvenUI").transform.GetChild(0).gameObject;
+        deailImgObj = DetailView.transform.GetChild(0).gameObject;
+        deailEXObj = DetailView.transform.GetChild(1).gameObject;
+        deailNmObj = DetailView.transform.GetChild(2).gameObject;
+        detailUI_Image = deailImgObj.GetComponent<Image>();
+        detailUI_Explain = deailEXObj.GetComponent<TextMeshProUGUI>();
+        detailUI_Name = deailNmObj.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -61,6 +70,10 @@ public class Animation : MonoBehaviour
         if (uiup == true)
         {
             StartCoroutine("GetUIroutine");
+        }
+        if (Hold.GetComponent<Image>().sprite.name == "item_key")
+        {
+            getkey = true;
         }
         if(Input.GetKeyDown(KeyCode.Tab))
         {
@@ -87,9 +100,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot1").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -101,9 +114,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot2").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -115,9 +128,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot3").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -129,9 +142,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot4").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -143,9 +156,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot5").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -157,9 +170,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot6").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -171,9 +184,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot7").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -185,9 +198,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot8").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -199,9 +212,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot9").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -213,9 +226,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot10").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -227,9 +240,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot11").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -241,9 +254,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(true);
             GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
-            detailUI_Image = GameObject.Find("InvenDetailView").transform.GetChild(0).gameObject.GetComponent<Image>();
-            detailUI_Explain = GameObject.Find("InvenDetailView").transform.GetChild(1).gameObject.GetComponent<TextMeshProUGUI>();
-            detailUI_Name = GameObject.Find("InvenDetailView").transform.GetChild(2).gameObject.GetComponent<TextMeshProUGUI>();
+            deailImgObj.SetActive(true);
+            deailEXObj.SetActive(true);
+            deailNmObj.SetActive(true);
 
             Hold.SetActive(true);
             Hold.GetComponent<Image>().sprite = GameObject.Find("Slot12").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
@@ -252,22 +265,17 @@ public class Animation : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(false);
-            GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(false);
+            DetailView.SetActive(false);
+            for (int i = 1; i < 13; i++)
+            {
+                GameObject.Find("Slot" + i).transform.GetChild(0).gameObject.SetActive(false);
+            }
             detailUI_Image.sprite = null;
-            detailUI_Explain.text = null;
-            detailUI_Name.text = null;
+            deailImgObj.SetActive(false);
+            detailUI_Explain.text = "";
+            deailEXObj.SetActive(false);
+            detailUI_Name.text = "";
+            deailEXObj.SetActive(false);
         }
     }
 
@@ -344,7 +352,7 @@ public class Animation : MonoBehaviour
     {
         invenNum += 1;
 
-        Debug.Log(itemsprite.name);
+        //Debug.Log(itemsprite.name);
 
         invenBaseImg[invenCount].sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
         invenBaseImg[invenCount].gameObject.SetActive(true);
@@ -402,6 +410,8 @@ public class Animation : MonoBehaviour
         {
             GameObject.Find("photo (3)").gameObject.SetActive(false);
         }
+
+        item = false;
     }
 
     IEnumerator GetUIroutine()
@@ -412,18 +422,23 @@ public class Animation : MonoBehaviour
         getUIobj.SetActive(false);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("this는" + this.name);
-            if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") || this.gameObject.name.Contains("door3coli")
+            if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") || this.gameObject.name.Contains("door7coli")
                 || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli") || this.gameObject.name.Contains("door10coli"))
             {
                 parent = transform.parent.gameObject;
-                //Debug.Log("parent는" + parent.name);
+                Debug.Log("parent는" + parent.name);
                 dooranim = true;
+            }
+            else
+            {
+                parent = null;
+                dooranim = false;
             }
             if (this.gameObject.name == "kitchenColi")
             {
@@ -433,11 +448,23 @@ public class Animation : MonoBehaviour
             {
                 inemproom = true;
             }
-            if (this.gameObject.name == "studyColi")
+            if (this.gameObject.name.Contains("door3coli"))
             {
-                //getkey 함수 설정 -> true면 
-                //studycoli가 아니고 서재 문 따로 빼서 제어해야할듯
-                //콜리더가 서재 문일 떄 getKey가 true면 애니메이션 적용 & 인벤토리에서 key삭제
+                Debug.Log("키 가지고 있나" + getkey);
+                //콜리더가 서재 문일 때 getKey가 true면 && hold 스프라이트 이름이 item_key이면 애니메이션 적용 & 인벤토리에서 key삭제
+                if(getkey == true && Hold.GetComponent<Image>().sprite.name == "item_key")
+                {
+                    parent = transform.parent.gameObject;
+                    dooranim = true;
+                    for(int i = 1; i < 13; i++)
+                    {
+                        if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_key")
+                        {
+                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
+                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.SetActive(false);
+                        }
+                    }
+                }
             }
             if (this.gameObject.name == "animForDrawerColi")
             {
@@ -447,7 +474,7 @@ public class Animation : MonoBehaviour
             if (this.gameObject.name == "knifeColi")
             {
                 item = true;
-                itemsprite = spriteImg1; 
+                itemsprite = spriteImg1;
             }
             if (this.gameObject.name == "kitchPhtoColi")
             {
@@ -474,7 +501,7 @@ public class Animation : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg6;
             }
-            if (this.gameObject.name == "basePhtoColi2")
+            if (this.gameObject.name == "basePEhtoColi2")
             {
                 item = true;
                 itemsprite = spriteImg7;
