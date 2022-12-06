@@ -22,6 +22,10 @@ public class FieldOfView : MonoBehaviour
 
     //거울 글씨
     public GameObject fadeIn;
+    
+    //이불
+    public GameObject BBlankek1;
+    public GameObject BBlankek2;
 
     void Start()
     {
@@ -71,6 +75,16 @@ public class FieldOfView : MonoBehaviour
                     {
                         Debug.Log("거울");
                         fadeIn.GetComponent<FadeIO>().startFadeIn();
+                    }
+
+                    if (target.name == "PFB_Bed")
+                    {
+                        Debug.Log("침대");
+                        if (Input.GetKeyDown(KeyCode.R))
+                        {
+                            BBlankek1.SetActive(false);
+                            BBlankek2.SetActive(true);
+                        }
                     }
                 }
             }
