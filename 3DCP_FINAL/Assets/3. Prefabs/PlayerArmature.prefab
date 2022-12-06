@@ -546,7 +546,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MoveSpeed: 4
   SprintSpeed: 9
-  RotationSmoothTime: 0.12
+  RotationSmoothTime: 0.3
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
@@ -570,7 +570,7 @@ MonoBehaviour:
   GroundedRadius: 0.28
   GroundLayers:
     serializedVersion: 2
-    m_Bits: 513
+    m_Bits: 641
   CinemachineCameraTarget: {fileID: 6292778627809691033}
   TopClamp: 70
   BottomClamp: -30
@@ -750,7 +750,7 @@ MonoBehaviour:
   visibleTargets: []
   meshResolution: 0
   viewMeshFilter: {fileID: 1800738107365870471}
-  fadeIn: {fileID: 0}
+  fadeIn: {fileID: 8783341467919513210}
   edgeResolveIterations: 0
   edgeDstThreshold: 0
 --- !u!54 &4570072284333632533
