@@ -22,9 +22,7 @@ public class QuestUI : MonoBehaviour
         }
         resetQuestUI();
     }
-    /// <summary> 
-    /// 퀘스트를 시작하거나 완료하면 UI를 리셋함 
-    /// </summary>
+
     public void resetQuestUI() 
     {   
         // UI 모두 해제

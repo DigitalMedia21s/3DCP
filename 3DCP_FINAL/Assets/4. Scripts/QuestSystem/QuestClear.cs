@@ -2,11 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-/// <summary> 
-/// 퀘스트 클리어 조건 <br/>
-/// 아이템을 획득하거나 특정 구역에 진입한 경우 <br/>
-/// 아이템을 획득한 경우, 
-/// </summary>
 public class QuestClear : MonoBehaviour
 {
     public static QuestClear instance;

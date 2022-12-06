@@ -55,7 +55,7 @@ MonoBehaviour:
     clear: 0
   - id: 1
     level: 1
-    name: 1
+    name: 0
     desc: "\uC2F1\uD06C\uB300 \uC704\uC5D0 \uCE7C \uC788\uB294\uB370. \uCE7C \uCC59\uAE30\uC790"
     reward: 1000
     open: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     clear: 0
   - id: 3
     level: 1
-    name: 3
+    name: 0
     desc: "\uD754\uB4E4\uC758\uC790 \uD63C\uC790 \uD754\uB4E4\uB9AC \uB124 \uAC00\uAE4C\uC774
       \uAC00\uBD10"
     reward: 3000

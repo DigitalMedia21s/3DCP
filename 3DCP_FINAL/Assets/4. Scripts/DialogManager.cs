@@ -7,41 +7,43 @@ using DG.Tweening;
 
 public class DialogManager : MonoBehaviour
 {
-    [SerializeField] private float interval; 
+    DialogManager instance;
+    
+    [SerializeField] private float interval;
+    [SerializeField] private Transform parentContent;
     [SerializeField] private CanvasGroup playerDialogPanel;
     [SerializeField] private TextMeshProUGUI playerDialogText;
     [SerializeField] private GameObject viewerTextPrefab;
-    [SerializeField] private Transform parentContent;
+
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
-    // 댓글 코루틴은 한 개만
     private DialogDatas datas;
+    private Queue<GameObject> viewerTextQueue;
+    private bool displayLoopDialog = false;
 
-    private void Awake() 
+    private void Awake()
     {
-        Debug.LogWarning("Awake");
-        
         Load();
     }
-    private void Start() 
+    private void Start()
     {
+        instance = this;
+        viewerTextQueue = new();
         ShowDialog("복도");
+        StartCoroutine(ShowLoopingDialog()); // 반복
     }
-    /// <summary> 
-    /// 대사를 시작하고 싶은 곳에서 이 함수를 호출하세요. 매개변수로 대사의 ID를 사용합니다. 
-    /// </summary>
+
     public void ShowDialog(string id)
     {
         PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id == id);
         ViewerDialog vDialog = datas.viewerDialogs.Find(x => x.id == id);
 
-        if (pDialog == null) Debug.LogWarning("CAN NOT FIND PLAYER DIALOG");
+        if (pDialog == null) Debug.LogError("CAN NOT FIND PLAYER DIALOG");
         else StartCoroutine(ShowPlayerDialog(pDialog));
-        if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG"); // 반복 실행
+        if (vDialog == null) Debug.LogError("CAN NOT FIND VIEWER DIALOG"); 
         else StartCoroutine(ShowViewerDialog(vDialog));
     }
-
-    private IEnumerator ShowPlayerDialog(PlayerDialog dialog) 
+    private IEnumerator ShowPlayerDialog(PlayerDialog dialog)
     {
         Tween tweener;
         yield return new WaitForSeconds(3);
@@ -49,31 +51,57 @@ public class DialogManager : MonoBehaviour
         foreach (string c in dialog.content)
         {
             playerDialogText.text = c;
-            tweener = playerDialogText.DOFade(1,1.5f);
+            tweener = playerDialogText.DOFade(1, 1.5f);
             yield return tweener.WaitForCompletion();
             yield return new WaitForSeconds(interval);
-            tweener = playerDialogText.DOFade(0, 0);   
+            tweener = playerDialogText.DOFade(0, 0);
         }
-            tweener = playerDialogPanel.DOFade(0, 1.5f);   
+        tweener = playerDialogPanel.DOFade(0, 1.5f);
     }
     private IEnumerator ShowViewerDialog(ViewerDialog dialog)
     {
+        displayLoopDialog = false;
         Debug.Log("ShowViewerDialog");
         foreach (var c in dialog.content)
         {
             GameObject clone = Instantiate(viewerTextPrefab, parentContent);
             clone.GetComponent<TextMeshProUGUI>().text = $"{c.name} : {c.content}";
+            viewerTextQueue.Enqueue(clone);
+            if (viewerTextQueue.Count > 6) Destroy(viewerTextQueue.Dequeue());
             yield return new WaitForSeconds(interval);
         }
-        // 반복 실행
+        displayLoopDialog = true;
     }
-    public void Load() 
+    private IEnumerator ShowLoopingDialog()
     {
-        Debug.LogWarning("Load 시작");
+        Debug.Log("ShowLoopingDialog");
+        ViewerDialog dialog = datas.viewerDialogs.Find(x => x.id == "반복");
+
+        while (true) 
+        {
+            yield return null;
+            if (displayLoopDialog)
+            {
+                // yield return null;
+                foreach (var c in dialog.content)
+                {
+                    GameObject clone = Instantiate(viewerTextPrefab, parentContent);
+                    clone.GetComponent<TextMeshProUGUI>().text = $"{c.name} : {c.content}";
+                    viewerTextQueue.Enqueue(clone);
+                    if (viewerTextQueue.Count > 6) Destroy(viewerTextQueue.Dequeue());
+                    yield return new WaitForSeconds(interval);
+                }
+            }
+        }
+
+    }
+    public void Load()
+    {
+        Debug.Log("Load 시작");
 
         TextAsset t = Resources.Load<TextAsset>("DialogData");
         datas = JsonUtility.FromJson<DialogDatas>(t.text);
-        Debug.LogWarning("Complete Data Load");
+        Debug.Log("Complete Data Load");
     }
 }
 
@@ -94,10 +122,11 @@ public class ViewerDialog
 {
     public string id;
     public List<ViewerDialogSub> content;
-}
-[System.Serializable]
-public struct ViewerDialogSub
-{
-    public string name;
-    public string content;
+
+    [System.Serializable]
+    public struct ViewerDialogSub
+    {
+        public string name;
+        public string content;
+    }
 }
