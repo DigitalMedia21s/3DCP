@@ -334,6 +334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330827297155357835}
   - component: {fileID: 2546861046309631690}
+  - component: {fileID: 5253451569499819262}
   m_Layer: 0
   m_Name: KitchenColi
   m_TagString: Untagged
@@ -369,8 +370,22 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 44.54026, y: 0, z: 55.678146}
-  m_Center: {x: -20.059483, y: -0.5, z: -7.1606445}
+  m_Size: {x: 41.449448, y: 5, z: 55.678146}
+  m_Center: {x: -21.604889, y: -0.5, z: -7.1606445}
+--- !u!114 &5253451569499819262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1875222567075963049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f1652c38b1effb499a27210d117e99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Panel: {fileID: 0}
+  itemsprite: {fileID: 0}
 --- !u!1 &2616956743193005673
 GameObject:
   m_ObjectHideFlags: 0

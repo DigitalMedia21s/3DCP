@@ -23,7 +23,9 @@ public class Animation : MonoBehaviour
 
     GameObject Hold, getUIobj;
 
-    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknif, getkitphto, getkey;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto;
+
+    GameObject kitchendoor, emptyroomdoor;
 
     // Start is called before the first frame update
     void Start()
@@ -60,6 +62,12 @@ public class Animation : MonoBehaviour
         detailUI_Image = deailImgObj.GetComponent<Image>();
         detailUI_Explain = deailEXObj.GetComponent<TextMeshProUGUI>();
         detailUI_Name = deailNmObj.GetComponent<TextMeshProUGUI>();
+
+        kitchendoor = GameObject.Find("door2coli").transform.parent.gameObject;
+        emptyroomdoor = GameObject.Find("").transform.parent.gameObject;
+
+        getknife = false;
+        getphoto = false;
     }
 
     // Update is called once per frame
@@ -71,10 +79,10 @@ public class Animation : MonoBehaviour
         {
             StartCoroutine("GetUIroutine");
         }
-        if (Hold.GetComponent<Image>().sprite.name == "item_key")
-        {
-            getkey = true;
-        }
+        //if (Hold.GetComponent<Image>().sprite.name == "item_key")
+        //{
+        //    getkey = true;
+        //}
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             OpenPanel();
@@ -295,22 +303,36 @@ public class Animation : MonoBehaviour
 
     public void DontOpenDoor()
     {
-        if (inkitch)
+        if (inkitch == true)
         {
             //door 제자리로 회전하기 & 해당 door doorNcoli active false
-            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
-            parent.transform.GetChild(1).gameObject.SetActive(false);
-
-            if(getknif == true && getkitphto == true)
+            kitchendoor.GetComponent<Animator>().SetBool("open", false);
+            kitchendoor.transform.GetChild(1).gameObject.SetActive(false);
+            for (int i = 1; i < 13; i++)
             {
-                parent.transform.GetChild(1).gameObject.SetActive(true);
+                if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_knife")
+                {
+                    getknife = true;
+                    Debug.Log(getknife);
+                }
+                if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_image5-01")
+                {
+                    getphoto = true;
+                    Debug.Log(getphoto);
+                }
+                if(getknife == true && getphoto == true)
+                {
+                    kitchendoor.GetComponent<Animator>().SetBool("open", true);
+                }
             }
         }
-        if (inemproom)
+        if (inemproom == true)
         {
             //위와 동일 
-            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
-            parent.transform.GetChild(1).gameObject.SetActive(false);
+            emptyroomdoor.GetComponent<Animator>().SetBool("open", false);
+            emptyroomdoor.transform.GetChild(1).gameObject.SetActive(false);
+
+            //조건문
         }
     }
 
@@ -326,7 +348,7 @@ public class Animation : MonoBehaviour
 
             animator.SetBool("open", !isOpen);
             //parent = null;
-            //dooranim = false;
+            dooranim = false;
         }
     }
 
@@ -358,12 +380,12 @@ public class Animation : MonoBehaviour
         invenBaseImg[invenCount].gameObject.SetActive(true);
         invenCount++;
 
-        Debug.Log(itemsprite.GetComponent<SpriteRenderer>().sprite.name);
+        Debug.Log("아이템 먹는 상태" + item);
+        //Debug.Log(itemsprite.GetComponent<SpriteRenderer>().sprite.name);
 
         if(itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
-            getknif = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
         {
@@ -392,7 +414,6 @@ public class Animation : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image5-01")
         {
             GameObject.Find("photo (1)").gameObject.SetActive(false);
-            getkitphto = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
@@ -427,6 +448,7 @@ public class Animation : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("this는" + this.name);
+
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") || this.gameObject.name.Contains("door7coli")
                 || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli") || this.gameObject.name.Contains("door10coli"))
@@ -440,7 +462,7 @@ public class Animation : MonoBehaviour
                 parent = null;
                 dooranim = false;
             }
-            if (this.gameObject.name == "kitchenColi")
+            if (this.gameObject.name == "KitchenColi")
             {
                 inkitch = true;
             }
@@ -448,11 +470,11 @@ public class Animation : MonoBehaviour
             {
                 inemproom = true;
             }
-            if (this.gameObject.name.Contains("door3coli"))
+            if (this.gameObject.name == "door3coli")
             {
-                Debug.Log("키 가지고 있나" + getkey);
+                Debug.Log(Hold.GetComponent<Image>().sprite.name);
                 //콜리더가 서재 문일 때 getKey가 true면 && hold 스프라이트 이름이 item_key이면 애니메이션 적용 & 인벤토리에서 key삭제
-                if(getkey == true && Hold.GetComponent<Image>().sprite.name == "item_key")
+                if(Hold.GetComponent<Image>().sprite.name == "item_key")
                 {
                     parent = transform.parent.gameObject;
                     dooranim = true;
@@ -471,65 +493,58 @@ public class Animation : MonoBehaviour
                 drawer = GameObject.Find("grpDraw_Anim").gameObject;
                 draweranim = true;
             }
-            if (this.gameObject.name == "knifeColi")
+            
+            if(item == false)
             {
                 item = true;
-                itemsprite = spriteImg1;
-            }
-            if (this.gameObject.name == "kitchPhtoColi")
-            {
-                item = true;
-                itemsprite = spriteImg2;
-            }
-            if (this.gameObject.name == "livinPhtoColi")
-            {
-                item = true;
-                itemsprite = spriteImg3;
-            }
-            if (this.gameObject.name == "guestPhotoColi")
-            {
-                item = true;
-                itemsprite = spriteImg4;
-            }
-            if (this.gameObject.name == "memoColi")
-            {
-                item = true;
-                itemsprite = spriteImg5;
-            }
-            if (this.gameObject.name == "basePhtoColi1")
-            {
-                item = true;
-                itemsprite = spriteImg6;
-            }
-            if (this.gameObject.name == "basePEhtoColi2")
-            {
-                item = true;
-                itemsprite = spriteImg7;
-            }
-            if (this.gameObject.name == "basePhtoColi3")
-            {
-                item = true;
-                itemsprite = spriteImg8;
-            }
-            if (this.gameObject.name == "basePhtoColi4")
-            {
-                item = true;
-                itemsprite = spriteImg9;
-            }
-            if (this.gameObject.name == "basePhtoColi5")
-            {
-                item = true;
-                itemsprite = spriteImg10;
-            }
-            if (this.gameObject.name == "basePhtoColi6")
-            {
-                item = true;
-                itemsprite = spriteImg11;
-            }
-            if (this.gameObject.name == "keyColi")
-            {
-                item = true;
-                itemsprite = spriteImg12;
+                if (this.gameObject.name == "knifeColi")
+                {
+                    itemsprite = spriteImg1;
+                }
+                if (this.gameObject.name == "kitchPhtoColi")
+                {
+                    itemsprite = spriteImg2;
+                }
+                if (this.gameObject.name == "livinPhtoColi")
+                {
+                    itemsprite = spriteImg3;
+                }
+                if (this.gameObject.name == "guestPhotoColi")
+                {
+                    itemsprite = spriteImg4;
+                }
+                if (this.gameObject.name == "memoColi")
+                {
+                    itemsprite = spriteImg5;
+                }
+                if (this.gameObject.name == "basePhtoColi1")
+                {
+                    itemsprite = spriteImg6;
+                }
+                if (this.gameObject.name == "basePEhtoColi2")
+                {
+                    itemsprite = spriteImg7;
+                }
+                if (this.gameObject.name == "basePhtoColi3")
+                {
+                    itemsprite = spriteImg8;
+                }
+                if (this.gameObject.name == "basePhtoColi4")
+                {
+                    itemsprite = spriteImg9;
+                }
+                if (this.gameObject.name == "basePhtoColi5")
+                {
+                    itemsprite = spriteImg10;
+                }
+                if (this.gameObject.name == "basePhtoColi6")
+                {
+                    itemsprite = spriteImg11;
+                }
+                if (this.gameObject.name == "keyColi")
+                {
+                    itemsprite = spriteImg12;
+                }
             }
         }
     }
