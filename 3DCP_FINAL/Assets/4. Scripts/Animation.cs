@@ -13,6 +13,8 @@ public class Animation : MonoBehaviour
     List<Image> invenBaseImg = new List<Image>(); //image with inven item
     int invenCount, invenNum; //for inventory count control
 
+    public int photoNum;
+
     public GameObject itemsprite;
     GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
 
@@ -25,7 +27,7 @@ public class Animation : MonoBehaviour
 
     bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start;
 
-    GameObject kitchendoor, emptyroomdoor, startUI;
+    GameObject kitchendoor, emptyroomdoor, startUI, puzzle;
 
     // Start is called before the first frame update
     void Start()
@@ -40,7 +42,9 @@ public class Animation : MonoBehaviour
         {
             invenBaseImg.Add(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>());
         }
-        
+
+        photoNum = 12; //여기 0으로 바꾸고 푸쉬해야함~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
         spriteImg1 = GameObject.Find("AllItemSprite").transform.GetChild(0).gameObject;
         spriteImg2 = GameObject.Find("AllItemSprite").transform.GetChild(1).gameObject;
         spriteImg3 = GameObject.Find("AllItemSprite").transform.GetChild(2).gameObject;
@@ -67,10 +71,12 @@ public class Animation : MonoBehaviour
         detailUI_Name = deailNmObj.GetComponent<TextMeshProUGUI>();
 
         kitchendoor = GameObject.Find("door2coli").transform.parent.gameObject;
-        emptyroomdoor = GameObject.Find("").transform.parent.gameObject;
+        //emptyroomdoor = GameObject.Find("").transform.parent.gameObject;
 
         getknife = false;
         getphoto = false;
+
+        puzzle = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -380,8 +386,7 @@ public class Animation : MonoBehaviour
     public void ItemToInven()
     {
         invenNum += 1;
-
-        //Debug.Log(itemsprite.name);
+        photoNum += 1;
 
         invenBaseImg[invenCount].sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
         invenBaseImg[invenCount].gameObject.SetActive(true);
@@ -457,8 +462,8 @@ public class Animation : MonoBehaviour
             Debug.Log("this는" + this.name);
 
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
-                || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") || this.gameObject.name.Contains("door7coli")
-                || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli") || this.gameObject.name.Contains("door10coli"))
+                || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") 
+                || this.gameObject.name.Contains("door7coli") || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli"))
             {
                 parent = transform.parent.gameObject;
                 Debug.Log("parent는" + parent.name);
@@ -493,6 +498,13 @@ public class Animation : MonoBehaviour
                             GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.SetActive(false);
                         }
                     }
+                }
+            }
+            if (this.gameObject.name == "door10coli")
+            {
+                if(photoNum > 11)
+                {
+                    puzzle.gameObject.SetActive(true);
                 }
             }
             if (this.gameObject.name == "animForDrawerColi")
