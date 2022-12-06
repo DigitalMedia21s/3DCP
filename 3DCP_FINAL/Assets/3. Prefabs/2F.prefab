@@ -43535,19 +43535,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000011662069570, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1000011843113466, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1000013790105684, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1000014015102930, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1000014285062516, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Name
@@ -43555,7 +43555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1000014285062516, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4000010454589570, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_LocalPosition.x
@@ -43623,7 +43623,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1578124871249623206, guid: 3f6ef443252cefb47b547930837634aa, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3f6ef443252cefb47b547930837634aa, type: 3}

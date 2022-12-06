@@ -1699,8 +1699,10 @@ MonoBehaviour:
     m_Bits: 128
   visibleTargets: []
   meshResolution: 1
-  viewMeshFilter: {fileID: 0}
+  viewMeshFilter: {fileID: 2454290500550863248}
   fadeIn: {fileID: 3372648448895763225}
+  BBlankek1: {fileID: 0}
+  BBlankek2: {fileID: 0}
   edgeResolveIterations: 0
   edgeDstThreshold: 0
 --- !u!114 &6627948174784808220
@@ -1715,11 +1717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53a5a77667645794c892f20e910eb112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ghost: {fileID: 0}
-  rUi: {fileID: 0}
-  gUi: {fileID: 0}
-  ceiling: {fileID: 0}
-  isGhost: 0
+  ghost1: {fileID: 0}
+  ghost2: {fileID: 0}
+  floor: {fileID: 0}
 --- !u!54 &2393162539910158513
 Rigidbody:
   m_ObjectHideFlags: 0

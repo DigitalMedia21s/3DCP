@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000013930057638}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000011645000802
 MeshFilter:
@@ -280,7 +280,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000013930057638}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &33000013558047278
 MeshFilter:
@@ -363,9 +363,9 @@ Transform:
   m_Children:
   - {fileID: 4000011825406032}
   - {fileID: 4000010454589570}
+  - {fileID: 7999647200138034445}
   - {fileID: 4000010141988324}
   - {fileID: 4000010419181484}
-  - {fileID: 7999647200138034445}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 4389604073775104342}
   - component: {fileID: 3248283161828523113}
   m_Layer: 0
-  m_Name: BedBlanket (1)
+  m_Name: BedBlanket_closed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -414,7 +414,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4000013930057638}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4389604073775104342
 MeshFilter:
