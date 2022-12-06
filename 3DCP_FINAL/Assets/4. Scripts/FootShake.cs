@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class FootShake : MonoBehaviour
 {
-    //public float shakeTime = 1.0f;
     public float shakeSpeed = 2.0f;
     public float shakeAmount = 2.5f;
 
