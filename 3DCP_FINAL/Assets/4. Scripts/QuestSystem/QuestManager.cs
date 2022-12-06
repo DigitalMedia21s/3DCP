@@ -10,7 +10,7 @@ public class QuestData
 {
     public int id; 
     public QuestLevel level;
-    public NickName name;
+    public Nickname name;
     public string desc;
     public int reward;
     public bool open;
@@ -29,10 +29,13 @@ public class QuestManager : MonoBehaviour
     public List<QuestData> CurrentQuests {get{return currentQuests;}} // QuestUI에서 사용하기 위한 읽기전용 프로퍼티
     private int[] levelCountMax;
     private QuestUI ui;
+    private int stars;
+    public int Stars {get{return stars;}}
 
     private void Awake() 
     {
         instance = this;
+        stars =0;
         ui = GetComponent<QuestUI>();
         currentQuests = new();
         currentLevel = QuestLevel.START;
@@ -61,7 +64,7 @@ public class QuestManager : MonoBehaviour
             Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc);
             // UI 동기화
         }       
-        catch (NullReferenceException ex) 
+        catch 
         {
             Debug.Log("NULL");
         }
@@ -77,7 +80,7 @@ public class QuestManager : MonoBehaviour
         if(!checkQuestItem(quest)) return;
 
         quest.clear = true;
-        // 플레이어 별풍선 += quest.reward;
+        stars += quest.reward;
         currentQuests.Remove(quest);
         quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
         ui.resetQuestUI();

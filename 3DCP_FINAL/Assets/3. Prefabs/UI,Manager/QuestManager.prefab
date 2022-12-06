@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5405867970655458292
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5405867970655458294}
+  - component: {fileID: 5405867970655458293}
+  - component: {fileID: 1449315208257894194}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5405867970655458294
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405867970655458292}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5405867970655458293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405867970655458292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 405b45e888fa3cd40a33a2ff0c939b1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - id: 0
+    level: 0
+    name: 0
+    desc: "\uC2DD\uD0C1 \uBC11\uC5D0 \uC800\uAC70 \uBB50\uC57C? \uC8FC\uC6CC\uBD10"
+    reward: 50000
+    open: 0
+    clear: 0
+  - id: 1
+    level: 1
+    name: 1
+    desc: "\uC2F1\uD06C\uB300 \uC704\uC5D0 \uCE7C \uC788\uB294\uB370. \uCE7C \uCC59\uAE30\uC790"
+    reward: 1000
+    open: 0
+    clear: 0
+  - id: 2
+    level: 1
+    name: 0
+    desc: "\uB0C9\uC7A5\uACE0 \uC548\uC5D0 \uD53C\uC790\uAC00 \uC788\uB294\uB370?
+      \uBA39\uC5B4\uBD10 \u314B"
+    reward: 10000
+    open: 0
+    clear: 0
+  - id: 3
+    level: 1
+    name: 3
+    desc: "\uD754\uB4E4\uC758\uC790 \uD63C\uC790 \uD754\uB4E4\uB9AC \uB124 \uAC00\uAE4C\uC774
+      \uAC00\uBD10"
+    reward: 3000
+    open: 0
+    clear: 0
+  - id: 4
+    level: 2
+    name: 2
+    desc: "\uC774\uAC74 \uC544\uB2CC \uAC83 \uAC19\uC544. \uBC16\uC73C\uB85C \uB098\uAC00\uC790
+      \uB3CC\uC544\uAC00\uC790"
+    reward: 5000
+    open: 0
+    clear: 0
+  - id: 5
+    level: 2
+    name: 0
+    desc: "\uD615 \uC5EC\uAE30 2\uCE35\uB3C4 \uC788\uB294 \uB370? \uC62C\uB77C\uAC00\uBCF4\uC790"
+    reward: 100000
+    open: 0
+    clear: 0
+  - id: 6
+    level: 3
+    name: 0
+    desc: "\uC774\uBD88 \uC816\uD600\uBD10"
+    reward: 50000
+    open: 0
+    clear: 0
+--- !u!114 &1449315208257894194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5405867970655458292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757cdbbafda1e3f4f92d49c8d2fb14ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questParent: {fileID: 0}
+  starCount: {fileID: 0}
