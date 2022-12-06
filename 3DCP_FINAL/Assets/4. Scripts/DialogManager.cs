@@ -17,14 +17,12 @@ public class DialogManager : MonoBehaviour
 
     // viewerNicknameText => TMP_Text?
     // viewerDialogText => TMP_Text?
-    // 댓글 코루틴은 한 개만
     private DialogDatas datas;
     private Queue<GameObject> viewerTextQueue;
     private bool displayLoopDialog = false;
 
     private void Awake()
     {
-        Debug.LogWarning("Awake");
         Load();
     }
     private void Start()
@@ -32,7 +30,7 @@ public class DialogManager : MonoBehaviour
         instance = this;
         viewerTextQueue = new();
         ShowDialog("복도");
-        StartCoroutine(ShowLoopingDialog());
+        StartCoroutine(ShowLoopingDialog()); // 반복
     }
 
     public void ShowDialog(string id)
@@ -40,9 +38,9 @@ public class DialogManager : MonoBehaviour
         PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id == id);
         ViewerDialog vDialog = datas.viewerDialogs.Find(x => x.id == id);
 
-        if (pDialog == null) Debug.LogWarning("CAN NOT FIND PLAYER DIALOG");
+        if (pDialog == null) Debug.LogError("CAN NOT FIND PLAYER DIALOG");
         else StartCoroutine(ShowPlayerDialog(pDialog));
-        if (vDialog == null) Debug.LogWarning("CAN NOT FIND VIEWER DIALOG"); // 반복 실행
+        if (vDialog == null) Debug.LogError("CAN NOT FIND VIEWER DIALOG"); 
         else StartCoroutine(ShowViewerDialog(vDialog));
     }
     private IEnumerator ShowPlayerDialog(PlayerDialog dialog)
@@ -99,11 +97,11 @@ public class DialogManager : MonoBehaviour
     }
     public void Load()
     {
-        Debug.LogWarning("Load 시작");
+        Debug.Log("Load 시작");
 
         TextAsset t = Resources.Load<TextAsset>("DialogData");
         datas = JsonUtility.FromJson<DialogDatas>(t.text);
-        Debug.LogWarning("Complete Data Load");
+        Debug.Log("Complete Data Load");
     }
 }
 
@@ -124,10 +122,11 @@ public class ViewerDialog
 {
     public string id;
     public List<ViewerDialogSub> content;
-}
-[System.Serializable]
-public struct ViewerDialogSub
-{
-    public string name;
-    public string content;
+
+    [System.Serializable]
+    public struct ViewerDialogSub
+    {
+        public string name;
+        public string content;
+    }
 }
