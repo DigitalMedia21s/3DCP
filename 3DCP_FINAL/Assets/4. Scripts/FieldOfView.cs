@@ -60,7 +60,6 @@ public class FieldOfView : MonoBehaviour
             // 플레이어와 forward와 target이 이루는 각이 설정한 각도 내라면
             if (Vector3.Angle(transform.forward, dirToTarget) < viewAngle / 2)
             {
-                Debug.Log("1");
                 float dstToTarget = Vector3.Distance(transform.position, target.transform.position);
 
                 // 타겟으로 가는 레이캐스트에 obstacleMask가 걸리지 않으면 visibleTargets에 Add
@@ -70,6 +69,7 @@ public class FieldOfView : MonoBehaviour
 
                     if (target.name == "PFB_BathroomSink")
                     {
+                        Debug.Log("거울");
                         fadeIn.GetComponent<FadeIO>().startFadeIn();
                     }
                 }

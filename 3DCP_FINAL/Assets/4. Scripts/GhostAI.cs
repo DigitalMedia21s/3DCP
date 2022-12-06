@@ -11,8 +11,6 @@ public class GhostAI : MonoBehaviour
     public bool isMove;
     public bool isGhost;
 
-    bool isCorPlay;
-
     // Start is called before the first frame update
     void Start()
     {
