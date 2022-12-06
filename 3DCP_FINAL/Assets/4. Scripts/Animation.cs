@@ -20,9 +20,9 @@ public class Animation : MonoBehaviour
     TextMeshProUGUI detailUI_Explain;
     TextMeshProUGUI detailUI_Name;
 
-    GameObject Hold;
+    GameObject Hold, getUIobj;
 
-    bool dooranim, draweranim, item;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknif, getkitphto;
 
     // Start is called before the first frame update
     void Start()
@@ -49,11 +49,19 @@ public class Animation : MonoBehaviour
         spriteImg12 = GameObject.Find("AllItemSprite").transform.GetChild(11).gameObject;
 
         Hold = GameObject.Find("HoldItem").gameObject.transform.GetChild(0).gameObject;
+
+        getUIobj = GameObject.Find("GetUI").gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
+        DontOpenDoor();
+
+        if (uiup == true)
+        {
+            StartCoroutine("GetUIroutine");
+        }
         if(Input.GetKeyDown(KeyCode.Tab))
         {
             OpenPanel();
@@ -69,7 +77,10 @@ public class Animation : MonoBehaviour
                 DrawerOpen();
             }
             if(item == true)
+            {
                 ItemToInven();
+                uiup = true;
+            }
         }
         if(Input.GetKeyDown(KeyCode.F1))
         {
@@ -254,6 +265,9 @@ public class Animation : MonoBehaviour
             GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(false);
             GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(false);
+            detailUI_Image.sprite = null;
+            detailUI_Explain.text = null;
+            detailUI_Name.text = null;
         }
     }
 
@@ -268,6 +282,27 @@ public class Animation : MonoBehaviour
 
                 animator.SetBool("open", !isOpen);
             }
+        }
+    }
+
+    public void DontOpenDoor()
+    {
+        if (inkitch)
+        {
+            //door 제자리로 회전하기 & 해당 door doorNcoli active false
+            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
+            parent.transform.GetChild(1).gameObject.SetActive(false);
+
+            if(getknif == true && getkitphto == true)
+            {
+                parent.transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+        if (inemproom)
+        {
+            //위와 동일 
+            parent.transform.localEulerAngles = new Vector3(0, 0, 0);
+            parent.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -299,6 +334,9 @@ public class Animation : MonoBehaviour
             animator.SetBool("open", !isOpen);
             //drawer = null;
             draweranim = false;
+            GameObject.Find("animForDrawerColi").gameObject.SetActive(false);
+            //draweropen = true;
+            GameObject.Find("2FRoom3Coli").transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
@@ -317,6 +355,7 @@ public class Animation : MonoBehaviour
         if(itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
+            getknif = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
         {
@@ -324,7 +363,7 @@ public class Animation : MonoBehaviour
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_key")
         {
-            //GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
+            GameObject.Find("Simple_02").gameObject.SetActive(false);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "itemui_image1-01")
         {
@@ -345,6 +384,7 @@ public class Animation : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image5-01")
         {
             GameObject.Find("photo (1)").gameObject.SetActive(false);
+            getkitphto = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
@@ -364,12 +404,19 @@ public class Animation : MonoBehaviour
         }
     }
 
+    IEnumerator GetUIroutine()
+    {
+        getUIobj.SetActive(true);
+        yield return new WaitForSeconds(3.0f);
+        uiup = false;
+        getUIobj.SetActive(false);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
             Debug.Log("this는" + this.name);
-
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") || this.gameObject.name.Contains("door3coli")
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") || this.gameObject.name.Contains("door7coli")
                 || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli") || this.gameObject.name.Contains("door10coli"))
@@ -377,6 +424,20 @@ public class Animation : MonoBehaviour
                 parent = transform.parent.gameObject;
                 //Debug.Log("parent는" + parent.name);
                 dooranim = true;
+            }
+            if (this.gameObject.name == "kitchenColi")
+            {
+                inkitch = true;
+            }
+            if (this.gameObject.name == " ")
+            {
+                inemproom = true;
+            }
+            if (this.gameObject.name == "studyColi")
+            {
+                //getkey 함수 설정 -> true면 
+                //studycoli가 아니고 서재 문 따로 빼서 제어해야할듯
+                //콜리더가 서재 문일 떄 getKey가 true면 애니메이션 적용 & 인벤토리에서 key삭제
             }
             if (this.gameObject.name == "animForDrawerColi")
             {
@@ -438,9 +499,11 @@ public class Animation : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg11;
             }
-            //if (this.gameObject.name == "keyColi")
-            //    item = true;
-            //    itemsprite = spriteImg12;
+            if (this.gameObject.name == "keyColi")
+            {
+                item = true;
+                itemsprite = spriteImg12;
+            }
         }
     }
 
