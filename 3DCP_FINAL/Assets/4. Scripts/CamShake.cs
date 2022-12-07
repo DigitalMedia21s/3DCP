@@ -14,11 +14,11 @@ public class CamShake : MonoBehaviour
     void Update()
     {
         cam = this.transform;
+    }
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(Shake());
-        }
+    public void StartShake()
+    {
+        StartCoroutine(Shake());
     }
 
     IEnumerator Shake()
