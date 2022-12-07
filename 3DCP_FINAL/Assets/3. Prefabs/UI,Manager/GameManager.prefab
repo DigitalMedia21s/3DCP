@@ -203,14 +203,14 @@ MonoBehaviour:
     open: 0
     clear: 0
   - id: 1
-    level: 1
+    level: 0
     name: 0
     desc: "\uC2F1\uD06C\uB300 \uC704\uC5D0 \uCE7C \uC788\uB294\uB370. \uCE7C \uCC59\uAE30\uC790"
     reward: 1000
     open: 0
     clear: 0
   - id: 2
-    level: 1
+    level: 0
     name: 0
     desc: "\uB0C9\uC7A5\uACE0 \uC548\uC5D0 \uD53C\uC790\uAC00 \uC788\uB294\uB370?
       \uBA39\uC5B4\uBD10 \u314B"
@@ -218,7 +218,7 @@ MonoBehaviour:
     open: 0
     clear: 0
   - id: 3
-    level: 1
+    level: 0
     name: 0
     desc: "\uD754\uB4E4\uC758\uC790 \uD63C\uC790 \uD754\uB4E4\uB9AC \uB124 \uAC00\uAE4C\uC774
       \uAC00\uBD10"
@@ -226,7 +226,7 @@ MonoBehaviour:
     open: 0
     clear: 0
   - id: 4
-    level: 2
+    level: 1
     name: 2
     desc: "\uC774\uAC74 \uC544\uB2CC \uAC83 \uAC19\uC544. \uBC16\uC73C\uB85C \uB098\uAC00\uC790
       \uB3CC\uC544\uAC00\uC790"
@@ -234,14 +234,14 @@ MonoBehaviour:
     open: 0
     clear: 0
   - id: 5
-    level: 2
+    level: 1
     name: 0
     desc: "\uD615 \uC5EC\uAE30 2\uCE35\uB3C4 \uC788\uB294 \uB370? \uC62C\uB77C\uAC00\uBCF4\uC790"
     reward: 100000
     open: 0
     clear: 0
   - id: 6
-    level: 3
+    level: 2
     name: 0
     desc: "\uC774\uBD88 \uC816\uD600\uBD10"
     reward: 50000
