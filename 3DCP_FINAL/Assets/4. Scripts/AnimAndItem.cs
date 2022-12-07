@@ -406,10 +406,12 @@ public class AnimAndItem : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
+            QuestManager.instance.clearQuest(1);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
         {
             GameObject.Find("Paper").gameObject.SetActive(false);
+            QuestManager.instance.clearQuest(6);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_key")
         {
@@ -422,6 +424,7 @@ public class AnimAndItem : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image2-01")
         {
             GameObject.Find("photo (4)").gameObject.SetActive(false);
+            
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image3-01")
         {
@@ -434,6 +437,7 @@ public class AnimAndItem : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image5-01")
         {
             GameObject.Find("photo (1)").gameObject.SetActive(false);
+            QuestManager.instance.clearQuest(2);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
@@ -442,10 +446,12 @@ public class AnimAndItem : MonoBehaviour
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image7-01")
         {
             GameObject.Find("photo (2)").gameObject.SetActive(false);
+            QuestManager.instance.clearQuest(0);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image8-01")
         {
             GameObject.Find("photo").gameObject.SetActive(false);
+            QuestManager.instance.clearQuest(3);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image9-01")
         {
