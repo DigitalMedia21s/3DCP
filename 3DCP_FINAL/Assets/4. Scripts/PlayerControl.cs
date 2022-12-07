@@ -7,9 +7,11 @@ public class PlayerControl : MonoBehaviour
     //public GameObject item;
     public GameObject ghost1;
     public GameObject ghost2;
+    public GameObject ghost3;
 
     float distance1;
     float distance2;
+    float distance3;
 
     public GameObject floor;
     public GameObject hole1;
@@ -67,6 +69,12 @@ public class PlayerControl : MonoBehaviour
                 //실제 귀신 공격
                 ghost2.GetComponent<GhostAI>().isMove = false;
             }
+
+            if (distance3 <= 20.0f)
+            {
+                //실제 귀신 공격
+                ghost3.GetComponent<GhostAI>().isMove = false;
+            }
         }
     }
 
@@ -107,5 +115,40 @@ public class PlayerControl : MonoBehaviour
                 ghost2.SetActive(true);
             }
         }
+
+        if (other.name == "Ghost2Coli")
+        {
+            if (ghost2.activeSelf == true)
+            {
+                ghost2.SetActive(false);
+                ghost3.SetActive(true);
+            }
+        }
+    }
+
+    IEnumerator Hole()
+    {
+        yield return new WaitForSecondsRealtime(5.0f);
+
+        hole1.SetActive(false);
+        hole2.SetActive(false);
+        hole3.SetActive(false);
+        hole4.SetActive(false);
+        hole5.SetActive(false);
+        hole6.SetActive(false);
+        hole7.SetActive(false);
+        hole8.SetActive(false);
+        hole9.SetActive(false);
+        hole10.SetActive(false);
+        hole11.SetActive(false);
+        hole12.SetActive(false);
+        hole13.SetActive(false);
+        hole14.SetActive(false);
+        hole15.SetActive(false);
+        hole16.SetActive(false);
+        hole17.SetActive(false);
+        hole18.SetActive(false);
+        hole19.SetActive(false);
+        hole20.SetActive(false);
     }
 }
