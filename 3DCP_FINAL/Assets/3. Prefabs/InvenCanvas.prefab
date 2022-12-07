@@ -5387,8 +5387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 300}
+  m_AnchoredPosition: {x: 734, y: 454}
+  m_SizeDelta: {x: 422.7419, y: 126.1241}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1460724432308385397
 CanvasRenderer:
@@ -5411,7 +5411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.5254902}
+  m_Color: {r: 0, g: 0, b: 0, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5463,8 +5463,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1920, y: 50}
+  m_AnchoredPosition: {x: -0.000015259, y: 0}
+  m_SizeDelta: {x: 415.5906, y: 125.6936}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9176003128896158522
 CanvasRenderer:
@@ -5494,10 +5494,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "<size=40>\uC544\uC774\uD15C\uC744 \uD68D\uB4DD\uD558\uC600\uC2B5\uB2C8\uB2E4.</size>\n\n<color=red>Tab</color>
-    \uD0A4\uB97C \uD1B5\uD574 <color=red>\uC778\uBCA4\uD1A0\uB9AC</color>\uB97C \uC5F4
-    \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n<color=red>F1~12</color> \uD0A4\uB97C \uD1B5\uD574
-    \uC544\uC774\uD15C\uC744 <color=red>HOLD</color>\uD560 \uC218 \uC788\uC73C\uBA70\n<color=red>\uB514\uD14C\uC77C
+  m_text: "<color=red>Tab</color> \uD0A4\uB97C \uD1B5\uD574 <color=red>\uC778\uBCA4\uD1A0\uB9AC</color>\uB97C
+    \uC5F4 \uC218 \uC788\uC2B5\uB2C8\uB2E4.\n<color=red>F1~12</color> \uD0A4\uB97C
+    \uD1B5\uD574 \uC544\uC774\uD15C\uC744 <color=red>HOLD</color>\uD560 \uC218 \uC788\uC73C\uBA70\n<color=red>\uB514\uD14C\uC77C
     \uBDF0</color>\uB97C \uD655\uC778\uD560 \uC218 \uC788\uC2B5\uB2C8\uB2E4."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 385fc4a87187f1941aa58c217285b423, type: 2}
@@ -5525,8 +5524,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
