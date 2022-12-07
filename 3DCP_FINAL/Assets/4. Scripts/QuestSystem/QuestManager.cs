@@ -64,6 +64,7 @@ public class QuestManager : MonoBehaviour
             Debug.Log("NULL");
         }
         ui.resetQuestUI();
+        SoundManager.instance.Play("addQuest");
     }
 
     public void clearQuest(int id) 
@@ -75,7 +76,9 @@ public class QuestManager : MonoBehaviour
         stars += quest.reward;
         currentQuests.Remove(quest);
         quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
-        ui.resetQuestUI(false);
+        StartCoroutine(ui.displayClearUI(quest.desc));
+        SoundManager.instance.Play("clearQuest");
+
         nextQuestLevel();
     }
 

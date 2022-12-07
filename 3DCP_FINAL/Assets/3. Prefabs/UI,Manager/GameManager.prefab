@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 8947183629894099185}
   - component: {fileID: 8947183629894099190}
   - component: {fileID: 8947183629894099191}
+  - component: {fileID: 4354838124113213483}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -301,6 +302,18 @@ MonoBehaviour:
   questParent: {fileID: 0}
   starCount: {fileID: 0}
   statusText: {fileID: 0}
+--- !u!114 &4354838124113213483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8947183629894099188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c5aad0403970748ae98aca4e022beb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8947183629966667054
 GameObject:
   m_ObjectHideFlags: 0

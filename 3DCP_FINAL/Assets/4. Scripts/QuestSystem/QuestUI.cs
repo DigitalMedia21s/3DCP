@@ -1,14 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using DG.Tweening;
 
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] private Transform questParent;
+    [SerializeField] private Image clearQuestUI;
+    private TextMeshProUGUI clearText;
     [SerializeField] TextMeshProUGUI starCount;
-    [SerializeField] private TextMeshProUGUI statusText;
     private Transform[] questsUI;
     private TMP_Text datailText;
     private TMP_Text nickText;
@@ -18,6 +20,7 @@ public class QuestUI : MonoBehaviour
     private void Start() 
     {
         questsUI = new Transform[questParent.transform.childCount];
+        clearText = clearQuestUI.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         for (int i =0; i < questParent.childCount; i++)
         {
             questsUI[i] = questParent.GetChild(i);
@@ -25,7 +28,7 @@ public class QuestUI : MonoBehaviour
         resetQuestUI();
     }
 
-    public void resetQuestUI(bool isOpen = true) 
+    public void resetQuestUI() 
     {   
         for(int i =0; i<questsUI.Length; i++)
         {
@@ -47,11 +50,22 @@ public class QuestUI : MonoBehaviour
 
             current--;
         }
-        StartCoroutine(QuestEffect(isOpen));
-        // 사운드 추가
         starCount.text = QuestManager.instance.Stars.ToString();
     }
 
+    public IEnumerator displayClearUI(string desc)
+    {
+        clearText.text = "[퀘스트 후원] " + desc + "를 성공하셨습니다!";
+        Tween tweener1, tweener2;
+        tweener1 = clearQuestUI.DOFade(1, 2f);
+        tweener2 = clearText.DOFade(1, 2f);
+        yield return tweener1.WaitForCompletion();
+        yield return new WaitForSeconds(2);
+        tweener1 = clearQuestUI.DOFade(0, 2f);
+        tweener2 = clearText.DOFade(0, 2f);
+    }
+
+    /*
     private IEnumerator QuestEffect(bool isOpen)
     {
         if (isOpen)
@@ -72,4 +86,5 @@ public class QuestUI : MonoBehaviour
         statusText.DOFade(0, 1);
         yield return null;
     }
+    */
 }
