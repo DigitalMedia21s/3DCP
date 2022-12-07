@@ -77,8 +77,8 @@ public class QuestManager : MonoBehaviour
         currentQuests.Remove(quest);
         quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
         StartCoroutine(ui.displayClearUI(quest.desc));
+        ui.resetQuestUI();
         SoundManager.instance.Play("clearQuest");
-
         nextQuestLevel();
     }
 
