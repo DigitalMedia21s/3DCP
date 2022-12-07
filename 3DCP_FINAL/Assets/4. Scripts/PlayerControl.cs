@@ -37,6 +37,9 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject ghostWall;
 
+    public GameObject gameoverUI;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -150,5 +153,18 @@ public class PlayerControl : MonoBehaviour
         hole18.SetActive(false);
         hole19.SetActive(false);
         hole20.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ghost"))
+        {
+            Time.timeScale = 0;
+
+            //basicUI.SetActive(false);
+            //missionUI.SetActive(false);
+
+            gameoverUI.SetActive(true);
+        }
     }
 }
