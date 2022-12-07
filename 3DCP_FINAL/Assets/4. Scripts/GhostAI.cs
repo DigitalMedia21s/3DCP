@@ -22,52 +22,39 @@ public class GhostAI : MonoBehaviour
         isGhost = true;
         isMove = true;
 
-        //StartGhost();
+        StartGhost();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isMove == true)
-        {
-            navAgent.SetDestination(target.position);
-        }
+
     }
 
-    //void StartGhost()
-    //{
-    //    StartCoroutine(StopGhost());
-    //}
+    void StartGhost()
+    {
+        StartCoroutine(StopGhost());
+    }
 
-    //IEnumerator StopGhost()
-    //{
-    //    isCorPlay = true;
+    IEnumerator StopGhost()
+    {
+        yield return new WaitUntil(() => isMove == true);
 
-    //    yield return new WaitUntil(() => isMove == true);
-    //    yield return new WaitForSecondsRealtime(1.0f);
+        while (isMove == true)
+        {
+            navAgent.SetDestination(target.position);
 
-    //    //while (isMove == true)
-    //    //{
-    //    //    navAgent.SetDestination(target.position);
+            yield return null;
+        }
+        navAgent.isStopped = true;
 
-    //    //    yield return null;
-    //    //}
-    //    //navAgent.isStopped = true;
+        yield return new WaitUntil(() => isMove == false);
+        Debug.Log("공격");
+        yield return new WaitForSecondsRealtime(5.0f);
 
-    //    //yield return new WaitUntil(() => isMove == false);
-    //    //Debug.Log("공격");
-    //    //yield return new WaitForSecondsRealtime(5.0f);
+        navAgent.isStopped = false;
+        isMove = true;
 
-    //    //navAgent.isStopped = false;
-    //    //isMove = true;
-
-    //    //isCorPlay = false;
-
-    //    //while (isCorPlay == false)
-    //    //{
-    //    //    StartCoroutine(Ghost());
-
-    //    //    yield return null;
-    //    //}
-    //}
+        StartCoroutine(StopGhost());
+    }
 }
