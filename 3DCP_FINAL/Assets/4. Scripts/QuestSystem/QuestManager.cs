@@ -94,6 +94,9 @@ public class QuestManager : MonoBehaviour
         }
         currentLevel ++;
         levelCount =0;
+        // FIRST의 퀘스트를 모두 완료하면 퀘스트 시작
+        if(currentLevel == QuestLevel.MID && levelCount == 0)
+            addCurrentQuests(4);
     }
 
     public QuestData getData(int id) 

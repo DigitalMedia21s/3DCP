@@ -22,7 +22,7 @@ public class QuestUI : MonoBehaviour
         {
             questsUI[i] = questParent.GetChild(i);
         }
-        resetQuestUI(false);
+        resetQuestUI();
     }
 
     public void resetQuestUI(bool isOpen = true) 
@@ -31,7 +31,6 @@ public class QuestUI : MonoBehaviour
         {
             questsUI[i].gameObject.SetActive(false);
         }
-        StartCoroutine(QuestEffect(isOpen));
         // 현재 수행중인 quest UI 설정
         int current = QuestManager.instance.CurrentQuests.Count -1; //looping parameter
         foreach(QuestData quest in QuestManager.instance.CurrentQuests)
@@ -48,8 +47,8 @@ public class QuestUI : MonoBehaviour
 
             current--;
         }
+        StartCoroutine(QuestEffect(isOpen));
         // 사운드 추가
-        // 페이드 효과 추가
         starCount.text = QuestManager.instance.Stars.ToString();
     }
 
@@ -57,12 +56,12 @@ public class QuestUI : MonoBehaviour
     {
         if (isOpen)
         {
+            if(questsUI[0].gameObject.activeSelf == false) yield break;
             statusText.text = "NEW";
             statusText.color = Color.red;
         }
         else
         {
-            if(questsUI[0].gameObject.activeSelf == false) yield break;
             statusText.text = "CLEAR";
             statusText.color = Color.yellow;
         }
