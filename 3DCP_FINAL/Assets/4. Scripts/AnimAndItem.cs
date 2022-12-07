@@ -23,9 +23,9 @@ public class AnimAndItem : MonoBehaviour
     TextMeshProUGUI detailUI_Explain;
     TextMeshProUGUI detailUI_Name;
 
-    GameObject Hold, getUIobj;
+    GameObject Hold, getUIobj, bed;
 
-    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket;
 
     GameObject kitchendoor, emptyroomdoor, startUI, puzzle;
 
@@ -75,7 +75,9 @@ public class AnimAndItem : MonoBehaviour
 
         getknife = false;
         getphoto = false;
+        blanket = false;
 
+        bed = GameObject.Find("PFB_Bed"); 
         puzzle = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
     }
 
@@ -113,6 +115,13 @@ public class AnimAndItem : MonoBehaviour
                 {
                     ItemToInven();
                     uiup = true;
+                }
+                if (blanket == true)
+                {
+                    bed.transform.GetChild(1).gameObject.SetActive(false);
+                    bed.transform.GetChild(2).gameObject.SetActive(true);
+                    GameObject.Find("blanketColi").SetActive(false);
+                    blanket = false;
                 }
             }
             if (Input.GetKeyDown(KeyCode.F1))
@@ -456,7 +465,7 @@ public class AnimAndItem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            // Debug.Log("this는" + this.name);
+            Debug.Log("this는" + this.name);
 
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") 
@@ -481,7 +490,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (this.gameObject.name == "blanketColi")
             {
-                //덮힌 이불 비활 접힌 이불 활성화 침대콜리더 비활
+                blanket = true;
             }
             if (this.gameObject.name == "door3coli")
             {
@@ -543,7 +552,7 @@ public class AnimAndItem : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg6;
             }
-            if (this.gameObject.name == "basePEhtoColi2")
+            if (this.gameObject.name == "basePhtoColi2")
             {
                 item = true;
                 itemsprite = spriteImg7;
