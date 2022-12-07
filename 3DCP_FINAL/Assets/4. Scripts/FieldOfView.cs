@@ -78,10 +78,7 @@ public class FieldOfView : MonoBehaviour
                     if (target.name == "Bath")
                     {
                         Debug.Log("¿åÁ¶");
-                        if (Input.GetKeyDown(KeyCode.R))
-                        {
-                            BathBlood.SetActive(false);
-                        }
+                        BathBlood.SetActive(false);
                     }
                 }
             }

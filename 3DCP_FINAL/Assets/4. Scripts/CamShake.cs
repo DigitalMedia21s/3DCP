@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
-    public float shakeTime = 1.0f;
-    public float shakeSpeed = 2.0f;
-    public float shakeAmount = 1.0f;
+    public float shakeTime = 5.0f;
+    public float shakeSpeed = 5.0f;
+    public float shakeAmount = 500.0f;
 
     Transform cam;
 
@@ -15,14 +15,20 @@ public class CamShake : MonoBehaviour
     {
         cam = this.transform;
 
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            StartCoroutine(Shake());
-        }
+        //if (Input.GetKeyDown(KeyCode.T))
+        //{
+        //    StartCoroutine(Shake());
+        //}
+    }
+
+    public void StartShake()
+    {
+        StartCoroutine(Shake());
     }
 
     IEnumerator Shake()
     {
+        Debug.Log("Ä«¸Þ¶ó");
         Vector3 originPosition = cam.localPosition;
         float elapsedTime = 0.0f;
 

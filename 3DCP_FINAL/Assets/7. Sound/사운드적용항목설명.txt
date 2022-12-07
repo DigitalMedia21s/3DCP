@@ -1,0 +1,9 @@
+[Horror Elements 에셋 중]
+- 귀신 비명소리 1 - 공격하는 귀신 (misc > laugh)
+- 귀신 비명소리 2 - 칼에 맞는 귀신 (hits > hit_drama) → 비명은 아니지만..
+- 브금 1 - 그냥 잔잔한 공포 (Ambient > underwater)
+- 브금 2 - 귀신 도주 장면에서 급한 브금 (Ambient >amb_run)
+- 브금 3 - 지하실 들어가면 엔딩 느낌 (saveroom>strange room / piano room)
+
+[미션성공]
+MP_스테이지_클리어_(레트로)
