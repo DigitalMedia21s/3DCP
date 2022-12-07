@@ -126,27 +126,27 @@
       "id": "복도",
       "content": [
         {
-          "name": "피카츄",
+          "name": "멜크리오 (mellcreep204)",
           "content": "ㅍㅇㄹ"
         },
         {
-          "name": "라이츄",
+          "name": "초코에멍 (choikkh)",
           "content": "ㅍㅇㄹ"
         },
         {
-          "name": "파이리",
+          "name": "마라당 (maratangtange)",
           "content": "방가"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "오늘은 어디?"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "오 50년"
         },
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "주작 아님?"
         }
       ]
@@ -155,20 +155,56 @@
       "id": "반복",
       "content": [
         {
-          "name": "피카츄",
-          "content": "피카피카"
+          "name": "멜크리오 (mellcreep204)",
+          "content": "와 무섭다"
         },
         {
-          "name": "라이츄",
-          "content": "라이라이(?)"
+          "name": "초코에멍 (choikkh)",
+          "content": "와 여긴 진짜 귀신 나오겠는데"
         },
         {
-          "name": "파이리",
-          "content": "파이파이"
+          "name": "마라당 (maratangtange)",
+          "content": "뿌시긴 뭘 뿌셔 맨날 자기가 뿌셔지는 폐뿌남 ㅋㅋ"
         },
         {
-          "name": "꼬북이",
-          "content": "내용이 길면 문제가 생기는데....이걸 어케 해결함"
+          "name": "마라당 (maratangtange)",
+          "content": "와 여긴 레전든데 한국 맞음?"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "<<!$! 급한돈 필요할 때 ->02-0000-0000<- 누구나 환영 !$!>>"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "으스스하다"
+        },
+        {
+          "name": "곰인형 (teddybeer4444)",
+          "content": "폐뿌남 사랑해요"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "몸이 한 100개정도 되는 폐뿌남"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "남의 집 주거침입하는 수준 ㅉ"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "인방계 최고 미남은 역시................... 차은우!"
+        },
+        {
+          "name": "곰인형 (teddybeer4444)",
+          "content": "오늘도 잘 보고 있어요"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "한 밤중에 폐가라니 간도 크다"
+        },
+        {
+          "name": "곰인형 (teddybeer4444)",
+          "content": "넌 내꺼야"
         }
       ]
     },
@@ -176,11 +212,11 @@
       "id": "복도_문앞",
       "content": [
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "고고"
         },
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "ㄱㄱ"
         }
       ]
@@ -189,15 +225,15 @@
       "id": "거실",
       "content": [
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "거실인가?"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "티비있네"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "티비 좋아보임"
         }
       ]
@@ -206,27 +242,27 @@
       "id": "거실_식탁",
       "content": [
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "사람 발 ㄷㄷ"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "엥 시체인가"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "헐 피"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "사진이네"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "무슨 사진이야?"
         },
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "헐 방금 뒤에"
         }
       ]
@@ -235,15 +271,15 @@
       "id": "거실_완료",
       "content": [
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "밖에 나가봐"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "무슨 소리야 방금"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "이건 아닌 것 같아 돌아가자"
         }
       ]
@@ -252,35 +288,35 @@
       "id": "1층_시작",
       "content": [
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "문이 안열린다고?"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "뭐야 갇혔어?"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "주작 아님?"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "사람 있나"
         },
         {
-          "name": "",
+          "name": "멜크리오 (mellcreep204)",
           "content": "뭐야 진짜 안열려?"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "다른 복도 가봐"
         },
         {
-          "name": "",
+          "name": "초코에멍 (choikkh)",
           "content": "다른 복도 ㄱㄱ"
         },
         {
-          "name": "",
+          "name": "마라당 (maratangtange)",
           "content": "분명 탈출구 있을거임"
         }
       ]
@@ -289,41 +325,417 @@
       "id": "부엌",
       "content": [
         {
-          "name": "",
-          "content": ""
+          "name": "멜크리오 (mellcreep204)",
+          "content": "또 문 닫힌 듯"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "마라당 (maratangtange)",
+          "content": "와 진짜 귀신인가 ㄷㄷ"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "초코에멍 (choikkh)",
+          "content": "뭐라도 찾아봐"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "멜크리오 (mellcreep204)",
+          "content": "<color = #FFFF00>열쇠</color>가 있나?"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "일단 <color = #FFFF00>귀신 때려잡을 거</color> 찾으셈"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "귀신 맞짱 뜨자"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "귀신 나와 !"
         }
       ]
     },
     {
-      "id": "",
+      "id": "부엌_시작",
       "content": [
         {
-          "name": "",
-          "content": ""
+          "name": "마라당 (maratangtange)",
+          "content": "뭐야 이건 무슨 미션"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "멜크리오 (mellcreep204)",
+          "content": "그냥 무시;;"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "초코에멍 (choikkh)",
+          "content": "엥 <color = #FFFF00>냉장고에 피자가 있는거 어떻게 앎</color>"
         },
         {
-          "name": "",
-          "content": ""
+          "name": "멜크리오 (mellcreep204)",
+          "content": "뭐야 귀신임?"
+        }
+      ]
+    },
+    {
+      "id": "부엌_완료",
+      "content": [
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "테디베어 뭐하는 애임"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "부자인가"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "왤케 후원 많이 함"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "ㅊㅋㅊㅋ"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "오늘 많이 터지네"
+        }
+      ]
+    },
+    {
+      "id": "응접실_시작",
+      "content": [
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "저거 뭐임?"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "의자가 혼자 흔들려"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "귀신이다"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "ㅎㄷㄷ"
+        }
+      ]
+    },
+    {
+      "id": "응접실_완료",
+      "content": [
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "이 정도면 테디베어 = 귀신"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "테디베어 무엇"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "미션이 좀 이상한데"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "왜 자꾸 사진 나와"
+        }
+      ]
+    },
+    {
+      "id": "1층끝_복도",
+      "content": [
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "저기 계단 있는데?"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "2층 ㄱㄱ"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "이건 아닌 것 같아 돌아가자"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "2층 ㄱㅂㅈㄱ"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "여기서 끝낼거야?"
+        }
+      ]
+    },
+    {
+      "id": "계단_완료",
+      "content": [
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "그냥 빨리 돌아가"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "2층 에바인듯"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "2층 ㄱㄱㄱ!!!"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "와 이거 ㄹㅇ 찐이네"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "흉가 체험임?"
+        }
+      ]
+    },
+    {
+      "id": "빈방앞",
+      "content": [
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "어"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "??"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "다른 방 ㄱ"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "부수자"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "?"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "뭐야"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "ㅇㅇ 다른방"
+        }
+      ]
+    },
+    {
+      "id": "침실_시작",
+      "content": [
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "오오"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "이불 안에 뭐 있는거 아님?"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "?"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "뭔데"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "가보자"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "ㄱㄱ"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "아"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "????????????"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "아 무서워"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "오"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "소름"
+        }
+      ]
+    },
+    {
+      "id": "욕실앞",
+      "content": [
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "?"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "뭐야"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "으"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "뭐야 ㅠㅠㅠ"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "무섭다"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "욕조에 피 아니지?"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "???"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "뭐래"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "아니ㅇㄹ런ㅁㅣ친"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "뭔데"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "아"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "뭐ㅐ야"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "??????"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "도망쳐"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "개무섭네"
+        }
+      ]
+    },
+    {
+      "id": "2층복도",
+      "content": [
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "때려"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "빨리빨리"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "제발"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "달려"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "아무데나 들어가"
+        }
+      ]
+    },
+    {
+      "id": "빈방",
+      "content": [
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "?"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "소름"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "?? 뭔데"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "아니 빨리 도망치라고! "
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "<color = #FFFF00>서랍!</color>"
+        }
+      ]
+    },
+    {
+      "id": "서재",
+      "content": [
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "<color = #FFFF00>열쇠</color>"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "ㄱㄱㄱㄱㄱㄱㄱㄱㄱ"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "키"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "빨리"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "열어"
+        }
+      ]
+    },
+    {
+      "id": "지하실_입구",
+      "content": [
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "뭐야"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "어디임"
+        },
+        {
+          "name": "멜크리오 (mellcreep204)",
+          "content": "???"
+        },
+        {
+          "name": "초코에멍 (choikkh)",
+          "content": "소름돋는데"
+        },
+        {
+          "name": "마라당 (maratangtange)",
+          "content": "뭐 이런데가 있냐"
         }
       ]
     }
