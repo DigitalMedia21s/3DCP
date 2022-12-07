@@ -2,13 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-
-public enum SoundType
-{
-    BGM,
-    EFFECT
-}
-
 [System.Serializable]
 public struct AudioClips
 {
@@ -70,6 +63,7 @@ public class SoundManager : MonoBehaviour
         }
         catch
         {
+            Debug.LogError("can not get audio clip");
             return;
         }
 
@@ -77,6 +71,7 @@ public class SoundManager : MonoBehaviour
         if (type == SoundType.BGM)
         {
             AudioSource audioSource = audioSources[(int)SoundType.BGM];
+            Debug.LogError(audioSource);
             if (audioSource.isPlaying) audioSource.Stop();
 
             audioSource.volume = volume;

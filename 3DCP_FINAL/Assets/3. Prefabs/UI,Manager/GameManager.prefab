@@ -262,9 +262,29 @@ MonoBehaviour:
   audioSources:
   - {fileID: 8892650582939370635, guid: 94d85a5d4602209468af94a1c41c06bc, type: 3}
   - {fileID: 7593966360022084055, guid: 94d85a5d4602209468af94a1c41c06bc, type: 3}
-  BgmClip: []
+  BgmClip:
+  - name: before
+    clip: {fileID: 8300000, guid: 8b3c2e75b5d9f294185b63398af215d6, type: 3}
+  - name: ghost
+    clip: {fileID: 8300000, guid: 1848e5c0f65bc1542a32b7b6c41f30a4, type: 3}
+  - name: basement
+    clip: {fileID: 8300000, guid: 860fec7f2eed32f4397171d7aecb4d02, type: 3}
   EffectClip:
-  - name: hit
+  - name: addQuest
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: clearQuest
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: pickUpItem
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: foot_normal
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: foot_basement
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: door
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: falldown
+    clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
+  - name: click_UI
     clip: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
 --- !u!114 &8947183629894099191
 MonoBehaviour:
@@ -280,6 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questParent: {fileID: 0}
   starCount: {fileID: 0}
+  statusText: {fileID: 0}
 --- !u!1 &8947183629966667054
 GameObject:
   m_ObjectHideFlags: 0
