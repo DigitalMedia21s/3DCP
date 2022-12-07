@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-public enum QuestLevel 
+public enum QuestLevel // 마지막 enum값 수정했으면 nextQuestLevel에서 수정할 필요 있음
 {
-    START, FIRST, MID, SECOND
+    FIRST, MID, SECOND
 }
 public enum Nickname
 {

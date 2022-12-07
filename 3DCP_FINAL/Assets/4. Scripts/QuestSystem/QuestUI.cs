@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using DG.Tweening;
 
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] private Transform questParent;
     [SerializeField] TextMeshProUGUI starCount;
+    [SerializeField] private TextMeshProUGUI statusText;
     private Transform[] questsUI;
     private TMP_Text datailText;
     private TMP_Text nickText;
@@ -20,16 +22,16 @@ public class QuestUI : MonoBehaviour
         {
             questsUI[i] = questParent.GetChild(i);
         }
-        resetQuestUI();
+        resetQuestUI(false);
     }
 
-    public void resetQuestUI() 
+    public void resetQuestUI(bool isOpen = true) 
     {   
-        // UI 모두 해제
         for(int i =0; i<questsUI.Length; i++)
         {
             questsUI[i].gameObject.SetActive(false);
         }
+        StartCoroutine(QuestEffect(isOpen));
         // 현재 수행중인 quest UI 설정
         int current = QuestManager.instance.CurrentQuests.Count -1; //looping parameter
         foreach(QuestData quest in QuestManager.instance.CurrentQuests)
@@ -49,5 +51,26 @@ public class QuestUI : MonoBehaviour
         // 사운드 추가
         // 페이드 효과 추가
         starCount.text = QuestManager.instance.Stars.ToString();
+    }
+
+    private IEnumerator QuestEffect(bool isOpen)
+    {
+        if (isOpen)
+        {
+            statusText.text = "NEW";
+            statusText.color = Color.red;
+        }
+        else
+        {
+            if(questsUI[0].gameObject.activeSelf == false) yield break;
+            statusText.text = "CLEAR";
+            statusText.color = Color.yellow;
+        }
+        Sequence seq = DOTween.Sequence().SetAutoKill();
+        seq.Append(statusText.DOFade(0, 1)).Append(statusText.DOFade(1, 1)).SetLoops(3);
+        seq.Play();
+        yield return seq.WaitForCompletion();
+        statusText.DOFade(0, 1);
+        yield return null;
     }
 }
