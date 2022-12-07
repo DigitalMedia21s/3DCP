@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-public enum QuestLevel // 마지막 enum값 수정했으면 nextQuestLevel에서 수정할 필요 있음
+public enum QuestLevel // 마지막 enum값 수정했으면 nextQuestLevel에서 두번째 라인 수정할 필요 있음
 {
     FIRST, MID, SECOND
 }
