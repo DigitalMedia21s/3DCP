@@ -38,15 +38,14 @@ public class QuestManager : MonoBehaviour
         stars =0;
         ui = GetComponent<QuestUI>();
         currentQuests = new();
-        currentLevel = QuestLevel.START;
-        levelCountMax = new int[System.Enum.GetValues(typeof(QuestLevel)).Length]; 
+        currentLevel = QuestLevel.FIRST;
+        levelCountMax = new int[Enum.GetValues(typeof(QuestLevel)).Length]; 
         
+        int temp;
         foreach (var i in quests) // LevelCountMax 배열에 quests 리스트의 level의 개수를 세어서.. 원소로 넣음
         {
-            if (i.level == QuestLevel.START) levelCountMax[0]++;
-            else if (i.level == QuestLevel.FIRST) levelCountMax[1]++;
-            else if (i.level == QuestLevel.MID) levelCountMax[2]++;
-            else if (i.level == QuestLevel.SECOND) levelCountMax[3]++;
+            temp = (int)i.level;
+            levelCountMax[temp]++;
         }
     }
 
@@ -58,8 +57,7 @@ public class QuestManager : MonoBehaviour
             if(!checkQuestLevel(quest)) return;
             quest.open = true;
             currentQuests.Add(quest);
-            Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc);
-            // UI 동기화
+            Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc); 
         }       
         catch 
         {
@@ -77,31 +75,23 @@ public class QuestManager : MonoBehaviour
         stars += quest.reward;
         currentQuests.Remove(quest);
         quests.Remove(quest); // 아예 지워버릴지 아니면 재사용할지?
-        ui.resetQuestUI();
+        ui.resetQuestUI(false);
         nextQuestLevel();
     }
 
     private void nextQuestLevel() 
     {
         levelCount ++;
+        if (currentLevel == QuestLevel.SECOND) return;
 
-        if (currentLevel == QuestLevel.START)
+        for (int i=0; i<levelCountMax.Length; i++)
         {
-            if (levelCount < levelCountMax[0]) return;
+            if (currentLevel == (QuestLevel)i)
+            {
+                if (levelCount < levelCountMax[i]) return;
+                break;
+            }
         }
-        else if (currentLevel == QuestLevel.FIRST) 
-        {
-            if (levelCount < levelCountMax[1]) return;
-        }
-        else if (currentLevel == QuestLevel.MID)
-        {
-            if (levelCount < levelCountMax[2]) return;
-        }
-        else if (currentLevel == QuestLevel.SECOND)
-        {
-            return;
-        }
-
         currentLevel ++;
         levelCount =0;
     }
