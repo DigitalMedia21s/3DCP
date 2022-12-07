@@ -6,7 +6,8 @@ public class FadeIO : MonoBehaviour
 {
     new Renderer renderer;
     public GameObject mirrorTxt;
-    public GameObject ghost;
+    public GameObject ghost1;
+    public GameObject ghost0;
 
     void Start()
     {
@@ -47,6 +48,7 @@ public class FadeIO : MonoBehaviour
 
         yield return new WaitForSeconds(2f);
 
-        ghost.SetActive(true);
+        ghost0.SetActive(false);
+        ghost1.SetActive(true);
     }
 }
