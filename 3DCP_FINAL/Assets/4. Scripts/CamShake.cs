@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class CamShake : MonoBehaviour
 {
-    public float shakeTime = 5.0f;
-    public float shakeSpeed = 5.0f;
-    public float shakeAmount = 500.0f;
+    float shakeTime = 3.0f;
+    float shakeSpeed = 2.0f;
+    float shakeAmount = 20.0f;
 
     Transform cam;
 
