@@ -86,6 +86,7 @@ public class AnimAndItem : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
+            SoundManager.instance.Play("click_UI");
             startUI.SetActive(false);
             start = true;
         }
@@ -126,6 +127,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F1))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -140,6 +142,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F2))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -154,6 +157,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F3))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -168,6 +172,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F4))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -182,6 +187,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F5))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -196,6 +202,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F6))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -210,6 +217,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F7))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -224,6 +232,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F8))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -238,6 +247,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F9))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -252,6 +262,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F10))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -266,6 +277,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F11))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -280,6 +292,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F12))
             {
+                SoundManager.instance.Play("click_UI");
                 GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -294,11 +307,13 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
+                SoundManager.instance.Play("click_UI");
                 DetailView.SetActive(false);
                 for (int i = 1; i < 13; i++)
                 {
                     GameObject.Find("Slot" + i).transform.GetChild(0).gameObject.SetActive(false);
                 }
+                Hold.SetActive(false);
                 detailUI_Image.sprite = null;
                 deailImgObj.SetActive(false);
                 detailUI_Explain.text = "";
@@ -316,6 +331,7 @@ public class AnimAndItem : MonoBehaviour
             Animator animator = Panel.GetComponent<Animator>();
             if(animator != null)
             {
+                SoundManager.instance.Play("click_UI");
                 bool isOpen = animator.GetBool("open");
 
                 animator.SetBool("open", !isOpen);
@@ -329,6 +345,7 @@ public class AnimAndItem : MonoBehaviour
         {
             //door 제자리로 회전하기 & 해당 door doorNcoli active false
             kitchendoor.GetComponent<Animator>().SetBool("open", false);
+            SoundManager.instance.Play("open_door");
             kitchendoor.transform.GetChild(1).gameObject.SetActive(false);
             for (int i = 1; i < 13; i++)
             {
@@ -366,6 +383,8 @@ public class AnimAndItem : MonoBehaviour
         if (animator != null)
         {
             //Debug.Log("test");
+            SoundManager.instance.Play("open_door");
+
             bool isOpen = animator.GetBool("open");
 
             animator.SetBool("open", !isOpen);
@@ -396,7 +415,7 @@ public class AnimAndItem : MonoBehaviour
     {
         invenNum += 1;
         photoNum += 1;
-
+        SoundManager.instance.Play("pickUpItem");
         invenBaseImg[invenCount].sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
         invenBaseImg[invenCount].gameObject.SetActive(true);
         invenCount++;
