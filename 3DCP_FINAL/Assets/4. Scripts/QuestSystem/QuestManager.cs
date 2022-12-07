@@ -71,6 +71,7 @@ public class QuestManager : MonoBehaviour
     {
         QuestData quest = getData(id);
         if(!checkQuestItem(quest)) return;
+        if(!checkCurrentQuest(quest)) return;
 
         quest.clear = true;
         stars += quest.reward;
@@ -120,7 +121,7 @@ public class QuestManager : MonoBehaviour
         return false;
     }
 
-    public bool checkQuestItem(QuestData data) 
+    private bool checkQuestItem(QuestData data) 
     {
         try
         {
@@ -135,4 +136,8 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    private bool checkCurrentQuest(QuestData data)
+    {
+        return getCurrentData(data.id) != null;
+    }
 }
