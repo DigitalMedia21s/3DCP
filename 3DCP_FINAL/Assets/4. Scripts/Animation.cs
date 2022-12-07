@@ -459,14 +459,14 @@ public class Animation : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("this는" + this.name);
+            // Debug.Log("this는" + this.name);
 
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") 
                 || this.gameObject.name.Contains("door7coli") || this.gameObject.name.Contains("door8coli") || this.gameObject.name.Contains("door9coli"))
             {
                 parent = transform.parent.gameObject;
-                Debug.Log("parent는" + parent.name);
+                // Debug.Log("parent는" + parent.name);
                 dooranim = true;
             }
             else
