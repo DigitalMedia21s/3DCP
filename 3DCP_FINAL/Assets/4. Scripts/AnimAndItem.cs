@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Animation : MonoBehaviour
+public class AnimAndItem : MonoBehaviour
 {
     public GameObject Panel;
     GameObject parent;
@@ -13,7 +13,7 @@ public class Animation : MonoBehaviour
     List<Image> invenBaseImg = new List<Image>(); //image with inven item
     int invenCount, invenNum; //for inventory count control
 
-    public int photoNum;
+    int photoNum;
 
     public GameObject itemsprite;
     GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
@@ -43,7 +43,7 @@ public class Animation : MonoBehaviour
             invenBaseImg.Add(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>());
         }
 
-        photoNum = 12; //여기 0으로 바꾸고 푸쉬해야함~!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        photoNum = 0;
 
         spriteImg1 = GameObject.Find("AllItemSprite").transform.GetChild(0).gameObject;
         spriteImg2 = GameObject.Find("AllItemSprite").transform.GetChild(1).gameObject;
@@ -392,10 +392,9 @@ public class Animation : MonoBehaviour
         invenBaseImg[invenCount].gameObject.SetActive(true);
         invenCount++;
 
-        Debug.Log("아이템 먹는 상태" + item);
-        //Debug.Log(itemsprite.GetComponent<SpriteRenderer>().sprite.name);
+        print("인벤순서" + invenNum + "인벤개수" + invenCount + "아이템개수" + photoNum);
 
-        if(itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
+        if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
         }
@@ -443,8 +442,6 @@ public class Animation : MonoBehaviour
         {
             GameObject.Find("photo (3)").gameObject.SetActive(false);
         }
-
-        item = false;
     }
 
     IEnumerator GetUIroutine()
@@ -455,7 +452,7 @@ public class Animation : MonoBehaviour
         getUIobj.SetActive(false);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
@@ -481,6 +478,10 @@ public class Animation : MonoBehaviour
             if (this.gameObject.name == " ")
             {
                 inemproom = true;
+            }
+            if (this.gameObject.name == "blanketColi")
+            {
+                //덮힌 이불 비활 접힌 이불 활성화 침대콜리더 비활
             }
             if (this.gameObject.name == "door3coli")
             {
@@ -512,61 +513,72 @@ public class Animation : MonoBehaviour
                 drawer = GameObject.Find("grpDraw_Anim").gameObject;
                 draweranim = true;
             }
-            
-            if(item == false)
+            if (this.gameObject.name == "knifeColi")
             {
                 item = true;
-                if (this.gameObject.name == "knifeColi")
-                {
-                    itemsprite = spriteImg1;
-                }
-                if (this.gameObject.name == "kitchPhtoColi")
-                {
-                    itemsprite = spriteImg2;
-                }
-                if (this.gameObject.name == "livinPhtoColi")
-                {
-                    itemsprite = spriteImg3;
-                }
-                if (this.gameObject.name == "guestPhotoColi")
-                {
-                    itemsprite = spriteImg4;
-                }
-                if (this.gameObject.name == "memoColi")
-                {
-                    itemsprite = spriteImg5;
-                }
-                if (this.gameObject.name == "basePhtoColi1")
-                {
-                    itemsprite = spriteImg6;
-                }
-                if (this.gameObject.name == "basePEhtoColi2")
-                {
-                    itemsprite = spriteImg7;
-                }
-                if (this.gameObject.name == "basePhtoColi3")
-                {
-                    itemsprite = spriteImg8;
-                }
-                if (this.gameObject.name == "basePhtoColi4")
-                {
-                    itemsprite = spriteImg9;
-                }
-                if (this.gameObject.name == "basePhtoColi5")
-                {
-                    itemsprite = spriteImg10;
-                }
-                if (this.gameObject.name == "basePhtoColi6")
-                {
-                    itemsprite = spriteImg11;
-                }
-                if (this.gameObject.name == "keyColi")
-                {
-                    itemsprite = spriteImg12;
-                }
+                itemsprite = spriteImg1;
+            }
+            if (this.gameObject.name == "kitchPhtoColi")
+            {
+                item = true;
+                itemsprite = spriteImg2;
+            }
+            if (this.gameObject.name == "livinPhtoColi")
+            {
+                item = true;
+                itemsprite = spriteImg3;
+            }
+            if (this.gameObject.name == "guestPhotoColi")
+            {
+                item = true;
+                itemsprite = spriteImg4;
+            }
+            if (this.gameObject.name == "memoColi")
+            {
+                item = true;
+                itemsprite = spriteImg5;
+            }
+            if (this.gameObject.name == "basePhtoColi1")
+            {
+                item = true;
+                itemsprite = spriteImg6;
+            }
+            if (this.gameObject.name == "basePEhtoColi2")
+            {
+                item = true;
+                itemsprite = spriteImg7;
+            }
+            if (this.gameObject.name == "basePhtoColi3")
+            {
+                item = true;
+                itemsprite = spriteImg8;
+            }
+            if (this.gameObject.name == "basePhtoColi4")
+            {
+                item = true;
+                itemsprite = spriteImg9;
+            }
+            if (this.gameObject.name == "basePhtoColi5")
+            {
+                item = true;
+                itemsprite = spriteImg10;
+            }
+            if (this.gameObject.name == "basePhtoColi6")
+            {
+                item = true;
+                itemsprite = spriteImg11;
+            }
+            if (this.gameObject.name == "keyColi")
+            {
+                item = true;
+                itemsprite = spriteImg12;
             }
         }
     }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    item = false;
+    //}
 
     void DetailInfo()
     {
