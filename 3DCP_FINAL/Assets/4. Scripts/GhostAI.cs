@@ -28,7 +28,7 @@ public class GhostAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     void StartGhost()
