@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour
 {
@@ -37,10 +38,14 @@ public class PlayerControl : MonoBehaviour
 
     public GameObject ghostWall;
 
+    public GameObject gameoverUI;
+
+    GameObject Hold;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        Hold = GameObject.Find("HoldItem").gameObject.transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -56,24 +61,27 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            //SoundManager.instance.Play("hit");
-
-            if (distance1 <= 20.0f)
+            if (Hold.GetComponent<Image>().sprite.name == "item_knife")
             {
-                //실제 귀신 공격
-                ghost1.GetComponent<GhostAI>().isMove = false;
-            }
+                //SoundManager.instance.Play("hit");
 
-            if (distance2 <= 20.0f)
-            {
-                //실제 귀신 공격
-                ghost2.GetComponent<GhostAI>().isMove = false;
-            }
+                if (distance1 <= 20.0f)
+                {
+                    //실제 귀신 공격
+                    ghost1.GetComponent<GhostAI>().isMove = false;
+                }
 
-            if (distance3 <= 20.0f)
-            {
-                //실제 귀신 공격
-                ghost3.GetComponent<GhostAI>().isMove = false;
+                if (distance2 <= 20.0f)
+                {
+                    //실제 귀신 공격
+                    ghost2.GetComponent<GhostAI>().isMove = false;
+                }
+
+                if (distance3 <= 20.0f)
+                {
+                    //실제 귀신 공격
+                    ghost3.GetComponent<GhostAI>().isMove = false;
+                }
             }
         }
     }
@@ -150,5 +158,37 @@ public class PlayerControl : MonoBehaviour
         hole18.SetActive(false);
         hole19.SetActive(false);
         hole20.SetActive(false);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Ghost"))
+        {
+            gameoverUI.SetActive(true);
+        }
+    }
+
+    public void Retry()
+    {
+        Debug.Log("버튼");
+        if (ghost1.activeSelf == true)
+        {
+            Debug.Log("1번 귀신");
+            ghost1.transform.position = new Vector3(-63.71f, 18.71f, -145.6f);
+            this.transform.position = new Vector3(-75.4f, 18f, -152.6f);
+            gameoverUI.SetActive(false);
+        }
+        else if (ghost2.activeSelf == true)
+        {
+            ghost2.transform.position = new Vector3(-111.4f, 18.71f, -102.1f);
+            this.transform.position = new Vector3(-75.4f, 18f, -107.7f);
+            gameoverUI.SetActive(false);
+        }
+        else if (ghost3.activeSelf == true)
+        {
+            ghost3.transform.position = new Vector3(-10.2f, -8f, -44.1f);
+            this.transform.position = new Vector3(-6.18f, -9f, -92.5f);
+            gameoverUI.SetActive(false);
+        }
     }
 }
