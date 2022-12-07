@@ -9,7 +9,7 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
     public static Vector2 defaultpos;
     public bool clear = false;
 
-    GameObject PzBg;
+    GameObject PzPanel, PzBg;
     GameObject[] pz = new GameObject[9];
     public GameObject check0, check1, check2, check3, check4, check5, check6, check7, check8;
 
@@ -19,7 +19,8 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     void Start()
     {
-        PzBg = GameObject.Find("Puzzle_BG");
+        PzPanel = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
+        PzBg = PzPanel.transform.GetChild(0).gameObject;
         for (int i = 0; i < 9; i++)
         {
             pz[i] = PzBg.transform.GetChild(i).gameObject;
