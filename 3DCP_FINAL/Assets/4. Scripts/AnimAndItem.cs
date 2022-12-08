@@ -11,11 +11,11 @@ public class AnimAndItem : MonoBehaviour
     GameObject drawer;
 
     List<Image> invenBaseImg = new List<Image>(); //image with inven item
-    int invenCount, invenNum; //for inventory count control
+    //int invenCount, invenNum; //for inventory count control
 
     int photoNum;
 
-    public GameObject itemsprite;
+    GameObject itemsprite;
     GameObject spriteImg1, spriteImg2, spriteImg3, spriteImg4, spriteImg5, spriteImg6, spriteImg7, spriteImg8, spriteImg9, spriteImg10, spriteImg11, spriteImg12; //each item sprite
 
     GameObject DetailView, deailImgObj, deailEXObj, deailNmObj;
@@ -26,6 +26,7 @@ public class AnimAndItem : MonoBehaviour
     GameObject Hold, getUIobj, bed;
 
     bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket;
+    //bool getitem;
 
     GameObject kitchendoor, emptyroomdoor, startUI, puzzle;
 
@@ -35,8 +36,8 @@ public class AnimAndItem : MonoBehaviour
         startUI = GameObject.Find("StartUI");
         start = false;
 
-        invenCount = 0;
-        invenNum = 0; //inven control reset
+        //invenCount = 0;
+        //invenNum = 0; //inven control reset
 
         for (int i = 1; i < 13; i++)
         {
@@ -79,6 +80,9 @@ public class AnimAndItem : MonoBehaviour
 
         bed = GameObject.Find("PFB_Bed"); 
         puzzle = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
+
+        //i_kn = false; i_kp = false; i_lp = false; i_gp = false; i_me = false; i_ke = false;
+        //i_b1 = false; i_b2 = false; i_b3 = false; i_b4 = false; i_b5 = false; i_b6 = false;
     }
 
     // Update is called once per frame
@@ -104,18 +108,17 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
+                print(dooranim + "<-문열기, 아이템->" + item);
+
                 if (dooranim == true)
                 {
+                    print("문상태"+dooranim);
                     DoorOpen();
+                    dooranim = false;
                 }
                 if (draweranim == true)
                 {
                     DrawerOpen();
-                }
-                if (item == true)
-                {
-                    ItemToInven();
-                    uiup = true;
                 }
                 if (blanket == true)
                 {
@@ -123,6 +126,31 @@ public class AnimAndItem : MonoBehaviour
                     bed.transform.GetChild(2).gameObject.SetActive(true);
                     GameObject.Find("blanketColi").SetActive(false);
                     blanket = false;
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                //if (item == true)
+                //{
+                //    if(getitem == false) // 가지고 있지 않으면
+                //    {
+                //        //invenNum += 1;
+                //        photoNum += 1;
+                //        //invenCount++;
+                //        ItemToInven();
+                //        uiup = true;
+                //        item = false;
+                //        getitem = false;
+                //    }
+                //    //ItemToInven();
+                //    //uiup = true;
+                //    //item = false;
+                //}
+                if(item == true)
+                {
+                    ItemToInven();
+                    uiup = true;
+                    item = false;
                 }
             }
             if (Input.GetKeyDown(KeyCode.F1))
@@ -361,6 +389,7 @@ public class AnimAndItem : MonoBehaviour
                 }
                 if(getknife == true && getphoto == true)
                 {
+                    kitchendoor.transform.GetChild(1).gameObject.SetActive(true);
                     kitchendoor.GetComponent<Animator>().SetBool("open", true);
                 }
             }
@@ -389,7 +418,7 @@ public class AnimAndItem : MonoBehaviour
 
             animator.SetBool("open", !isOpen);
             //parent = null;
-            dooranim = false;
+            dooranim = true;
         }
     }
 
@@ -413,68 +442,86 @@ public class AnimAndItem : MonoBehaviour
 
     public void ItemToInven()
     {
-        invenNum += 1;
-        photoNum += 1;
+        //invenNum += 1;
+        //photoNum += 1;
         SoundManager.instance.Play("pickUpItem");
-        invenBaseImg[invenCount].sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
-        invenBaseImg[invenCount].gameObject.SetActive(true);
-        invenCount++;
 
-        print("인벤순서" + invenNum + "인벤개수" + invenCount + "아이템개수" + photoNum);
+        //invenBaseImg[invenCount].sprite = itemsprite.GetComponent<SpriteRenderer>().sprite;
+        //invenBaseImg[invenCount].gameObject.SetActive(true);
+        //invenCount++;
+
+        //print("인벤순서" + invenNum + "인벤개수" + invenCount + "아이템개수" + photoNum);
 
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
+            GameObject.Find("Slot3").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(1);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
         {
+            GameObject.Find("Slot5").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("Paper").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(6);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_key")
         {
+            GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("Simple_02").gameObject.SetActive(false);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "itemui_image1-01")
         {
+            GameObject.Find("Slot10").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (7)").gameObject.SetActive(false);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image2-01")
         {
+            GameObject.Find("Slot9").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (4)").gameObject.SetActive(false);
-            
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image3-01")
         {
+            GameObject.Find("Slot12").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (8)").gameObject.SetActive(false);
+            //i_b6 = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image4-01")
         {
+            GameObject.Find("Slot11").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (5)").gameObject.SetActive(false);
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image5-01")
         {
+            GameObject.Find("Slot2").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (1)").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(2);
+            //i_kp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
+            GameObject.Find("Slot8").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (6)").gameObject.SetActive(false);
+            //i_b2 = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image7-01")
         {
+            GameObject.Find("Slot1").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (2)").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(0);
+            //i_lp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image8-01")
         {
+            GameObject.Find("Slot4").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(3);
+            //i_gp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image9-01")
         {
+            GameObject.Find("Slot7").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (3)").gameObject.SetActive(false);
+            //i_b1 = true;
         }
     }
 
@@ -562,7 +609,7 @@ public class AnimAndItem : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg3;
             }
-            if (this.gameObject.name == "guestPhotoColi")
+            if (this.gameObject.name == "guestPhtoColi")
             {
                 item = true;
                 itemsprite = spriteImg4;
@@ -609,10 +656,6 @@ public class AnimAndItem : MonoBehaviour
             }
         }
     }
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    item = false;
-    //}
 
     void DetailInfo()
     {
