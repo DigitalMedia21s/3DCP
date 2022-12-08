@@ -100,7 +100,10 @@ public class QuestManager : MonoBehaviour
         levelCount =0;
         // FIRST의 퀘스트를 모두 완료하면 퀘스트 시작
         if(currentLevel == QuestLevel.MID && levelCount == 0)
+        {
             addCurrentQuests(4);
+            DialogManager.instance.ShowDialog("1층끝");
+        }
     }
 
     public QuestData getData(int id) 

@@ -45,7 +45,7 @@
     {
       "id": "부엌_완료",
       "content": [
-        "피자 밑에 사진이 있었네 퉷...퉷투세ㅞ숱",
+        "피자 밑에 사진이 있었네 퉤퉷",
         "아이고 또 테이베어님이 0000원을 주셨습니다~ 감사합니다~"
       ]
     },
@@ -71,7 +71,6 @@
     {
       "id": "1층_시작",
       "content": [
-        "문이 잠겨있어",
         "이 집... 느낌이 안좋아 빨리 다른 탈출구를 찾아야 해"
       ]
     },
@@ -289,35 +288,23 @@
       "content": [
         {
           "name": "멜크리오 (mellcreep204)",
-          "content": "문이 안열린다고?"
-        },
-        {
-          "name": "초코에멍 (choikkh)",
-          "content": "뭐야 갇혔어?"
+          "content": "저기 계단 있는데?"
         },
         {
           "name": "마라당 (maratangtange)",
-          "content": "주작 아님?"
+          "content": "2층 ㄱㄱ"
         },
         {
           "name": "초코에멍 (choikkh)",
-          "content": "사람 있나"
+          "content": "이건 아닌 것 같아 돌아가자"
         },
         {
           "name": "멜크리오 (mellcreep204)",
-          "content": "뭐야 진짜 안열려?"
+          "content": "2층 ㄱㅂㅈㄱ"
         },
         {
           "name": "마라당 (maratangtange)",
-          "content": "다른 복도 가봐"
-        },
-        {
-          "name": "초코에멍 (choikkh)",
-          "content": "다른 복도 ㄱㄱ"
-        },
-        {
-          "name": "마라당 (maratangtange)",
-          "content": "분명 탈출구 있을거임"
+          "content": "여기서 끝낼거야?"
         }
       ]
     },
@@ -443,31 +430,6 @@
       ]
     },
     {
-      "id": "1층끝_복도",
-      "content": [
-        {
-          "name": "멜크리오 (mellcreep204)",
-          "content": "저기 계단 있는데?"
-        },
-        {
-          "name": "마라당 (maratangtange)",
-          "content": "2층 ㄱㄱ"
-        },
-        {
-          "name": "초코에멍 (choikkh)",
-          "content": "이건 아닌 것 같아 돌아가자"
-        },
-        {
-          "name": "멜크리오 (mellcreep204)",
-          "content": "2층 ㄱㅂㅈㄱ"
-        },
-        {
-          "name": "마라당 (maratangtange)",
-          "content": "여기서 끝낼거야?"
-        }
-      ]
-    },
-    {
       "id": "계단_완료",
       "content": [
         {
@@ -575,7 +537,7 @@
       ]
     },
     {
-      "id": "욕실앞",
+      "id": "욕실_앞",
       "content": [
         {
           "name": "마라당 (maratangtange)",
@@ -640,7 +602,7 @@
       ]
     },
     {
-      "id": "2층복도",
+      "id": "욕실_안",
       "content": [
         {
           "name": "마라당 (maratangtange)",

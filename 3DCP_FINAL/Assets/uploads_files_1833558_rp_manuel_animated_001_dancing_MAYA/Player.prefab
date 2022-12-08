@@ -2573,6 +2573,8 @@ GameObject:
   - component: {fileID: 1576745127636122297}
   - component: {fileID: 1576745127636122296}
   - component: {fileID: 3473440758312034938}
+  - component: {fileID: 9089762477119378268}
+  - component: {fileID: 2196476124287932318}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2834,6 +2836,7 @@ MonoBehaviour:
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
   ghost3: {fileID: 0}
+  gameoverUI: {fileID: 0}
 --- !u!114 &1576745127636122297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2886,6 +2889,30 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710bb7ad159208949ab47fa4e5a1b1e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9089762477119378268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977350210412297407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2196476124287932318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6977350210412297407}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481c0337c6d20c94782f8f0fa7fce0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7102326937492679132
@@ -3474,7 +3501,8 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverUI: {fileID: 0}
+  gameoverImg: {fileID: 0}
+  gameoverButton: {fileID: 0}
 --- !u!1 &8454116375593290439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3628,7 +3656,8 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverUI: {fileID: 0}
+  gameoverImg: {fileID: 0}
+  gameoverButton: {fileID: 0}
 --- !u!1 &8454116375698730206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3782,7 +3811,8 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverUI: {fileID: 0}
+  gameoverImg: {fileID: 0}
+  gameoverButton: {fileID: 0}
 --- !u!1 &8454116376346349379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3936,7 +3966,8 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverUI: {fileID: 0}
+  gameoverImg: {fileID: 0}
+  gameoverButton: {fileID: 0}
 --- !u!1 &8527733928080535001
 GameObject:
   m_ObjectHideFlags: 0
