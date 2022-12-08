@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0031405094, g: 0.0061705993, b: 0.014241768, a: 1}
+  m_IndirectSpecularColor: {r: 0.0031405292, g: 0.0061706104, b: 0.014241753, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -32087,6 +32087,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efe15599f132a884984fe1b7cd73351f, type: 3}
+--- !u!1 &1660337696 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8947183629894099188, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+  m_PrefabInstance: {fileID: 8947183628743942429}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1666149804
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36162,6 +36167,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1483416079}
     - target: {fileID: 684138074784560164, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1660337696}
+    - target: {fileID: 684138074784560164, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
       propertyPath: ghostWall
       value: 
       objectReference: {fileID: 2074547411}
@@ -36273,6 +36282,10 @@ PrefabInstance:
       propertyPath: hole20
       value: 
       objectReference: {fileID: 1483416079}
+    - target: {fileID: 1325987993121890416, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1660337696}
     - target: {fileID: 1325987993121890416, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
       propertyPath: ghostWall
       value: 
@@ -36421,6 +36434,10 @@ PrefabInstance:
       propertyPath: hole20
       value: 
       objectReference: {fileID: 1483416079}
+    - target: {fileID: 7607808032294586439, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1660337696}
     - target: {fileID: 7607808032294586439, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
       propertyPath: ghostWall
       value: 
@@ -36577,6 +36594,10 @@ PrefabInstance:
       propertyPath: hole20
       value: 
       objectReference: {fileID: 1483416079}
+    - target: {fileID: 8056727781262710568, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 1660337696}
     - target: {fileID: 8056727781262710568, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
       propertyPath: ghostWall
       value: 
@@ -37997,6 +38018,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: ghost1
+      value: 
+      objectReference: {fileID: 1430372484}
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: ghost2
+      value: 
+      objectReference: {fileID: 490631723}
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: ghost3
+      value: 
+      objectReference: {fileID: 1340967427}
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 35578487}
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: gameoverImg
+      value: 
+      objectReference: {fileID: 1666149808}
+    - target: {fileID: 3083462450550063734, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: gameoverTxt
+      value: 
+      objectReference: {fileID: 1848511759}
     - target: {fileID: 8947183629894099184, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: interval
       value: 2

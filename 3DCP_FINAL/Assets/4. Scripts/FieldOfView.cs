@@ -25,7 +25,7 @@ public class FieldOfView : MonoBehaviour
 
     public GameObject BathBlood;
 
-    void Start()
+    void OnEnable()
     {
         viewMesh = new Mesh();
         viewMesh.name = "View Mesh";

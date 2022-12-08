@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerColi : MonoBehaviour
 {
+    public GameObject manager;
     public GameObject player;
 
     public GameObject ghost1;
@@ -33,9 +34,6 @@ public class PlayerColi : MonoBehaviour
     public GameObject hole20;
 
     public GameObject ghostWall;
-
-    public GameObject gameoverImg;
-    public GameObject gameoverButton;
 
     // Start is called before the first frame update
     void Start()
@@ -129,16 +127,18 @@ public class PlayerColi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ghost"))
         {
-            StartCoroutine(GameOver());
+            if (ghost1.activeSelf == true)
+            {
+                StartCoroutine(manager.GetComponent<ReTry>().GameOver1());
+            }
+            else if (ghost2.activeSelf == true)
+            {
+                StartCoroutine(manager.GetComponent<ReTry>().GameOver2());
+            }
+            else if (ghost3.activeSelf == true)
+            {
+                StartCoroutine(manager.GetComponent<ReTry>().GameOver3());
+            }
         }
-    }
-
-    IEnumerator GameOver()
-    {
-        gameoverImg.SetActive(true);
-
-        yield return new WaitForSecondsRealtime(2.0f);
-
-        gameoverButton.SetActive(true);
     }
 }
