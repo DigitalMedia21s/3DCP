@@ -9,7 +9,7 @@ public class FadeIO : MonoBehaviour
     public GameObject ghost1;
     public GameObject ghost0;
 
-    void Start()
+    void OnEnable()
     {
         renderer = mirrorTxt.GetComponent<Renderer>();
     }

@@ -12,8 +12,10 @@ public class GhostAI : MonoBehaviour
     public bool isGhost;
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
+        SoundManager.instance.Play("ghost", SoundType.BGM);
+
         //[WIndows] - [AI] - [Navigation] > [Bake] > [Bake]. 귀신 이동 반경에 Static 체크
 
         target = GameObject.FindGameObjectWithTag("Player").transform; //타겟에 Player 태그 필수
@@ -28,7 +30,7 @@ public class GhostAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void StartGhost()
