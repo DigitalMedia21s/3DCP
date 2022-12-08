@@ -52,6 +52,9 @@ public class GhostAI : MonoBehaviour
 
         yield return new WaitUntil(() => isMove == false);
         Debug.Log("АјАн");
+
+        SoundManager.instance.Play("player_hit");
+
         yield return new WaitForSecondsRealtime(5.0f);
 
         navAgent.isStopped = false;
