@@ -77,7 +77,7 @@ public class FieldOfView : MonoBehaviour
 
                     if (target.name == "Bath")
                     {
-                        Debug.Log("¿åÁ¶");
+                        // Debug.Log("¿åÁ¶");
                         BathBlood.SetActive(false);
                     }
                 }

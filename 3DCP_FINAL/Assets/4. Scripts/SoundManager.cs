@@ -56,6 +56,7 @@ public class SoundManager : MonoBehaviour
 
     public void Play(string name, SoundType type = SoundType.EFFECT, float volume = 0.5f)
     {
+        Debug.Log("Play : " + name);
         AudioClip audioClip;
         try
         {
