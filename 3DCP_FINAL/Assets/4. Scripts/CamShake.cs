@@ -34,6 +34,8 @@ public class CamShake : MonoBehaviour
 
         while (elapsedTime < shakeTime)
         {
+            SoundManager.instance.Play("falldown");
+
             Vector3 randomPoint = originPosition + Random.insideUnitSphere * shakeAmount;
             cam.localPosition = Vector3.Lerp(cam.localPosition, randomPoint, Time.deltaTime * shakeSpeed);
 
