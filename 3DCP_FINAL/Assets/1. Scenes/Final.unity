@@ -577,6 +577,11 @@ PrefabInstance:
       objectReference: {fileID: 281103646}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c96f6cdf3adb89444815407fb97da1c9, type: 3}
+--- !u!1 &35578487 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6977350210412297407, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
+  m_PrefabInstance: {fileID: 2037287358}
+  m_PrefabAsset: {fileID: 0}
 --- !u!43 &43896161
 Mesh:
   m_ObjectHideFlags: 0
@@ -14392,10 +14397,22 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1576745127636122298, guid: 83737e44a81637b4eb091832418f2ef6, type: 3}
   m_PrefabInstance: {fileID: 2037287358}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 35578487}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53a5a77667645794c892f20e910eb112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1143783326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 35578487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 481c0337c6d20c94782f8f0fa7fce0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!82 &1159081572 stripped
@@ -37317,13 +37334,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1596148789}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
+      propertyPath: EffectClip.Array.data[0].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a7f37e4a4c96d34284b8c63cf45f9d0, type: 3}
+    - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[0].name
       value: addQuest
       objectReference: {fileID: 0}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[1].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 57cb71e2ff6773d4a970f143464292c7, type: 3}
+      objectReference: {fileID: 8300000, guid: abbc6f093b36ae242b2575e041ab2c1f, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[1].name
       value: clearQuest
@@ -37331,7 +37352,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[2].clip
       value: 
-      objectReference: {fileID: 8300000, guid: a7091f7b917d7e943beb06db935303c5, type: 3}
+      objectReference: {fileID: 8300000, guid: 066645ae0846f0745b71f220bd5df85d, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[2].name
       value: pickUpItem
@@ -37339,7 +37360,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[3].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 57cb71e2ff6773d4a970f143464292c7, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[3].name
       value: foot_normal
@@ -37347,7 +37368,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[4].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 862e32085adc29949a12fee9d1ff11a0, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[4].name
       value: foot_basement
@@ -37355,7 +37376,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[5].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 4104495a448805b4e94dc83af000e0f6, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[5].name
       value: door
@@ -37363,7 +37384,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[6].clip
       value: 
-      objectReference: {fileID: 8300000, guid: e07acf4be273f6d4d884b12942c8e800, type: 3}
+      objectReference: {fileID: 8300000, guid: 7e9ee6dc04a5d40d1a5dfc4beb9865e7, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[6].name
       value: falldown
@@ -37371,7 +37392,7 @@ PrefabInstance:
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[7].clip
       value: 
-      objectReference: {fileID: 8300000, guid: 1689058eeeb072842b8c76940508c2a7, type: 3}
+      objectReference: {fileID: 8300000, guid: 64f4be982684fb241974092b6ef9d44e, type: 3}
     - target: {fileID: 8947183629894099190, guid: 01aeb06e19b9d9d468af8a2e06513245, type: 3}
       propertyPath: EffectClip.Array.data[7].name
       value: click_UI
