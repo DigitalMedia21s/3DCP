@@ -9,6 +9,7 @@ public class ClearQuest5 : MonoBehaviour
         if (other.tag == "Player")
         {
             QuestManager.instance.clearQuest(5);
+            DialogManager.instance.ShowDialog("계단_완료");
             Destroy(this);
         }
     }

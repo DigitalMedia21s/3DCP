@@ -495,12 +495,14 @@ public class AnimAndItem : MonoBehaviour
             GameObject.Find("Slot2").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (1)").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(2);
+            DialogManager.instance.ShowDialog("부엌_완료");
             //i_kp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image6-01")
         {
             GameObject.Find("Slot8").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (6)").gameObject.SetActive(false);
+            DialogManager.instance.ShowDialog("욕실_앞");
             //i_b2 = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image7-01")
@@ -508,6 +510,7 @@ public class AnimAndItem : MonoBehaviour
             GameObject.Find("Slot1").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo (2)").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(0);
+            DialogManager.instance.ShowDialog("거실_완료");
             //i_lp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image8-01")
@@ -515,6 +518,7 @@ public class AnimAndItem : MonoBehaviour
             GameObject.Find("Slot4").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("photo").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(3);
+            DialogManager.instance.ShowDialog("응접실_완료");
             //i_gp = true;
         }
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_image9-01")
@@ -654,8 +658,6 @@ public class AnimAndItem : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg12;
             }
-            // Dialog 삽입으로 추가
-            if(this.gameObject.name.Contains("door0coli")) DialogManager.instance.ShowDialog("복도_문앞");
         }
     }
 
