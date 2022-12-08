@@ -25,10 +25,10 @@ public class AnimAndItem : MonoBehaviour
 
     GameObject Hold, getUIobj, bed;
 
-    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket, rug;
     //bool getitem;
 
-    GameObject kitchendoor, emptyroomdoor, startUI, puzzle;
+    GameObject kitchendoor, emptyroomdoor, startUI, puzzle, key, rugfab, rugtree;
 
     // Start is called before the first frame update
     void Start()
@@ -77,22 +77,25 @@ public class AnimAndItem : MonoBehaviour
         getknife = false;
         getphoto = false;
         blanket = false;
-
+        rug = false;
         bed = GameObject.Find("PFB_Bed"); 
         puzzle = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
-
-        //i_kn = false; i_kp = false; i_lp = false; i_gp = false; i_me = false; i_ke = false;
-        //i_b1 = false; i_b2 = false; i_b3 = false; i_b4 = false; i_b5 = false; i_b6 = false;
+        key = GameObject.Find("Simple_02");
+        rugfab = GameObject.Find("Prop_Rug_B");
+        rugtree = GameObject.Find("Villa1_Floor_Mid_C");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(start == false)
         {
-            SoundManager.instance.Play("click_UI");
-            startUI.SetActive(false);
-            start = true;
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
+                startUI.SetActive(false);
+                start = true;
+            }
         }
         if(start == true)
         {
@@ -127,35 +130,29 @@ public class AnimAndItem : MonoBehaviour
                     GameObject.Find("blanketColi").SetActive(false);
                     blanket = false;
                 }
+                if (rug == true)
+                {
+                    rugfab.SetActive(false);
+                    rugtree.SetActive(false);
+                }
             }
             if (Input.GetKeyDown(KeyCode.Q))
             {
-                //if (item == true)
-                //{
-                //    if(getitem == false) // 가지고 있지 않으면
-                //    {
-                //        //invenNum += 1;
-                //        photoNum += 1;
-                //        //invenCount++;
-                //        ItemToInven();
-                //        uiup = true;
-                //        item = false;
-                //        getitem = false;
-                //    }
-                //    //ItemToInven();
-                //    //uiup = true;
-                //    //item = false;
-                //}
-                if(item == true)
+                if (item == true)
                 {
                     ItemToInven();
                     uiup = true;
                     item = false;
                 }
+                if (GameObject.Find("keyColi").gameObject.activeSelf == true)
+                {
+                    GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(true);
+                    key.SetActive(false);
+                }
             }
             if (Input.GetKeyDown(KeyCode.F1))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot1").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -170,7 +167,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F2))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot2").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -185,7 +182,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F3))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot3").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -200,7 +197,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F4))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot4").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -215,8 +212,13 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F5))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot5").transform.GetChild(0).gameObject.SetActive(true);
+
+                detailUI_Image.sprite = spriteImg5.GetComponent<SpriteRenderer>().sprite;
+                detailUI_Explain.text = "붉은 글씨로 적힌 쪽지. 뭔가 불길하다.";
+                detailUI_Name.text = "익명의 쪽지";
+
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
                 deailImgObj.SetActive(true);
@@ -226,11 +228,11 @@ public class AnimAndItem : MonoBehaviour
                 Hold.SetActive(true);
                 Hold.GetComponent<Image>().sprite = GameObject.Find("Slot5").transform.GetChild(1).gameObject.GetComponent<Image>().sprite;
 
-                DetailInfo();
+                //DetailInfo();
             }
             if (Input.GetKeyDown(KeyCode.F6))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot6").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -245,7 +247,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F7))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot7").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -260,7 +262,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F8))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot8").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -275,7 +277,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F9))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot9").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -290,8 +292,13 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F10))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot10").transform.GetChild(0).gameObject.SetActive(true);
+
+                detailUI_Image.sprite = spriteImg9.GetComponent<SpriteRenderer>().sprite;
+                detailUI_Explain.text = "조각난 사진 조각. 섬뜩한 사진이다.";
+                detailUI_Name.text = "사진 조각";
+
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
                 deailImgObj.SetActive(true);
@@ -305,7 +312,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F11))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot11").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -320,7 +327,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.F12))
             {
-                SoundManager.instance.Play("click_UI");
+                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
                 GameObject.Find("Slot12").transform.GetChild(0).gameObject.SetActive(true);
                 GameObject.Find("InvenUI").transform.GetChild(0).gameObject.SetActive(true);
 
@@ -335,19 +342,22 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                SoundManager.instance.Play("click_UI");
-                DetailView.SetActive(false);
-                for (int i = 1; i < 13; i++)
+                if(DetailView.activeSelf == true)
                 {
-                    GameObject.Find("Slot" + i).transform.GetChild(0).gameObject.SetActive(false);
+                    SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.2f);
+                    DetailView.SetActive(false);
+                    for (int i = 1; i < 13; i++)
+                    {
+                        GameObject.Find("Slot" + i).transform.GetChild(0).gameObject.SetActive(false);
+                    }
+                    //Hold.SetActive(false);
+                    detailUI_Image.sprite = null;
+                    deailImgObj.SetActive(false);
+                    detailUI_Explain.text = "";
+                    deailEXObj.SetActive(false);
+                    detailUI_Name.text = "";
+                    deailEXObj.SetActive(false);
                 }
-                Hold.SetActive(false);
-                detailUI_Image.sprite = null;
-                deailImgObj.SetActive(false);
-                detailUI_Explain.text = "";
-                deailEXObj.SetActive(false);
-                detailUI_Name.text = "";
-                deailEXObj.SetActive(false);
             }
         }
     }
@@ -451,6 +461,7 @@ public class AnimAndItem : MonoBehaviour
         //invenCount++;
 
         //print("인벤순서" + invenNum + "인벤개수" + invenCount + "아이템개수" + photoNum);
+        print(itemsprite.GetComponent<SpriteRenderer>().sprite.name);
 
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_knife")
         {
@@ -458,17 +469,17 @@ public class AnimAndItem : MonoBehaviour
             GameObject.Find("uploads_files_1924412_03+-+Knife").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(1);
         }
-        if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_paper")
+        if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item__paper")
         {
             GameObject.Find("Slot5").transform.GetChild(1).gameObject.SetActive(true);
             GameObject.Find("Paper").gameObject.SetActive(false);
             QuestManager.instance.clearQuest(6);
         }
-        if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "item_key")
-        {
-            GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(true);
-            GameObject.Find("Simple_02").gameObject.SetActive(false);
-        }
+        //if (forkey == true)
+        //{
+        //    GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(true);
+        //    GameObject.Find("Simple_02").gameObject.SetActive(false);
+        //}
         if (itemsprite.GetComponent<SpriteRenderer>().sprite.name == "itemui_image1-01")
         {
             GameObject.Find("Slot10").transform.GetChild(1).gameObject.SetActive(true);
@@ -576,19 +587,18 @@ public class AnimAndItem : MonoBehaviour
                 {
                     parent = transform.parent.gameObject;
                     dooranim = true;
-                    for(int i = 1; i < 13; i++)
-                    {
-                        if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_key")
-                        {
-                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
-                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.SetActive(false);
-                        }
-                    }
+                    GameObject.Find("Slot6").transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
+                    GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(false);
                 }
+            }
+            if (this.gameObject.name == "keyColi")
+            {
+                item = true;
+                itemsprite = spriteImg12;
             }
             if (this.gameObject.name == "door10coli")
             {
-                if(photoNum > 11)
+                if(photoNum > 10)
                 {
                     puzzle.gameObject.SetActive(true);
                 }
@@ -653,10 +663,9 @@ public class AnimAndItem : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg11;
             }
-            if (this.gameObject.name == "keyColi")
+            if (this.gameObject.name == "RugColi")
             {
-                item = true;
-                itemsprite = spriteImg12;
+                rug = true;
             }
         }
     }
