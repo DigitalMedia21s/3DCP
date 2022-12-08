@@ -27,6 +27,8 @@ public class ReTry : MonoBehaviour
                 gameoverTxt.SetActive(false);
                 gameoverImg.SetActive(false);
 
+                SoundManager.instance.Play("restart_enter");
+
                 if (isghost1 == true)
                 {
                     isghost1 = false;
