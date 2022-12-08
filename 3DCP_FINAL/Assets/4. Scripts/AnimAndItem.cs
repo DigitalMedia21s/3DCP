@@ -78,7 +78,7 @@ public class AnimAndItem : MonoBehaviour
         blanket = false;
         rug = false;
         bed = GameObject.Find("PFB_Bed"); 
-        puzzle = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
+        //puzzle = GameObject.Find("Puzzle").transform.GetChild(0).gameObject;
         key = GameObject.Find("Simple_02");
         rugfab = GameObject.Find("Prop_Rug_B");
         rugtree = GameObject.Find("Villa1_Floor_Mid_C");
