@@ -25,7 +25,7 @@ public class AnimAndItem : MonoBehaviour
 
     GameObject Hold, getUIobj, bed;
 
-    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket, rug;
+    bool dooranim, draweranim, item, uiup, inkitch, inemproom, getknife, getphoto, start, blanket, rug, openstrm;
     //bool getitem;
 
     GameObject kitchendoor, emptyroomdoor, startUI, puzzle, key, rugfab, rugtree;
@@ -95,6 +95,10 @@ public class AnimAndItem : MonoBehaviour
         //        start = true;
         //    }
         //}
+        if(openstrm == true)
+        {
+            GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(false);
+        }
         if(start == false)
         {
             DontOpenDoor();
@@ -590,6 +594,7 @@ public class AnimAndItem : MonoBehaviour
                     dooranim = true;
                     GameObject.Find("Slot6").transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
                     GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(false);
+                    openstrm = true;
                 }
             }
             if (this.gameObject.name == "keyColi")
@@ -599,7 +604,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (this.gameObject.name == "door10coli")
             {
-                if(photoNum > 10)
+                if(GameObject.Find("Slot12").transform.GetChild(1).gameObject.activeSelf == true)
                 {
                     puzzle.gameObject.SetActive(true);
                 }
