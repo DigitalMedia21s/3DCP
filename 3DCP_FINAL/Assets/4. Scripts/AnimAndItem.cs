@@ -654,6 +654,8 @@ public class AnimAndItem : MonoBehaviour
                 item = true;
                 itemsprite = spriteImg12;
             }
+            // Dialog 삽입으로 추가
+            if(this.gameObject.name.Contains("door0coli")) DialogManager.instance.ShowDialog("복도_문앞");
         }
     }
 
