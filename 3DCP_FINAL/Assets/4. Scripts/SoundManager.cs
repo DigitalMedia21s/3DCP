@@ -18,6 +18,17 @@ public class SoundManager : MonoBehaviour
 
     public void Awake()
     {
+        // Dont Destroy 설정
+        var obj = FindObjectsOfType<SoundManager>();
+        if (obj.Length == 1)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         // BGM loop 설정
         audioSources[(int)SoundType.BGM].loop = true;
         instance = this;
