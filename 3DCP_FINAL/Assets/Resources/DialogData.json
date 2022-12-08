@@ -125,6 +125,50 @@
       "id": "복도",
       "content": [
         {
+          "name": "<color=#FFFF00>게임 시작",
+          "content": "ESC</color>"
+        },
+        {
+          "name": "<color=#FFFF00>플레이어이동",
+          "content": "W, A, S, D</color>"
+        },
+        {
+          "name": "<color=#FFFF00>점프",
+          "content": "SpaceBar</color>"
+        },
+        {
+          "name": "<color=#FFFF00>달리기",
+          "content": "LShift</color>"
+        },
+        {
+          "name": "<color=#FFFF00>귀신공격",
+          "content": "F</color>"
+        },
+        {
+          "name": "<color=#FFFF00>아이템획득",
+          "content": "Q</color>"
+        },
+        {
+          "name": "<color=#FFFF00>문열/닫기, 서랍열기, 이불접기, 러그치우기",
+          "content": "R</color>"
+        },
+        {
+          "name": "<color=#FFFF00>인벤토리",
+          "content": "Tab</color>"
+        },
+        {
+          "name": "<color=#FFFF00>디테일뷰 열기",
+          "content": "F1 ~ F12</color>"
+        },
+        {
+          "name": "<color=#FFFF00>디테일뷰 끄기",
+          "content": "SpaceBar</color>"
+        },
+        {
+          "name": "<color=#FFFF00>퍼즐맞추기",
+          "content": "왼쪽 마우스 드래그 앤 드롭</color>"
+        },
+        {
           "name": "멜크리오 (mellcreep204)",
           "content": "ㅍㅇㄹ"
         },
@@ -204,6 +248,50 @@
         {
           "name": "곰인형 (teddybeer4444)",
           "content": "넌 내꺼야"
+        },
+        {
+          "name": "<color=#FFFF00>게임 시작",
+          "content": "ESC</color>"
+        },
+        {
+          "name": "<color=#FFFF00>플레이어이동",
+          "content": "W, A, S, D</color>"
+        },
+        {
+          "name": "<color=#FFFF00>점프",
+          "content": "SpaceBar</color>"
+        },
+        {
+          "name": "<color=#FFFF00>달리기",
+          "content": "LShift</color>"
+        },
+        {
+          "name": "<color=#FFFF00>귀신공격",
+          "content": "F</color>"
+        },
+        {
+          "name": "<color=#FFFF00>아이템획득",
+          "content": "Q</color>"
+        },
+        {
+          "name": "<color=#FFFF00>문열/닫기, 서랍열기, 이불접기, 러그치우기",
+          "content": "R</color>"
+        },
+        {
+          "name": "<color=#FFFF00>인벤토리",
+          "content": "Tab</color>"
+        },
+        {
+          "name": "<color=#FFFF00>디테일뷰 열기",
+          "content": "F1 ~ F12</color>"
+        },
+        {
+          "name": "<color=#FFFF00>디테일뷰 끄기",
+          "content": "SpaceBar</color>"
+        },
+        {
+          "name": "<color=#FFFF00>퍼즐맞추기",
+          "content": "왼쪽 마우스 드래그 앤 드롭</color>"
         }
       ]
     },
@@ -325,11 +413,11 @@
         },
         {
           "name": "멜크리오 (mellcreep204)",
-          "content": "<color = #FFFF00>열쇠</color>가 있나?"
+          "content": "<color=#FFFF00>열쇠</color>가 있나?"
         },
         {
           "name": "마라당 (maratangtange)",
-          "content": "일단 <color = #FFFF00>귀신 때려잡을 거</color> 찾으셈"
+          "content": "일단 <color=#FFFF00>귀신 때려잡을 거</color> 찾으셈"
         },
         {
           "name": "초코에멍 (choikkh)",
@@ -354,7 +442,7 @@
         },
         {
           "name": "초코에멍 (choikkh)",
-          "content": "엥 <color = #FFFF00>냉장고에 피자가 있는거 어떻게 앎</color>"
+          "content": "엥 <color=#FFFF00>냉장고에 피자가 있는거 어떻게 앎</color>"
         },
         {
           "name": "멜크리오 (mellcreep204)",
@@ -647,7 +735,7 @@
         },
         {
           "name": "초코에멍 (choikkh)",
-          "content": "<color = #FFFF00>서랍!</color>"
+          "content": "<color=#FFFF00>서랍!</color>"
         }
       ]
     },
@@ -656,7 +744,7 @@
       "content": [
         {
           "name": "멜크리오 (mellcreep204)",
-          "content": "<color = #FFFF00>열쇠</color>"
+          "content": "<color=#FFFF00>열쇠</color>"
         },
         {
           "name": "마라당 (maratangtange)",
