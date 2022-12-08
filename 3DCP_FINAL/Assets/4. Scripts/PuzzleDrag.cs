@@ -15,7 +15,7 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     public Image Panel;
     float time = 0f;
-    float F_time = 2f;
+    float F_time = 6f;
 
     void Start()
     {
@@ -33,6 +33,7 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
         {
             clear = true;
             print("ÆÛÁñÅ¬¸®¾î");
+            QuestManager.instance.clearQuest(4);
             StartCoroutine(FadeFlow());
         }
     }
