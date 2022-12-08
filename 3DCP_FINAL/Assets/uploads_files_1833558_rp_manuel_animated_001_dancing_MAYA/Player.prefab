@@ -2661,16 +2661,16 @@ MonoBehaviour:
   SpeedChangeRate: 10
   LandingAudioClip: {fileID: 8300000, guid: ff697d3070687ce4583faa0561a145a2, type: 3}
   FootstepAudioClips:
-  - {fileID: 8300000, guid: 72f526a6a9890f643a88e85a61c86c8a, type: 3}
-  - {fileID: 8300000, guid: 85016e0f2b01da248b9663dd49a161b0, type: 3}
-  - {fileID: 8300000, guid: 186de84b3207156479abe98f4958fed0, type: 3}
-  - {fileID: 8300000, guid: 1a91fcd19acf1e54bba0945d9f390849, type: 3}
-  - {fileID: 8300000, guid: 14e8a8d2158bec840b56c54f5266e692, type: 3}
-  - {fileID: 8300000, guid: 29841e7d5bbfb5b419c9ad16ca8bc4c1, type: 3}
-  - {fileID: 8300000, guid: dd1af302b8902684d9381de1f2d3a5af, type: 3}
-  - {fileID: 8300000, guid: 67c8b33e424ccdc4486edf538ab91c5a, type: 3}
-  - {fileID: 8300000, guid: 274649b0e221539409070ebf6c18918b, type: 3}
-  - {fileID: 8300000, guid: a3194b8bbc96ef84fab1f98f4b7dae3e, type: 3}
+  - {fileID: 8300000, guid: 487cc5bbf86ad354185d06a7d9061d48, type: 3}
+  - {fileID: 8300000, guid: 174953bf8fd258742a9d705dbc37e29f, type: 3}
+  - {fileID: 8300000, guid: 487cc5bbf86ad354185d06a7d9061d48, type: 3}
+  - {fileID: 8300000, guid: 174953bf8fd258742a9d705dbc37e29f, type: 3}
+  - {fileID: 8300000, guid: 487cc5bbf86ad354185d06a7d9061d48, type: 3}
+  - {fileID: 8300000, guid: 174953bf8fd258742a9d705dbc37e29f, type: 3}
+  - {fileID: 8300000, guid: 487cc5bbf86ad354185d06a7d9061d48, type: 3}
+  - {fileID: 8300000, guid: 174953bf8fd258742a9d705dbc37e29f, type: 3}
+  - {fileID: 8300000, guid: 487cc5bbf86ad354185d06a7d9061d48, type: 3}
+  - {fileID: 8300000, guid: 174953bf8fd258742a9d705dbc37e29f, type: 3}
   FootstepAudioVolume: 0.3
   JumpHeight: 1.2
   Gravity: -15
@@ -2836,7 +2836,6 @@ MonoBehaviour:
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
   ghost3: {fileID: 0}
-  gameoverUI: {fileID: 0}
 --- !u!114 &1576745127636122297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3475,6 +3474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea58b0dd578321f4c88ce6fa9e169d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   player: {fileID: 6977350210412297407}
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
@@ -3501,8 +3501,6 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverImg: {fileID: 0}
-  gameoverButton: {fileID: 0}
 --- !u!1 &8454116375593290439
 GameObject:
   m_ObjectHideFlags: 0
@@ -3630,6 +3628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea58b0dd578321f4c88ce6fa9e169d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   player: {fileID: 6977350210412297407}
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
@@ -3656,8 +3655,6 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverImg: {fileID: 0}
-  gameoverButton: {fileID: 0}
 --- !u!1 &8454116375698730206
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,6 +3782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea58b0dd578321f4c88ce6fa9e169d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   player: {fileID: 6977350210412297407}
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
@@ -3811,8 +3809,6 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverImg: {fileID: 0}
-  gameoverButton: {fileID: 0}
 --- !u!1 &8454116376346349379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3940,6 +3936,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea58b0dd578321f4c88ce6fa9e169d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
   player: {fileID: 6977350210412297407}
   ghost1: {fileID: 0}
   ghost2: {fileID: 0}
@@ -3966,8 +3963,6 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
-  gameoverImg: {fileID: 0}
-  gameoverButton: {fileID: 0}
 --- !u!1 &8527733928080535001
 GameObject:
   m_ObjectHideFlags: 0
