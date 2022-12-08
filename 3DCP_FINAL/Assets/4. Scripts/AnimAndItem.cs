@@ -128,7 +128,7 @@ public class AnimAndItem : MonoBehaviour
                     blanket = false;
                 }
             }
-            if (Input.GetKeyDown(KeyCode.LeftShift))
+            if (Input.GetKeyDown(KeyCode.Q))
             {
                 //if (item == true)
                 //{
