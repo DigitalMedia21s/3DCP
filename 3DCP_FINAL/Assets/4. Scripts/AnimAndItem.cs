@@ -72,8 +72,6 @@ public class AnimAndItem : MonoBehaviour
         detailUI_Name = deailNmObj.GetComponent<TextMeshProUGUI>();
 
         kitchendoor = GameObject.Find("door2coli").transform.parent.gameObject;
-        //emptyroomdoor = GameObject.Find("").transform.parent.gameObject;
-
         getknife = false;
         getphoto = false;
         blanket = false;
@@ -88,16 +86,16 @@ public class AnimAndItem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //if(start == false)
+        //{
+        //    if (Input.GetKeyDown(KeyCode.Escape))
+        //    {
+        //        SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
+        //        startUI.SetActive(false);
+        //        start = true;
+        //    }
+        //}
         if(start == false)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                SoundManager.instance.Play("click_UI", SoundType.EFFECT, 0.1f);
-                startUI.SetActive(false);
-                start = true;
-            }
-        }
-        if(start == true)
         {
             DontOpenDoor();
 
@@ -150,6 +148,7 @@ public class AnimAndItem : MonoBehaviour
                 {
                     GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(true);
                     key.SetActive(false);
+                    uiup = true;
                 }
             }
             if (Input.GetKeyDown(KeyCode.F1))

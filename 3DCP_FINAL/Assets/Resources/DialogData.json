@@ -125,10 +125,6 @@
       "id": "복도",
       "content": [
         {
-          "name": "<color=#FFFF00>게임 시작",
-          "content": "ESC</color>"
-        },
-        {
           "name": "<color=#FFFF00>플레이어이동",
           "content": "W, A, S, D</color>"
         },
@@ -248,10 +244,6 @@
         {
           "name": "곰인형 (teddybeer4444)",
           "content": "넌 내꺼야"
-        },
-        {
-          "name": "<color=#FFFF00>게임 시작",
-          "content": "ESC</color>"
         },
         {
           "name": "<color=#FFFF00>플레이어이동",
