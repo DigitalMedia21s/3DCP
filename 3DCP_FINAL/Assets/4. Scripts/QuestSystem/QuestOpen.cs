@@ -19,7 +19,7 @@ public class QuestOpen : MonoBehaviour
             return;
         }
 
-        QuestManager.instance.addCurrentQuests(questNum);
-        Destroy(other);
+        if (QuestManager.instance.addCurrentQuests(questNum))
+            Destroy(other);
     }
 }

@@ -396,12 +396,12 @@ public class AnimAndItem : MonoBehaviour
                 if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_knife")
                 {
                     getknife = true;
-                    Debug.Log(getknife);
+                    // Debug.Log(getknife);
                 }
                 if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_image5-01")
                 {
                     getphoto = true;
-                    Debug.Log(getphoto);
+                    // Debug.Log(getphoto);
                 }
                 if(getknife == true && getphoto == true)
                 {

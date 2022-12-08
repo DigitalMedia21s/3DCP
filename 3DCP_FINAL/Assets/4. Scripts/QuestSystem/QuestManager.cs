@@ -47,14 +47,15 @@ public class QuestManager : MonoBehaviour
             temp = (int)i.level;
             levelCountMax[temp]++;
         }
+        levelCountMax[1]--;
     }
 
-    public void addCurrentQuests(int id) 
+    public bool addCurrentQuests(int id) 
     {
         QuestData quest = getData(id);
         try 
         {
-            if(!checkQuestLevel(quest)) return;
+            if(!checkQuestLevel(quest)) return false;
             quest.open = true;
             currentQuests.Add(quest);
             Debug.Log("퀘스트를 추가함 : " + quest.id + " , " +quest.desc); 
@@ -65,6 +66,7 @@ public class QuestManager : MonoBehaviour
         }
         ui.resetQuestUI();
         SoundManager.instance.Play("addQuest");
+        return true;
     }
 
     public void clearQuest(int id) 
@@ -129,7 +131,6 @@ public class QuestManager : MonoBehaviour
     {
         if (currentLevel == level)
             return true;
-        Debug.Log("현재 레벨에 해당하지 않음");
         return false;
     }
 
