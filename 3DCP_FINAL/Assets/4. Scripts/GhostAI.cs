@@ -16,6 +16,8 @@ public class GhostAI : MonoBehaviour
     {
         //[WIndows] - [AI] - [Navigation] > [Bake] > [Bake]. 귀신 이동 반경에 Static 체크
 
+        SoundManager.instance.Play("ghost", SoundType.BGM);
+
         target = GameObject.FindGameObjectWithTag("Player").transform; //타겟에 Player 태그 필수
         navAgent = GetComponent<NavMeshAgent>(); //귀신 오브젝트에 NavMeshAgent 컴포넌트 추가
 
