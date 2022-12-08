@@ -35,6 +35,7 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string id)
     {
+        Debug.Log("ShowDialog");
         PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id.Equals(id));
         ViewerDialog vDialog = datas.viewerDialogs.Find(x => x.id.Equals(id));
         // UI 그리기
