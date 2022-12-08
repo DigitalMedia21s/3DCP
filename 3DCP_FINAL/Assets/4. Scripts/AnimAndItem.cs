@@ -587,14 +587,8 @@ public class AnimAndItem : MonoBehaviour
                 {
                     parent = transform.parent.gameObject;
                     dooranim = true;
-                    for(int i = 1; i < 13; i++)
-                    {
-                        if(GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite.name == "item_key")
-                        {
-                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
-                            GameObject.Find("Slot" + i).transform.GetChild(1).gameObject.SetActive(false);
-                        }
-                    }
+                    GameObject.Find("Slot6").transform.GetChild(1).gameObject.GetComponent<Image>().sprite = null;
+                    GameObject.Find("Slot6").transform.GetChild(1).gameObject.SetActive(false);
                 }
             }
             if (this.gameObject.name == "keyColi")
@@ -604,7 +598,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (this.gameObject.name == "door10coli")
             {
-                if(photoNum > 11)
+                if(photoNum > 10)
                 {
                     puzzle.gameObject.SetActive(true);
                 }
