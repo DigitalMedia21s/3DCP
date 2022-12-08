@@ -25,7 +25,5 @@ public class DialogOpen : MonoBehaviour
             else if (other.name == "StudyColi") DialogManager.instance.ShowDialog("서재");
             else if (other.name == "2FRoom3Coli") DialogManager.instance.ShowDialog("빈방");
         }
-        
-
     }
 }

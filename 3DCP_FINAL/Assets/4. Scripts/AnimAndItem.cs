@@ -109,7 +109,7 @@ public class AnimAndItem : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.R))
             {
-                print(dooranim + "<-문열기, 아이템->" + item);
+                // print(dooranim + "<-문열기, 아이템->" + item);
 
                 if (dooranim == true)
                 {
@@ -553,7 +553,7 @@ public class AnimAndItem : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            Debug.Log("this는" + this.name);
+            // Debug.Log("this는" + this.name);
 
             if (this.gameObject.name.Contains("door0coli") || this.gameObject.name.Contains("door1coli") || this.gameObject.name.Contains("door2coli") 
                 || this.gameObject.name.Contains("door4coli") || this.gameObject.name.Contains("door5coli") || this.gameObject.name.Contains("door6coli") 

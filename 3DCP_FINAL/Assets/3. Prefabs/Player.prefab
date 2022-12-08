@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 405525851656569445}
   - component: {fileID: 405525851656569446}
   - component: {fileID: 7103692415988608331}
+  - component: {fileID: 7192714621793739899}
   m_Layer: 0
   m_Name: PlayerTag4
   m_TagString: Player
@@ -154,6 +155,18 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
+--- !u!114 &7192714621793739899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405525851656569464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405525852002486268
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,6 +181,7 @@ GameObject:
   - component: {fileID: 405525852002486265}
   - component: {fileID: 405525852002486266}
   - component: {fileID: 8758712256156399903}
+  - component: {fileID: 8831492109333402047}
   m_Layer: 0
   m_Name: PlayerTag2
   m_TagString: Player
@@ -308,6 +322,18 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
+--- !u!114 &8831492109333402047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405525852002486268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405525852030263781
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +348,7 @@ GameObject:
   - component: {fileID: 405525852030263778}
   - component: {fileID: 405525852030263779}
   - component: {fileID: 1830683048843003260}
+  - component: {fileID: 6249909313985771530}
   m_Layer: 0
   m_Name: PlayerTag1
   m_TagString: Player
@@ -462,6 +489,18 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
+--- !u!114 &6249909313985771530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405525852030263781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &405525852773784716
 GameObject:
   m_ObjectHideFlags: 0
@@ -476,6 +515,7 @@ GameObject:
   - component: {fileID: 405525852773784713}
   - component: {fileID: 405525852773784714}
   - component: {fileID: 2250821984604314131}
+  - component: {fileID: 786812837564562916}
   m_Layer: 0
   m_Name: PlayerTag3
   m_TagString: Player
@@ -616,6 +656,18 @@ MonoBehaviour:
   hole19: {fileID: 0}
   hole20: {fileID: 0}
   ghostWall: {fileID: 0}
+--- !u!114 &786812837564562916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405525852773784716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &480514356901896418
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +847,6 @@ GameObject:
   - component: {fileID: 7282884400243652482}
   - component: {fileID: 7282884400243652483}
   - component: {fileID: 4667869306256158529}
-  - component: {fileID: 1069300623129026151}
   - component: {fileID: 7964839097491167909}
   m_Layer: 0
   m_Name: Player
@@ -1111,18 +1162,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 710bb7ad159208949ab47fa4e5a1b1e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1069300623129026151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1163967868967760260}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77057ccd1c064514ab8c71827a9136d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &7964839097491167909
