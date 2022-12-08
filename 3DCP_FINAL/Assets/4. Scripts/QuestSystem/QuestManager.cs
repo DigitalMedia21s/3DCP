@@ -98,6 +98,7 @@ public class QuestManager : MonoBehaviour
         }
         currentLevel ++;
         levelCount =0;
+
         // FIRST의 퀘스트를 모두 완료하면 퀘스트 시작
         if(currentLevel == QuestLevel.MID && levelCount == 0)
         {
@@ -119,6 +120,14 @@ public class QuestManager : MonoBehaviour
     private bool checkQuestLevel(QuestData data)
     {
         if (currentLevel == data.level)
+            return true;
+        Debug.Log("현재 레벨에 해당하지 않음");
+        return false;
+    }
+
+    public bool checkQuestLevel(QuestLevel level)
+    {
+        if (currentLevel == level)
             return true;
         Debug.Log("현재 레벨에 해당하지 않음");
         return false;
