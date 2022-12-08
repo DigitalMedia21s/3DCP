@@ -127,6 +127,8 @@ public class PlayerColi : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ghost"))
         {
+            SoundManager.instance.Play("ghost_hit");
+
             if (ghost1.activeSelf == true)
             {
                 StartCoroutine(manager.GetComponent<ReTry>().GameOver1());
