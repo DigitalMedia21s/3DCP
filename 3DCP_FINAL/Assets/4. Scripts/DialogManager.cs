@@ -7,7 +7,7 @@ using DG.Tweening;
 
 public class DialogManager : MonoBehaviour
 {
-    DialogManager instance;
+    public static DialogManager instance;
     
     [SerializeField] private float interval;
     [SerializeField] private Transform parentContent;
@@ -35,13 +35,15 @@ public class DialogManager : MonoBehaviour
 
     public void ShowDialog(string id)
     {
-        PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id == id);
-        ViewerDialog vDialog = datas.viewerDialogs.Find(x => x.id == id);
-
+        PlayerDialog pDialog = datas.playerDialogs.Find(x => x.id.Equals(id));
+        ViewerDialog vDialog = datas.viewerDialogs.Find(x => x.id.Equals(id));
+        // UI 그리기
         if (pDialog == null) Debug.LogError("CAN NOT FIND PLAYER DIALOG");
         else StartCoroutine(ShowPlayerDialog(pDialog));
         if (vDialog == null) Debug.LogError("CAN NOT FIND VIEWER DIALOG"); 
         else StartCoroutine(ShowViewerDialog(vDialog));
+        // 한 번 띄운 대사 삭제
+        datas.Remove(id);
     }
     private IEnumerator ShowPlayerDialog(PlayerDialog dialog)
     {
@@ -110,6 +112,12 @@ public class DialogDatas
 {
     public List<PlayerDialog> playerDialogs; // => dictionary? can not serialize
     public List<ViewerDialog> viewerDialogs;
+
+    public void Remove(string id)
+    {
+        playerDialogs.Remove(playerDialogs.Find(x => x.id.Equals(id))); 
+        viewerDialogs.Remove(viewerDialogs.Find(x => x.id.Equals(id)));
+    }
 }
 [System.Serializable]
 public class PlayerDialog
