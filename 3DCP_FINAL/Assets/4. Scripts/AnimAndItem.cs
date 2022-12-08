@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class AnimAndItem : MonoBehaviour
 {
@@ -606,7 +607,7 @@ public class AnimAndItem : MonoBehaviour
             {
                 if(GameObject.Find("Slot12").transform.GetChild(1).gameObject.activeSelf == true)
                 {
-                    puzzle.gameObject.SetActive(true);
+                    SceneManager.LoadScene(2);
                 }
             }
             if (this.gameObject.name == "animForDrawerColi")
