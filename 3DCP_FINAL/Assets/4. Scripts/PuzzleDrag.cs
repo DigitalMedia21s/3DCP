@@ -19,6 +19,9 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
 
     void Start()
     {
+        //Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = true;
+
         PzPanel = GameObject.Find("PzCanvas").transform.GetChild(0).gameObject;
         PzBg = PzPanel.transform.GetChild(0).gameObject;
         for (int i = 0; i < 9; i++)
@@ -26,14 +29,18 @@ public class PuzzleDrag : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDr
             pz[i] = PzBg.transform.GetChild(i).gameObject;
         }
     }
-
+    void OnEnable()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
     void Update()
     {
         if (PzBg.transform.childCount <= 9)
         {
             clear = true;
             print("ÆÛÁñÅ¬¸®¾î");
-            QuestManager.instance.clearQuest(4);
+            //QuestManager.instance.clearQuest(4);
             StartCoroutine(FadeFlow());
         }
     }
