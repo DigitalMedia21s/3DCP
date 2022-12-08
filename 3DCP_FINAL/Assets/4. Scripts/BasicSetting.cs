@@ -8,6 +8,7 @@ public class BasicSetting : MonoBehaviour
     void Start()
     {
         SoundManager.instance.Play("before", SoundType.BGM);
+        Screen.SetResolution(1920, 1080, true);
     }
 
 }

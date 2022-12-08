@@ -134,6 +134,8 @@ public class AnimAndItem : MonoBehaviour
                 {
                     rugfab.SetActive(false);
                     rugtree.SetActive(false);
+                    SoundManager.instance.Play("basement", SoundType.BGM);
+                    rug = false;
                 }
             }
             if (Input.GetKeyDown(KeyCode.Q))
